@@ -10,6 +10,8 @@ import type { Locals } from '$lib/types';
 
 	(The data on the todo app will expire periodically; no
 	guarantees are made. Don't use it to organise your life.)
+
+	https://github.com/dagerikhl/miles-fagdag01-gypalant-case-svelte/blob/starter-ts/src/routes/characters/_api.ts
 */
 
 const base = 'https://api.svelte.dev';

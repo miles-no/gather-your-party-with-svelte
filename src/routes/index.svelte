@@ -3,7 +3,6 @@
 </script>
 
 <script lang="ts">
-	import Counter from '$lib/Counter.svelte';
 </script>
 
 <svelte:head>
@@ -11,6 +10,7 @@
 </svelte:head>
 
 <section>
+	<!-- TODO Fill with some welcome message and landing page stuff, not SvelteKit demo -->
 	<h1>
 		<div class="welcome">
 			<picture>
@@ -20,8 +20,6 @@
 		</div>
 		MR COOL GUY TOO
 	</h1>
-
-	<Counter />
 </section>
 
 <style>

@@ -1,12 +1,12 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import logo from './svelte-logo.svg';
+	import logo from './miles-logo.svg';
 </script>
 
 <header>
 	<div class="corner">
-		<a href="https://kit.svelte.dev">
-			<img src={logo} alt="SvelteKit" />
+		<a href="https://www.miles.no/" target="_blank">
+			<img src={logo} alt="Miles" />
 		</a>
 	</div>
 
@@ -16,23 +16,26 @@
 		</svg>
 		<ul>
 			<li class:active={$page.path === '/'}><a sveltekit:prefetch href="/">Home</a></li>
-			<li class:active={$page.path === '/about'}><a sveltekit:prefetch href="/about">About</a></li>
-			<li class:active={$page.path === '/todos'}><a sveltekit:prefetch href="/todos">Todos</a></li>
+			<li class:active={$page.path === '/creator'}>
+				<a sveltekit:prefetch href="/creator">Character Creator</a>
+			</li>
+			<!-- <li class:active={$page.path === '/characters'}><a sveltekit:prefetch href="/characters">Characters</a></li> -->
 		</ul>
 		<svg viewBox="0 0 2 3" aria-hidden="true">
 			<path d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" />
 		</svg>
 	</nav>
 
-	<div class="corner">
-		<!-- TODO put something else here? github link? -->
+	<div class="github-links">
+		<a href="https://github.com/dagerikhl" target="_blank">dagerikhl</a>
+		<a href="https://github.com/palexcast" target="_blank">palexcast</a>
 	</div>
 </header>
 
 <style>
 	header {
 		display: flex;
-		justify-content: space-between;
+		justify-content: space-around;
 	}
 
 	.corner {
@@ -52,6 +55,13 @@
 		width: 2em;
 		height: 2em;
 		object-fit: contain;
+	}
+
+	.github-links {
+		display: flex;
+		align-items: center;
+		gap: 1em;
+		height: 2em;
 	}
 
 	nav {

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Header from '$lib/header/Header.svelte';
+	import Header from '$lib/components/header/Header.svelte';
 	import '../app.css';
 </script>
 
@@ -10,6 +10,7 @@
 </main>
 
 <footer>
+	<!-- TODO Change footer to something Miles related -->
 	<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
 </footer>
 
