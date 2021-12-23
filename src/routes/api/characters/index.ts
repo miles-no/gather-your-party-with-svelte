@@ -37,5 +37,5 @@ export const post: RequestHandler<Locals> = async (request) => {
 	if (isApiError(response)) {
 		return { status: response.status, body: response.error };
 	}
-	return { status: 204 };
+	return { status: 201 };
 };
