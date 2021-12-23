@@ -3,6 +3,7 @@ import type { Locals } from '$lib/types';
 import type { Character } from '$lib/types/character';
 import { isApiError, getCharacters, saveCharacters } from '$lib/utils/api-utils';
 import { v4 as uuid } from '@lukeed/uuid';
+import { validateCharacter } from '$lib/validation/character-validation';
 
 // GET /api/characters
 export const get: RequestHandler<Locals> = async () => {
@@ -15,12 +16,16 @@ export const get: RequestHandler<Locals> = async () => {
 
 // POST /api/characters
 export const post: RequestHandler<Locals> = async (request) => {
+	const data = request.body as unknown;
+	const validation = validateCharacter(data);
+	if (isApiError(validation)) {
+		return { status: validation.status, body: validation.error };
+	}
+	const character: Character = data as Character;
 	const characters = getCharacters();
 	if (isApiError(characters)) {
 		return { status: characters.status, body: characters.error };
 	}
-	// TODO Validate input data?
-	const character: Character = request.body as unknown as Character;
 	if (!character.id) {
 		character.id = uuid();
 	}
