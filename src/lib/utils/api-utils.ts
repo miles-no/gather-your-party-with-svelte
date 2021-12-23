@@ -1,13 +1,17 @@
 import type { ApiError } from '$lib/types/api-error';
-import { readFileSync, writeFileSync, existsSync } from 'fs';
+import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'fs';
 import type { Character } from '$lib/types/character';
 
-const filePath = '.data/characters.json';
+const folderPath = '.data';
+const filePath = folderPath + '/characters.json';
 const encoding = 'utf8';
 
 const createFileIfNotExist = (): void => {
 	if (existsSync(filePath)) {
 		return;
+	}
+	if (!existsSync(folderPath)) {
+		mkdirSync(folderPath, { recursive: true });
 	}
 	writeFileSync(filePath, '[]', encoding);
 };
