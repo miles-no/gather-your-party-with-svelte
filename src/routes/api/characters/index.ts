@@ -16,7 +16,7 @@ export const get: RequestHandler<Locals> = async () => {
 
 // POST /api/characters
 export const post: RequestHandler<Locals> = async (request) => {
-	const data = request.body as unknown;
+	const data = JSON.parse(request.body as string);
 	const validation = validateCharacter(data);
 	if (isApiError(validation)) {
 		return { status: validation.status, body: validation.error };
