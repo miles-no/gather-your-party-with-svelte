@@ -21,6 +21,8 @@
 	};
 	let submissionStatus: SubmissionStatus;
 
+	let isSavingCharacter = false;
+
 	const clearSubmissionStatusAfterDelay = (delay = 5000) => {
 		setTimeout(() => {
 			submissionStatus = undefined;
@@ -28,6 +30,7 @@
 	};
 
 	const handleSubmit = () => {
+		isSavingCharacter = true;
 		fetch('/api/characters', { method: 'POST', body: JSON.stringify({ name, race }) }).then(
 			async (response) => {
 				if (response.status >= 400) {
@@ -39,6 +42,10 @@
 					submissionStatus = SUBMISSION_STATUSES.Success;
 					clearSubmissionStatusAfterDelay();
 				}
+
+				setTimeout(() => {
+					isSavingCharacter = false;
+				}, 2000);
 			},
 		);
 	};
@@ -49,21 +56,21 @@
 </svelte:head>
 
 <section class="container">
-	<label class="input text-input">
+	<label class="input">
 		<span>Name</span>
-		<input bind:value={name} />
+		<input class="interactive" bind:value={name} />
 	</label>
 
 	<label class="input select-input">
 		<span>Race</span>
-		<select bind:value={race}>
+		<select class="interactive" bind:value={race}>
 			{#each RACE_OPTIONS as { id, name }}
 				<option value={id}>{name}</option>
 			{/each}
 		</select>
 	</label>
 
-	<Button on:click={handleSubmit}>Save</Button>
+	<Button disabled={isSavingCharacter} on:click={handleSubmit}>Save</Button>
 
 	{#if submissionStatus === SUBMISSION_STATUSES.Success}
 		Character saved!
@@ -89,12 +96,6 @@
 	}
 	.input > input,
 	.input > select {
-		height: var(--interactive-height);
-		width: var(--interactive-width);
-		margin: 0;
-		padding: var(--interactive-padding-y) var(--interactive-padding-x);
-		border: var(--interactive-border);
-		border-radius: var(--interactive-border-radius);
 		font-size: 100%;
 	}
 

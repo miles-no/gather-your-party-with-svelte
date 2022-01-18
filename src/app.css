@@ -19,6 +19,8 @@
 
 	--interactive-height: 40px;
 	--interactive-width: 12rem;
+	--interactive-margin-y: 0;
+	--interactive-margin-x: 0;
 	--interactive-padding-y: 0;
 	--interactive-padding-x: 0.5rem;
 	--interactive-border: 2px solid black;
@@ -107,6 +109,15 @@ button {
 
 button:focus:not(:focus-visible) {
 	outline: none;
+}
+
+.interactive {
+	height: var(--interactive-height);
+	width: var(--interactive-width);
+	margin: var(--interactive-margin-y) var(--interactive-margin-x);
+	padding: var(--interactive-padding-y) var(--interactive-padding-x);
+	border: var(--interactive-border);
+	border-radius: var(--interactive-border-radius);
 }
 
 @media (min-width: 720px) {
