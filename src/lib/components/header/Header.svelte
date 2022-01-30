@@ -11,9 +11,6 @@
 	</div>
 
 	<nav>
-		<svg viewBox="0 0 2 3" aria-hidden="true">
-			<path d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" />
-		</svg>
 		<ul>
 			<li class:active={$page.path === '/'}><a sveltekit:prefetch href="/">Home</a></li>
 			<li class:active={$page.path === '/creator'}>
@@ -21,26 +18,22 @@
 			</li>
 			<!-- <li class:active={$page.path === '/characters'}><a sveltekit:prefetch href="/characters">Characters</a></li> -->
 		</ul>
-		<svg viewBox="0 0 2 3" aria-hidden="true">
-			<path d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" />
-		</svg>
 	</nav>
-
-	<div class="github-links">
-		<a href="https://github.com/dagerikhl" target="_blank">dagerikhl</a>
-		<a href="https://github.com/palexcast" target="_blank">palexcast</a>
-	</div>
 </header>
 
 <style>
 	header {
 		display: flex;
 		justify-content: space-around;
+		position: relative;
 	}
 
 	.corner {
 		width: 3em;
 		height: 3em;
+		position: absolute;
+		top: 0;
+		left: 0;
 	}
 
 	.corner a {
@@ -57,27 +50,10 @@
 		object-fit: contain;
 	}
 
-	.github-links {
-		display: flex;
-		align-items: center;
-		gap: 1em;
-		height: 2em;
-	}
-
 	nav {
 		display: flex;
 		justify-content: center;
 		--background: rgba(255, 255, 255, 0.7);
-	}
-
-	svg {
-		width: 2em;
-		height: 3em;
-		display: block;
-	}
-
-	path {
-		fill: var(--background);
 	}
 
 	ul {
