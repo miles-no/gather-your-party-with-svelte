@@ -1,7 +1,13 @@
 <script lang="ts">
 	import Button from '$lib/components/button/Button.svelte';
 	import { RACES } from '$lib/models/races';
+	import type { Character } from '$lib/types/character';
 	import type { Race } from '$lib/types/race';
+	import { ApiService, RESPONSE_STATUSES } from '$lib/utils/ApiService';
+
+	const saveCharacterApi = new ApiService();
+	const { isLoading: isSavingCharacter, responseStatus: saveCharacterStatus } = saveCharacterApi;
+	const savedCharacterResponse = saveCharacterApi.response as Character;
 
 	let name = '';
 
@@ -14,40 +20,16 @@
 	];
 	let race = RACES.Human;
 
-	type SubmissionStatus = 'success' | 'failure';
-	const SUBMISSION_STATUSES: { [key: string]: SubmissionStatus } = {
-		Success: 'success',
-		Failure: 'failure',
-	};
-	let submissionStatus: SubmissionStatus;
-
-	let isSavingCharacter = false;
-
-	const clearSubmissionStatusAfterDelay = (delay = 5000) => {
-		setTimeout(() => {
-			submissionStatus = undefined;
-		}, delay);
-	};
-
 	const handleSubmit = () => {
-		isSavingCharacter = true;
-		fetch('/api/characters', { method: 'POST', body: JSON.stringify({ name, race }) }).then(
-			async (response) => {
-				if (response.status >= 400) {
-					console.error(await response.text());
-
-					submissionStatus = SUBMISSION_STATUSES.Failure;
-					clearSubmissionStatusAfterDelay();
-				} else {
-					submissionStatus = SUBMISSION_STATUSES.Success;
-					clearSubmissionStatusAfterDelay();
-				}
-
-				setTimeout(() => {
-					isSavingCharacter = false;
-				}, 2000);
-			},
-		);
+		saveCharacterApi
+			.fetch(
+				'/api/characters',
+				{ method: 'POST', body: JSON.stringify({ name, race }) },
+				{ clearAfter: 5000 },
+			)
+			.catch((error) => {
+				console.error(error);
+			});
 	};
 </script>
 
@@ -70,12 +52,14 @@
 		</select>
 	</label>
 
-	<Button disabled={isSavingCharacter} on:click={handleSubmit}>Save</Button>
+	<Button disabled={$isSavingCharacter} on:click={handleSubmit}
+		>{$isSavingCharacter ? 'Saving character...' : 'Save character'}</Button
+	>
 
-	{#if submissionStatus === SUBMISSION_STATUSES.Success}
-		Character saved!
-	{:else if submissionStatus === SUBMISSION_STATUSES.Failure}
-		Error saving character
+	{#if $saveCharacterStatus === RESPONSE_STATUSES.Success}
+		&check; Character "{$savedCharacterResponse.name}" saved.
+	{:else if $saveCharacterStatus === RESPONSE_STATUSES.Failure}
+		&cross; Error saving character, see console for more info.
 	{/if}
 </section>
 

@@ -48,5 +48,6 @@ export const post: RequestHandler<Locals> = async (request) => {
 	if (isApiError(response)) {
 		return { status: response.status, body: response.error };
 	}
-	return { status: 201 };
+
+	return { status: 201, body: character };
 };
