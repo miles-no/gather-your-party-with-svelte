@@ -21,7 +21,7 @@ interface FetchOptions {
 	clearAfter?: number;
 }
 
-export class ApiService {
+export class ApiService<T> {
 	private _clearTimeoutId: NodeJS.Timeout;
 
 	private _isLoading = writable<boolean>(false);
@@ -32,8 +32,8 @@ export class ApiService {
 	public get responseStatus(): Writable<ResponseStatus> {
 		return this._responseStatus;
 	}
-	private _response = writable<unknown>(undefined);
-	public get response(): Writable<unknown> {
+	private _response = writable<T>(undefined);
+	public get response(): Writable<T> {
 		return this._response;
 	}
 	private _error = writable<Error>(undefined);

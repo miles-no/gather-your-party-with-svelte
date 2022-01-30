@@ -5,9 +5,12 @@
 	import type { Race } from '$lib/types/race';
 	import { ApiService, RESPONSE_STATUSES } from '$lib/utils/ApiService';
 
-	const saveCharacterApi = new ApiService();
-	const { isLoading: isSavingCharacter, responseStatus: saveCharacterStatus } = saveCharacterApi;
-	const savedCharacterResponse = saveCharacterApi.response as Character;
+	const saveCharacterApi = new ApiService<Character>();
+	const {
+		isLoading: isSavingCharacter,
+		responseStatus: saveCharacterStatus,
+		response: savedCharacterResponse,
+	} = saveCharacterApi;
 
 	let name = '';
 
