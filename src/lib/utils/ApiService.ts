@@ -1,3 +1,12 @@
+/***
+ * NOT PART OF WORKSHOP
+ *
+ * It should not be necessary to familiarize oneself with this file for the workshop.
+ *
+ * This file contains logic for simulating a delay in the otherwise very fast API,
+ * as well as logic for handling states of an API-call.
+ */
+
 import type { Writable } from 'svelte/store';
 import { writable } from 'svelte/store';
 
