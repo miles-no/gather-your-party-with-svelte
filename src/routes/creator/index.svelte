@@ -1,7 +1,9 @@
 <script lang="ts">
 	import Button from '$lib/components/button/Button.svelte';
+	import { CLASSES } from '$lib/models/classes';
 	import { RACES } from '$lib/models/races';
 	import type { Character } from '$lib/types/character';
+	import type { Class } from '$lib/types/class';
 	import type { Race } from '$lib/types/race';
 	import { ApiService, RESPONSE_STATUSES } from '$lib/utils/ApiService';
 
@@ -12,19 +14,19 @@
 	let name = '';
 
 	type RaceOption = { id: Race; name: string };
-	let RACE_OPTIONS: RaceOption[] = [
-		{ id: RACES.Human, name: 'Human' },
-		{ id: RACES.Elf, name: 'Elf' },
-		{ id: RACES.Dwarf, name: 'Dwarf' },
-		{ id: RACES.Orc, name: 'Orc' },
-	];
-	let race = RACES.Human;
+	let RACE_OPTIONS: RaceOption[] = Object.entries(RACES).map(([name, id]) => ({ id, name }));
+	let race: Race;
 
+	type ClassOption = { id: Class; name: string };
+	let CLASS_OPTIONS: ClassOption[] = Object.entries(CLASSES).map(([name, id]) => ({ id, name }));
+	let characterClass: Class;
+
+	// TODO Should we validate inputs in the frontend as well as the backend?
 	const handleSubmit = () => {
 		saveCharacterApi
 			.fetch(
 				'/api/characters',
-				{ method: 'POST', body: JSON.stringify({ name, race }) },
+				{ method: 'POST', body: JSON.stringify({ name, race, class: characterClass }) },
 				{ clearAfter: 5000 },
 			)
 			.catch((error) => {
@@ -46,11 +48,26 @@
 	<label class="input select-input">
 		<span>Race</span>
 		<select class="interactive" bind:value={race}>
+			<option value={null}>Please select...</option>
+
 			{#each RACE_OPTIONS as { id, name }}
 				<option value={id}>{name}</option>
 			{/each}
 		</select>
 	</label>
+
+	<label class="input select-input">
+		<span>Class</span>
+		<select class="interactive" bind:value={characterClass}>
+			<option value={null}>Please select...</option>
+
+			{#each CLASS_OPTIONS as { id, name }}
+				<option value={id}>{name}</option>
+			{/each}
+		</select>
+	</label>
+
+	<!-- TODO Add dual class? Or multiclass? -->
 
 	<Button disabled={$isSavingCharacter} on:click={handleSubmit}
 		>{$isSavingCharacter ? 'Saving character...' : 'Save character'}</Button
