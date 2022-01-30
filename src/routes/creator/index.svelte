@@ -19,14 +19,21 @@
 
 	type ClassOption = { id: Class; name: string };
 	let CLASS_OPTIONS: ClassOption[] = Object.entries(CLASSES).map(([name, id]) => ({ id, name }));
-	let characterClass: Class;
+
+	let primaryClass: Class;
+	let isDualClass = false;
+	let secondaryClass: Class;
+
+	const handleSelectPrimaryClass = () => {
+		secondaryClass = null;
+	};
 
 	// TODO Should we validate inputs in the frontend as well as the backend?
 	const handleSubmit = () => {
 		saveCharacterApi
 			.fetch(
 				'/api/characters',
-				{ method: 'POST', body: JSON.stringify({ name, race, class: characterClass }) },
+				{ method: 'POST', body: JSON.stringify({ name, race, primaryClass, secondaryClass }) },
 				{ clearAfter: 5000 },
 			)
 			.catch((error) => {
@@ -58,7 +65,7 @@
 
 	<label class="input select-input">
 		<span>Class</span>
-		<select class="interactive" bind:value={characterClass}>
+		<select class="interactive" bind:value={primaryClass} on:change={handleSelectPrimaryClass}>
 			<option value={null}>Please select...</option>
 
 			{#each CLASS_OPTIONS as { id, name }}
@@ -67,7 +74,23 @@
 		</select>
 	</label>
 
-	<!-- TODO Add dual class? Or multiclass? -->
+	<label class="input checkbox-input">
+		<span>Dual class?</span>
+		<input class="interactive" type="checkbox" bind:checked={isDualClass} />
+	</label>
+
+	{#if isDualClass}
+		<label class="input select-input">
+			<span>Dual class</span>
+			<select class="interactive" bind:value={secondaryClass}>
+				<option value={null}>Please select...</option>
+
+				{#each CLASS_OPTIONS as { id, name }}
+					<option value={id} disabled={id === primaryClass}>{name}</option>
+				{/each}
+			</select>
+		</label>
+	{/if}
 
 	<Button disabled={$isSavingCharacter} on:click={handleSubmit}
 		>{$isSavingCharacter ? 'Saving character...' : 'Save character'}</Button
@@ -93,7 +116,7 @@
 		align-items: center;
 	}
 	.input > span {
-		width: 4rem;
+		width: 6rem;
 	}
 	.input > input,
 	.input > select {
@@ -104,5 +127,12 @@
 		height: calc(var(--interactive-height) + 4px);
 		width: calc(var(--interactive-width) + 1.25rem);
 		padding: var(--interactive-padding-y) calc(var(--interactive-padding-x) - 0.15rem);
+	}
+
+	.checkbox-input > input {
+		width: calc(var(--interactive-width) + 4px);
+		margin: calc(var(--interactive-margin-y) + var(--interactive-padding-y))
+			calc(var(--interactive-margin-x) + var(--interactive-padding-x));
+		padding: 0;
 	}
 </style>

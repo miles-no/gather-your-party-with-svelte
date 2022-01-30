@@ -5,6 +5,7 @@ export type Character = {
 	id: string;
 	name: string;
 	race: Race;
-	class: Class;
+	primaryClass: Class;
+	secondaryClass?: Class;
 	// TODO Add more fields
 };
