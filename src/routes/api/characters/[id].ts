@@ -1,3 +1,11 @@
+/***
+ * NOT PART OF WORKSHOP
+ *
+ * It should not be necessary to familiarize oneself with this file for the workshop.
+ *
+ * This file contains API endpoints for getting a specific character.
+ */
+
 import type { RequestHandler } from '@sveltejs/kit';
 import type { Locals } from '$lib/types';
 import { isApiError, getCharacters } from '$lib/utils/api-utils';

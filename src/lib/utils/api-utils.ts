@@ -1,3 +1,11 @@
+/***
+ * NOT PART OF WORKSHOP
+ *
+ * It should not be necessary to familiarize oneself with this file for the workshop.
+ *
+ * This file contains logic for interacting with the API; reading from and writing to file.
+ */
+
 import type { ApiError } from '$lib/types/api-error';
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'fs';
 import type { Character } from '$lib/types/character';
