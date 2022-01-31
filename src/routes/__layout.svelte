@@ -23,5 +23,4 @@
 		margin: 0 auto;
 		box-sizing: border-box;
 	}
-
 </style>
