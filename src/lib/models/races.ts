@@ -1,8 +1,7 @@
-import type { Race } from '$lib/types/race';
-
-export const RACES: { [key: string]: Race } = {
-	Human: 'human',
-	Elf: 'elf',
+export const RACES = {
 	Dwarf: 'dwarf',
+	Elf: 'elf',
+	Gnome: 'gnome',
+	Human: 'human',
 	Orc: 'orc',
-};
+} as const;

@@ -19,9 +19,9 @@
 
 	--interactive-height: 40px;
 	--interactive-width: 12rem;
-	--interactive-margin-y: 0;
-	--interactive-margin-x: 0;
-	--interactive-padding-y: 0;
+	--interactive-margin-y: 0px;
+	--interactive-margin-x: 0px;
+	--interactive-padding-y: 0px;
 	--interactive-padding-x: 0.5rem;
 	--interactive-border: 2px solid black;
 	--interactive-border-radius: 4px;
