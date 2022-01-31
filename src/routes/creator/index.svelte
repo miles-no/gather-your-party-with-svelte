@@ -1,10 +1,12 @@
 <script lang="ts">
 	import Button from '$lib/components/button/Button.svelte';
+	import SkillSelect from '$lib/components/skill-select/SkillSelect.svelte';
 	import { CLASSES } from '$lib/models/classes';
 	import { RACES } from '$lib/models/races';
 	import type { Character } from '$lib/types/character';
 	import type { Class } from '$lib/types/class';
 	import type { Race } from '$lib/types/race';
+	import type { Skill } from '$lib/types/skill';
 	import { ApiService, RESPONSE_STATUSES } from '$lib/utils/ApiService';
 
 	const saveCharacterApi = new ApiService<Character>();
@@ -31,12 +33,17 @@
 		secondaryClass = null;
 	};
 
+	let skills: Skill[];
+
 	// TODO Should we validate inputs in the frontend as well as the backend?
 	const handleSubmit = () => {
 		saveCharacterApi
 			.fetch(
 				'/api/characters',
-				{ method: 'POST', body: JSON.stringify({ name, race, primaryClass, secondaryClass }) },
+				{
+					method: 'POST',
+					body: JSON.stringify({ name, race, primaryClass, secondaryClass, skills }),
+				},
 				{ clearAfter: 5000 },
 			)
 			.catch((error) => {
@@ -79,7 +86,7 @@
 
 	<label class="input checkbox-input">
 		<span>Dual class?</span>
-		<input class="interactive" type="checkbox" bind:checked={isDualClass} />
+		<input class="interactive interactive--small" type="checkbox" bind:checked={isDualClass} />
 	</label>
 
 	{#if isDualClass}
@@ -94,6 +101,11 @@
 			</select>
 		</label>
 	{/if}
+
+	<label class="input" for="skills">
+		<span>Skills</span>
+		<SkillSelect id="skills" bind:value={skills} />
+	</label>
 
 	<Button disabled={$isSavingCharacter} on:click={handleSubmit}
 		>{$isSavingCharacter ? 'Saving character...' : 'Save character'}</Button
@@ -116,10 +128,11 @@
 
 	.input {
 		display: flex;
-		align-items: center;
+		width: 28rem;
 	}
 	.input > span {
-		width: 6rem;
+		width: 8rem;
+		padding-top: 0.25rem;
 	}
 	.input > input,
 	.input > select {
