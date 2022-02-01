@@ -25,6 +25,12 @@
 	--interactive-padding-x: 0.5rem;
 	--interactive-border: 2px solid black;
 	--interactive-border-radius: 4px;
+	--interactive-height--small: 24px;
+	--interactive-width--small: 8rem;
+	--interactive-margin-y--small: 0px;
+	--interactive-margin-x--small: 0px;
+	--interactive-padding-y--small: 0px;
+	--interactive-padding-x--small: 0.25rem;
 }
 
 body {
@@ -118,6 +124,23 @@ button:focus:not(:focus-visible) {
 	padding: var(--interactive-padding-y) var(--interactive-padding-x);
 	border: var(--interactive-border);
 	border-radius: var(--interactive-border-radius);
+}
+.interactive--small {
+	height: var(--interactive-height--small);
+	width: var(--interactive-width--small);
+	margin: var(--interactive-margin-y--small) var(--interactive-margin-x--small);
+	padding: var(--interactive-padding-y--small) var(--interactive-padding-x--small);
+}
+
+.clickable:not(:disabled) {
+	cursor: pointer;
+}
+.clickable:focus:not(:disabled),
+.clickable:hover:not(:disabled) {
+	font-weight: bold;
+}
+.clickable:hover:not(:disabled) {
+	box-shadow: 0 0 2px 1px gray;
 }
 
 @media (min-width: 720px) {
