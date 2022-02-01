@@ -1,8 +1,17 @@
 <script context="module" lang="ts">
+	import type { Session } from '$lib/types/session';
+	import type { Load } from '@sveltejs/kit';
+	import SvelteMarkdown from 'svelte-markdown';
+
 	export const prerender = true;
+
+	export const load: Load<{ session: Session }> = async ({ session }) => ({
+		props: { readme: session.readme },
+	});
 </script>
 
 <script lang="ts">
+	export let readme: any;
 </script>
 
 <svelte:head>
@@ -11,6 +20,8 @@
 
 <section>
 	<h1>Gather your party with Svelte!</h1>
+
+	<SvelteMarkdown source={readme} />
 </section>
 
 <style>

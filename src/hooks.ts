@@ -1,6 +1,15 @@
-import cookie from 'cookie';
+import type { Session } from '$lib/types/session';
 import { v4 as uuid } from '@lukeed/uuid';
 import type { Handle } from '@sveltejs/kit';
+import cookie from 'cookie';
+import fs from 'fs';
+import path from 'path';
+
+export const getSession = (): Session => {
+	const readme = fs.readFileSync(path.resolve('README.md'), { encoding: 'utf8' });
+
+	return { readme };
+};
 
 export const handle: Handle = async ({ request, resolve }) => {
 	const cookies = cookie.parse(request.headers.cookie || '');
