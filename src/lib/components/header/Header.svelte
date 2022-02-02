@@ -11,7 +11,7 @@
 	</div>
 
 	<nav>
-		<ul>
+		<ul class="rpgui-container framed-golden-2">
 			<li class:active={$page.path === '/'}><a sveltekit:prefetch href="/">Home</a></li>
 			<li class:active={$page.path === '/creator'}>
 				<a sveltekit:prefetch href="/creator">Character Creator</a>
@@ -25,15 +25,16 @@
 	header {
 		display: flex;
 		justify-content: space-around;
-		position: relative;
+		position: sticky;
+		top: 0;
 	}
 
 	.corner {
-		width: 3em;
-		height: 3em;
+		width: 4em;
+		height: 4em;
 		position: absolute;
-		top: 0;
-		left: 0;
+		top: -8px;
+		left: -8px;
 	}
 
 	.corner a {
@@ -42,62 +43,55 @@
 		justify-content: center;
 		width: 100%;
 		height: 100%;
+		padding: 0.5rem;
+		background: url('$lib/themes/rpg-ui/img/icons/shield-slot.png');
+		background-size: contain;
+		transition: all 0.2s ease-in-out;
+	}
+	.corner a:hover {
+		background: url('$lib/themes/rpg-ui/img/icons/shield.png');
+		background-size: contain;
 	}
 
-	.corner img {
+	.corner a img {
 		width: 2em;
 		height: 2em;
 		object-fit: contain;
 	}
 
-	nav {
-		display: flex;
-		justify-content: center;
-		--background: rgba(255, 255, 255, 0.7);
-	}
-
 	ul {
 		position: relative;
 		padding: 0;
-		margin: 0;
-		height: 3em;
+		margin-top: -1em;
 		display: flex;
-		justify-content: center;
-		align-items: center;
 		list-style: none;
-		background: var(--background);
-		background-size: contain;
 	}
 
 	li {
 		position: relative;
-		height: 100%;
+		margin-left: 0;
 	}
 
 	li.active::before {
-		--size: 6px;
+		--size: 40px;
 		content: '';
-		width: 0;
-		height: 0;
+		width: var(--size);
+		height: var(--size);
 		position: absolute;
-		top: 0;
-		left: calc(50% - var(--size));
-		border: var(--size) solid transparent;
-		border-top: var(--size) solid var(--accent-color);
+		top: 1em;
+		left: calc(50% - var(--size) / 2);
+		background: url('$lib/themes/rpg-ui/img/icons/shield.png');
+		background-size: contain;
 	}
 
 	nav a {
 		display: flex;
-		height: 100%;
-		align-items: center;
 		padding: 0 1em;
-		color: var(--heading-color);
-		font-weight: 700;
-		font-size: 0.8rem;
+		color: white;
 		text-transform: uppercase;
 		letter-spacing: 0.1em;
 		text-decoration: none;
-		transition: color 0.2s linear;
+		transition: color 0.1s linear;
 	}
 
 	a:hover {
