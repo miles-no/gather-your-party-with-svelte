@@ -62,8 +62,8 @@
 					class="interactive interactive--small clickable"
 					disabled={availableSkillsCount === 0}
 					on:click={() => handleAddSkill(skill)}
-					in:receive={{ key: skill }}
-					out:send={{ key: skill }}
+					in:receive|local={{ key: skill }}
+					out:send|local={{ key: skill }}
 					animate:flip>{formatskill(skill)} &gt;</button
 				>
 			{/each}
@@ -78,8 +78,8 @@
 				<button
 					class="interactive interactive--small clickable"
 					on:click={() => handleRemoveSkill(skill)}
-					in:receive={{ key: skill }}
-					out:send={{ key: skill }}
+					in:receive|local={{ key: skill }}
+					out:send|local={{ key: skill }}
 					animate:flip>&lt; {formatskill(skill)}</button
 				>
 			{/each}
