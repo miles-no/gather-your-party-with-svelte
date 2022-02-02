@@ -12,7 +12,8 @@
 </script>
 
 <button
-	class={`interactive ${small ? 'interactive--small' : ''} clickable`}
+	class="interactive clickable"
+	class:interactive--small={small}
 	{disabled}
 	on:click={handleClick}><slot /></button
 >
