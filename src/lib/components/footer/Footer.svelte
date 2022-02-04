@@ -36,6 +36,7 @@
 	.right {
 		width: 30%;
 		display: flex;
+		align-items: center;
 		flex-wrap: nowrap;
 		min-width: 250px;
 		flex-grow: 1;
@@ -44,10 +45,6 @@
 
 	.center {
 		justify-content: center;
-	}
-
-	.center a {
-		font-weight: 600;
 	}
 
 	.right {

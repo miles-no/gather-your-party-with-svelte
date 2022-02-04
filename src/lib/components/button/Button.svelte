@@ -3,7 +3,6 @@
 
 	const dispatch = createEventDispatcher();
 
-	export let small: boolean = undefined;
 	export let disabled: boolean = undefined;
 
 	const handleClick = () => {
@@ -11,9 +10,4 @@
 	};
 </script>
 
-<button
-	class="interactive clickable"
-	class:interactive--small={small}
-	{disabled}
-	on:click={handleClick}><slot /></button
->
+<button class="rpgui-button golden" {disabled} on:click={handleClick}><slot /></button>

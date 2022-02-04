@@ -56,56 +56,69 @@
 	<title>Character Creator</title>
 </svelte:head>
 
-<section class="container">
-	<label class="input">
-		<span>Name</span>
-		<input class="interactive" bind:value={name} />
-	</label>
+<section class="rpgui-container framed outer-container">
+	<div class="container">
+		<label class="input">
+			<span>Name</span>
+			<input bind:value={name} />
+		</label>
 
-	<label class="input select-input">
-		<span>Race</span>
-		<select class="interactive" bind:value={race}>
-			<option value={null}>Please select...</option>
-
-			{#each RACE_OPTIONS as { id, name }}
-				<option value={id}>{name}</option>
-			{/each}
-		</select>
-	</label>
-
-	<label class="input select-input">
-		<span>Class</span>
-		<select class="interactive" bind:value={primaryClass} on:change={handleSelectPrimaryClass}>
-			<option value={null}>Please select...</option>
-
-			{#each CLASS_OPTIONS as { id, name }}
-				<option value={id}>{name}</option>
-			{/each}
-		</select>
-	</label>
-
-	<label class="input checkbox-input">
-		<span>Dual class?</span>
-		<input class="interactive interactive--small" type="checkbox" bind:checked={isDualClass} />
-	</label>
-
-	{#if isDualClass}
-		<label class="input select-input">
-			<span>Dual class</span>
-			<select class="interactive" bind:value={secondaryClass}>
+		<label class="input">
+			<span>Race</span>
+			<select class="rpgui-dropdown-imp" bind:value={race}>
 				<option value={null}>Please select...</option>
 
-				{#each CLASS_OPTIONS as { id, name }}
-					<option value={id} disabled={id === primaryClass}>{name}</option>
+				{#each RACE_OPTIONS as { id, name }}
+					<option value={id}>{name}</option>
 				{/each}
 			</select>
 		</label>
-	{/if}
 
-	<label class="input" for="skills">
-		<span>Skills</span>
-		<SkillSelect id="skills" bind:value={skills} />
-	</label>
+		<div class="input-group">
+			<label class="input">
+				<span>Class</span>
+				<select
+					class="rpgui-dropdown-imp"
+					bind:value={primaryClass}
+					on:change={handleSelectPrimaryClass}
+				>
+					<option value={null}>Please select...</option>
+
+					{#each CLASS_OPTIONS as { id, name }}
+						<option value={id}>{name}</option>
+					{/each}
+				</select>
+			</label>
+
+			<div>
+				<input
+					id="is-dual-class"
+					class="rpgui-checkbox"
+					type="checkbox"
+					bind:checked={isDualClass}
+				/>
+				<label for="is-dual-class">Dual class?</label>
+			</div>
+		</div>
+
+		{#if isDualClass}
+			<label class="input">
+				<span>Dual class</span>
+				<select class="rpgui-dropdown-imp" bind:value={secondaryClass}>
+					<option value={null}>Please select...</option>
+
+					{#each CLASS_OPTIONS as { id, name }}
+						<option value={id} disabled={id === primaryClass}>{name}</option>
+					{/each}
+				</select>
+			</label>
+		{/if}
+
+		<label class="input" for="skills">
+			<span>Skills</span>
+			<SkillSelect id="skills" bind:value={skills} />
+		</label>
+	</div>
 
 	<Button disabled={$isSavingCharacter} on:click={handleSubmit}
 		>{$isSavingCharacter ? 'Saving character...' : 'Save character'}</Button
@@ -119,36 +132,28 @@
 </section>
 
 <style>
-	.container {
+	.outer-container {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		gap: 1rem;
 	}
+	.container {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	.input-group {
+		display: flex;
+		gap: 1rem;
+	}
 
 	.input {
 		display: flex;
-		width: 28rem;
 	}
 	.input > span {
-		width: 8rem;
+		width: 12rem;
 		padding-top: 0.25rem;
-	}
-	.input > input,
-	.input > select {
-		font-size: 100%;
-	}
-
-	.select-input > select {
-		height: calc(var(--interactive-height) + 4px);
-		width: calc(var(--interactive-width) + 1.25rem);
-		padding: var(--interactive-padding-y) calc(var(--interactive-padding-x) - 0.15rem);
-	}
-
-	.checkbox-input > input {
-		width: calc(var(--interactive-width) + 4px);
-		margin: calc(var(--interactive-margin-y) + var(--interactive-padding-y))
-			calc(var(--interactive-margin-x) + var(--interactive-padding-x));
-		padding: 0;
 	}
 </style>

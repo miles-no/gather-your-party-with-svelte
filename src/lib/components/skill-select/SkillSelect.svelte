@@ -52,16 +52,13 @@
 
 <div class="container" {id}>
 	<div>
-		<div class="label">
-			Available skills {#each Array(availableSkillsCount).fill(0) as i}*{/each}
-		</div>
+		<div class="label">Chosen skills ({MAX_SKILLS - availableSkillsCount}/{MAX_SKILLS})</div>
 
 		<div class="list">
-			{#each Object.values(SKILLS).filter((skill) => !value.includes(skill)) as skill (skill)}
+			{#each value as skill (skill)}
 				<button
-					class="interactive interactive--small clickable"
-					disabled={availableSkillsCount === 0}
-					on:click={() => handleAddSkill(skill)}
+					class="rpgui-button rpgui-button--small"
+					on:click={() => handleRemoveSkill(skill)}
 					in:receive|local={{ key: skill }}
 					out:send|local={{ key: skill }}
 					animate:flip>{formatskill(skill)} &gt;</button
@@ -71,13 +68,16 @@
 	</div>
 
 	<div>
-		<div class="label">Chosen skills ({MAX_SKILLS - availableSkillsCount}/{MAX_SKILLS})</div>
+		<div class="label">
+			Available skills {#each Array(availableSkillsCount).fill(0) as i}*{/each}
+		</div>
 
 		<div class="list">
-			{#each value as skill (skill)}
+			{#each Object.values(SKILLS).filter((skill) => !value.includes(skill)) as skill (skill)}
 				<button
-					class="interactive interactive--small clickable"
-					on:click={() => handleRemoveSkill(skill)}
+					class="rpgui-button rpgui-button--small"
+					disabled={availableSkillsCount === 0}
+					on:click={() => handleAddSkill(skill)}
 					in:receive|local={{ key: skill }}
 					out:send|local={{ key: skill }}
 					animate:flip>&lt; {formatskill(skill)}</button
@@ -102,7 +102,7 @@
 		display: flex;
 		flex-direction: column;
 		gap: 0.25rem;
-		height: 192px;
-		width: 128px;
+		min-height: 240px;
+		width: 280px;
 	}
 </style>
