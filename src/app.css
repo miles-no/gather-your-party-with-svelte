@@ -51,3 +51,12 @@ body {
 	line-height: 1.25;
 	text-shadow: none;
 }
+
+.rpgui-content .readme code {
+	-webkit-touch-callout: default;
+	-webkit-user-select: all;
+	-khtml-user-select: all;
+	-moz-user-select: all;
+	-ms-user-select: all;
+	user-select: all;
+}
