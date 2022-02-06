@@ -8,6 +8,9 @@
 	import type { Race } from '$lib/types/race';
 	import type { Skill } from '$lib/types/skill';
 	import { ApiService, RESPONSE_STATUSES } from '$lib/utils/ApiService';
+	import AttributeOverview from '$lib/components/attribute-overview/AttributeOverview.svelte';
+	import { AttributeAllocation } from '$lib/types/attribute-allocation';
+	import type { UpsertCharacterRequest } from '$lib/types/upsert-character-request';
 
 	const saveCharacterApi = new ApiService<Character>();
 	const {
@@ -34,15 +37,24 @@
 	};
 
 	let skills: Skill[];
+	let attributes: AttributeAllocation;
 
 	// TODO Should we validate inputs in the frontend as well as the backend?
 	const handleSubmit = () => {
+		const character: UpsertCharacterRequest = {
+			name,
+			race,
+			primaryClass,
+			secondaryClass,
+			skills,
+			attributes,
+		};
 		saveCharacterApi
 			.fetch(
 				'/api/characters',
 				{
 					method: 'POST',
-					body: JSON.stringify({ name, race, primaryClass, secondaryClass, skills }),
+					body: JSON.stringify(character),
 				},
 				{ clearAfter: 5000 },
 			)
@@ -113,6 +125,11 @@
 				</select>
 			</label>
 		{/if}
+
+		<label class="input" for="attributes">
+			<span>Attributes</span>
+			<AttributeOverview id="attributes" bind:value={attributes} />
+		</label>
 
 		<label class="input" for="skills">
 			<span>Skills</span>
