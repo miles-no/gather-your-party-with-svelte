@@ -23,3 +23,9 @@ body {
 .rpgui-button--small {
 	height: 30px;
 }
+
+.rpgui-button--small-squared {
+	height: 30px;
+	min-width: 30px;
+	padding: 10px;
+}
