@@ -11,7 +11,11 @@
 </script>
 
 <script lang="ts">
-	export let readme: any;
+	import { slide } from 'svelte/transition';
+
+	export let readme: string;
+	let readmeIsOpen = false;
+	const toggleReadme = () => (readmeIsOpen = !readmeIsOpen);
 </script>
 
 <svelte:head>
@@ -21,10 +25,17 @@
 <section>
 	<h1>Gather your party with Svelte!</h1>
 
-	<SvelteMarkdown source={readme} />
+	<button class="toggle-readme rpgui-button" on:click={toggleReadme}>
+		{readmeIsOpen ? 'Hide' : 'Show'} Readme
+	</button>
+	{#if readmeIsOpen}
+		<div class="readme" transition:slide={{ duration: 300 }}>
+			<SvelteMarkdown source={readme} />
+		</div>
+	{/if}
 </section>
 
-<style>
+<style lang="css">
 	section {
 		display: flex;
 		flex-direction: column;
@@ -35,5 +46,13 @@
 
 	h1 {
 		width: 100%;
+	}
+
+	.readme {
+		display: inline-block;
+		max-height: 60vh;
+		overflow-y: scroll;
+		max-width: 100%;
+		padding: 0.25em;
 	}
 </style>

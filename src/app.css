@@ -29,3 +29,40 @@ body {
 	min-width: 30px;
 	padding: 10px;
 }
+
+.rpgui-content .readme h1 {
+	text-align: start;
+	font-size: 1.5em;
+}
+
+.rpgui-content .readme h2 {
+	text-align: start;
+	font-size: 1.125em;
+}
+
+.rpgui-content .readme h3 {
+	text-align: start;
+	font-size: 1em;
+}
+
+.rpgui-content .readme h4 {
+	text-align: start;
+	font-size: 0.825em;
+}
+
+.rpgui-content .readme code {
+	background-color: #ffff00;
+	color: #000;
+	padding: 0.125em;
+	line-height: 1.25;
+	text-shadow: none;
+}
+
+.rpgui-content .readme code {
+	-webkit-touch-callout: default;
+	-webkit-user-select: all;
+	-khtml-user-select: all;
+	-moz-user-select: all;
+	-ms-user-select: all;
+	user-select: all;
+}
