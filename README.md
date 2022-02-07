@@ -6,14 +6,15 @@ Everything you need to build a Svelte project, powered by [create-svelte](https:
 
 If you're seeing this, you've probably already done this step. Congrats!
 
-
 #### Create a new project in the current directory
-```bash 
+
+```bash
 npm init svelte@next
 ```
 
 #### Create a new project in my-app
-```bash 
+
+```bash
 npm init svelte@next my-app
 ```
 
