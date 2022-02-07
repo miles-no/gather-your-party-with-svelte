@@ -9,7 +9,7 @@
 
 	export let id: string = undefined;
 
-	export let attributes: AttributeAllocation = {
+	export let value: AttributeAllocation = {
 		[ATTRIBUTES.Charisma]: STARTING_VALUE,
 		[ATTRIBUTES.Constitution]: STARTING_VALUE,
 		[ATTRIBUTES.Intelligence]: STARTING_VALUE,
@@ -21,10 +21,10 @@
 	let pointsRemaining = POINTS_TO_DISTRIBUTE;
 
 	const subtractPoint = (key: Attribute) => {
-		if (pointsRemaining >= POINTS_TO_DISTRIBUTE || attributes[key] <= STARTING_VALUE) {
+		if (pointsRemaining >= POINTS_TO_DISTRIBUTE || value[key] <= STARTING_VALUE) {
 			return;
 		}
-		attributes[key]--;
+		value[key]--;
 		pointsRemaining++;
 	};
 
@@ -32,14 +32,14 @@
 		if (pointsRemaining <= 0) {
 			return;
 		}
-		attributes[key]++;
+		value[key]++;
 		pointsRemaining--;
 	};
 </script>
 
 <div class="container" {id}>
 	<span>Points to distribute: {pointsRemaining}</span>
-	{#each Object.entries(attributes) as [name, value]}
+	{#each Object.entries(value) as [name, value]}
 		<AttributePicker
 			{name}
 			{value}
