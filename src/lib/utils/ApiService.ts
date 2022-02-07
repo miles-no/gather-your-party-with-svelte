@@ -90,6 +90,7 @@ export class ApiService<T> {
 					const json = await response.json();
 					this._responseStatus.set(RESPONSE_STATUSES.Success);
 					this._response.set(json);
+					console.log(this.response);
 
 					return json;
 				}
