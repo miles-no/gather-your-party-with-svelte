@@ -9,6 +9,7 @@
 import type { RequestHandler } from '@sveltejs/kit';
 import type { Locals } from '$lib/types';
 import type { Character } from '$lib/types/character';
+import type { UpsertCharacterRequest } from '$lib/types/upsert-character-request';
 import { isApiError, getCharacters, saveCharacters } from '$lib/utils/api-utils';
 import { v4 as uuid } from '@lukeed/uuid';
 import { validateCharacter } from '$lib/validation/character-validation';
@@ -35,21 +36,22 @@ export const post: RequestHandler<Locals> = async (request) => {
 	if (isApiError(validation)) {
 		return { status: validation.status, body: validation.error };
 	}
-	const character: Character = data as Character;
+	const characterRequest: UpsertCharacterRequest = data as UpsertCharacterRequest;
 	const characters = getCharacters();
 	if (isApiError(characters)) {
 		return { status: characters.status, body: characters.error };
 	}
-	if (!character.id) {
-		character.id = uuid();
+	if (!characterRequest.id) {
+		characterRequest.id = uuid();
 	}
-	const existingIndex = characters.findIndex((char) => character.id === char.id);
+	const newCharacter: Character = characterRequest as Character;
+	const existingIndex = characters.findIndex((char) => newCharacter.id === char.id);
 	let updatedList: Character[];
 	if (existingIndex === -1) {
-		updatedList = [...characters, character];
+		updatedList = [...characters, newCharacter];
 	} else {
 		const tmp = characters.slice();
-		tmp[existingIndex] = character;
+		tmp[existingIndex] = newCharacter;
 		updatedList = tmp;
 	}
 	const response = saveCharacters(updatedList);
@@ -57,5 +59,5 @@ export const post: RequestHandler<Locals> = async (request) => {
 		return { status: response.status, body: response.error };
 	}
 
-	return { status: 201, body: character };
+	return { status: 201, body: characterRequest };
 };

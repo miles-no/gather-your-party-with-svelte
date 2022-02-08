@@ -24,6 +24,12 @@ body {
 	height: 30px;
 }
 
+.rpgui-button--small-squared {
+	height: 30px;
+	min-width: 30px;
+	padding: 10px;
+}
+
 .rpgui-content .readme h1 {
 	text-align: start;
 	font-size: 1.5em;
