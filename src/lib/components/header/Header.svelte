@@ -16,7 +16,9 @@
 			<li class:active={$page.path === '/creator'}>
 				<a sveltekit:prefetch href="/creator">Character Creator</a>
 			</li>
-			<!-- <li class:active={$page.path === '/characters'}><a sveltekit:prefetch href="/characters">Characters</a></li> -->
+			<li class:active={$page.path === '/characters'}>
+				<a sveltekit:prefetch href="/characters">Characters</a>
+			</li>
 		</ul>
 	</nav>
 </header>
