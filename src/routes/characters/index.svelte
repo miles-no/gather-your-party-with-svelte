@@ -20,7 +20,7 @@
 
 <section class="rpgui-container framed outer-container" class:loading={$isLoading}>
 	{#if $isLoading}
-		<Loader class="loader" />
+		<Loader />
 	{:else if $responseStatus === RESPONSE_STATUSES.Success}
 		<CharacterPreviewList characters={$characters} />
 	{:else if $responseStatus === RESPONSE_STATUSES.Failure}
