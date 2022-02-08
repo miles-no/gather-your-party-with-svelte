@@ -9,7 +9,7 @@
 	const responseStatus = fetchCharacters.responseStatus;
 	const characters = fetchCharacters.response;
 
-	fetchCharacters.fetch('/api/characters', { method: 'GET' }).catch((error) => {
+	fetchCharacters.fetch('/api/characters').catch((error) => {
 		console.error(error);
 	});
 </script>
