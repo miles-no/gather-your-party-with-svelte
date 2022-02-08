@@ -24,7 +24,7 @@
 	{:else if $responseStatus === RESPONSE_STATUSES.Success}
 		<CharacterPreviewList characters={$characters} />
 	{:else if $responseStatus === RESPONSE_STATUSES.Failure}
-		&cross; Error saving character, see console for more info.
+		&cross; Error getting characters, see console for more info.
 	{/if}
 </section>
 
