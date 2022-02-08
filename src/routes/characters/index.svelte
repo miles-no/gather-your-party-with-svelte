@@ -7,11 +7,9 @@
 	const fetchCharacters = new ApiService<Character[]>();
 	const { isLoading, responseStatus, _response: characters } = fetchCharacters;
 
-	fetchCharacters
-		.fetch('http://localhost:3000/api/characters', { method: 'GET' })
-		.catch((error) => {
-			console.error(error);
-		});
+	fetchCharacters.fetch('/api/characters', { method: 'GET' }).catch((error) => {
+		console.error(error);
+	});
 </script>
 
 <svelte:head>
