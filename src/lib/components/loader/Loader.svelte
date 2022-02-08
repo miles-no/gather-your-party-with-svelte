@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	let ms = 300;
 	let counter = 0;
 	const incr = () => {
