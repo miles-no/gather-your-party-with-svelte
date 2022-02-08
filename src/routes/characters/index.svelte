@@ -5,11 +5,7 @@
 	import Loader from '$lib/components/loader/Loader.svelte';
 
 	const fetchCharacters = new ApiService<Character[]>();
-	const { isLoading, responseStatus, _response: characters } = fetchCharacters;
-
-	fetchCharacters.fetch('/api/characters', { method: 'GET' }).catch((error) => {
-		console.error(error);
-	});
+	const { isLoading, responseStatus, response: characters } = fetchCharacters;
 </script>
 
 <svelte:head>
