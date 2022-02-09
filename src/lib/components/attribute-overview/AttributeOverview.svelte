@@ -28,7 +28,7 @@
 	});
 
 	let displayedPointsRemaining = spring(pointsRemaining, {
-		stiffness: 0.2,
+		stiffness: 0.1,
 	});
 
 	const subtractPoint = (key: Attribute) => {
@@ -57,7 +57,6 @@
 		for (let count = 0; count < POINTS_TO_DISTRIBUTE; count++) {
 			const randomAttribute = attributeNames[(Math.random() * attributeNames.length) | 0];
 			allocation[randomAttribute]++;
-			pointsRemaining--;
 		}
 		pointsRemaining = 0;
 		value = allocation;
