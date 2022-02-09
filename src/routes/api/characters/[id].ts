@@ -7,11 +7,10 @@
  */
 
 import type { RequestHandler } from '@sveltejs/kit';
-import type { Locals } from '$lib/types';
 import { isApiError, getCharacters } from '$lib/utils/api-utils';
 
 // GET /api/characters/[id]
-export const get: RequestHandler<Locals> = async (request) => {
+export const get: RequestHandler = async (request) => {
 	const lookupId = request.params.id;
 	const characters = getCharacters();
 	if (isApiError(characters)) {

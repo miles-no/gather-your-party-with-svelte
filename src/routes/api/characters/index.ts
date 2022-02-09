@@ -7,7 +7,6 @@
  */
 
 import type { RequestHandler } from '@sveltejs/kit';
-import type { Locals } from '$lib/types';
 import type { Character } from '$lib/types/character';
 import type { UpsertCharacterRequest } from '$lib/types/upsert-character-request';
 import { isApiError, getCharacters, saveCharacters } from '$lib/utils/api-utils';
@@ -15,7 +14,7 @@ import { v4 as uuid } from '@lukeed/uuid';
 import { validateCharacter } from '$lib/validation/character-validation';
 
 // GET /api/characters
-export const get: RequestHandler<Locals> = async () => {
+export const get: RequestHandler = async () => {
 	const response = getCharacters();
 	if (isApiError(response)) {
 		return { status: response.status, body: response.error };
@@ -24,7 +23,7 @@ export const get: RequestHandler<Locals> = async () => {
 };
 
 // POST /api/characters
-export const post: RequestHandler<Locals> = async (request) => {
+export const post: RequestHandler = async (request) => {
 	let data;
 	try {
 		data = JSON.parse(request.body as string);
