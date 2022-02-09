@@ -64,7 +64,7 @@
 	ul {
 		position: relative;
 		padding: 0;
-		margin-top: -1em;
+		margin-top: -0.6em;
 		display: flex;
 		list-style: none;
 	}

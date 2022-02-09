@@ -31,23 +31,27 @@ body {
 }
 
 .rpgui-content .readme h1 {
+	margin: revert;
+	text-align: start;
+	font-size: 1.8em;
+}
+
+.rpgui-content .readme h2 {
+	margin: revert;
 	text-align: start;
 	font-size: 1.5em;
 }
 
-.rpgui-content .readme h2 {
-	text-align: start;
-	font-size: 1.125em;
-}
-
 .rpgui-content .readme h3 {
+	margin: revert;
 	text-align: start;
-	font-size: 1em;
+	font-size: 1.35em;
 }
 
 .rpgui-content .readme h4 {
+	margin: revert;
 	text-align: start;
-	font-size: 0.825em;
+	font-size: 1.2em;
 }
 
 .rpgui-content .readme code {
