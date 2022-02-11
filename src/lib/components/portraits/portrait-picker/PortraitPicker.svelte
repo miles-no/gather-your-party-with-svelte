@@ -1,0 +1,35 @@
+<script lang="ts">
+	import Modal from '$lib/components/modal/Modal.svelte';
+	import PortraitPreview from '$lib/components/portraits/portrait-preview/PortraitPreview.svelte';
+	import PortraitSelection from '$lib/components/portraits/portrait-selection/PortraitSelection.svelte';
+	import Space from '$lib/components/space/Space.svelte';
+
+	export let id: string = undefined;
+	export let value: string = undefined;
+
+	let showPortraitSelection = false;
+
+	const handleSelectPortrait = ({ detail: { portrait } }) => {
+		value = portrait;
+
+		showPortraitSelection = false;
+	};
+</script>
+
+<div {id} class="container">
+	<Space bottom>
+		<PortraitPreview big {value} />
+	</Space>
+
+	<Modal label="Change portrait" bind:show={showPortraitSelection}
+		><PortraitSelection on:select={handleSelectPortrait} /></Modal
+	>
+</div>
+
+<style>
+	.container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+</style>

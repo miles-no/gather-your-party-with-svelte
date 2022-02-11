@@ -9,7 +9,7 @@ export type Character = {
 	race: Race;
 	primaryClass: Class;
 	secondaryClass?: Class;
-	skills: Skill[];
+	portrait: string;
 	attributes: AttributeAllocation;
-	// TODO Add more fields
+	skills: Skill[];
 };

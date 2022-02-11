@@ -7,6 +7,7 @@
  * as well as logic for handling states of an API-call.
  */
 
+import { sleep } from '$lib/utils/sleep';
 import type { Writable } from 'svelte/store';
 import { writable } from 'svelte/store';
 
@@ -21,10 +22,7 @@ export const RESPONSE_STATUSES: ResponseStatuses = {
 	Failure: 'failure',
 };
 
-const FAKE_DELAY_LIMITS = { Min: 1, Max: 3 };
-
-const sleep = (duration?: number): Promise<never> =>
-	new Promise((resolve) => setTimeout(resolve, duration));
+const FAKE_DELAY_LIMITS = { min: 1, max: 3 };
 
 interface FetchOptions {
 	clearAfter?: number;
@@ -61,18 +59,18 @@ export class ApiService<T> {
 		input: RequestInfo,
 		init?: RequestInit,
 		options?: FetchOptions,
-	): Promise<unknown> => {
+	): Promise<T> => {
 		this.clear();
 
 		this._isLoading.set(true);
 
 		clearTimeout(this._clearTimeoutId);
 
-		// Sleep for a random time to simulate a bit slower API
-		await sleep((FAKE_DELAY_LIMITS.Min + Math.random() * FAKE_DELAY_LIMITS.Max) * 1000);
-
 		return fetch(input, init)
 			.then(async (response) => {
+				// Sleep for a random time to simulate a bit slower API
+				await sleep(FAKE_DELAY_LIMITS);
+
 				this._isLoading.set(false);
 
 				if (options?.clearAfter) {
@@ -94,7 +92,10 @@ export class ApiService<T> {
 					return json;
 				}
 			})
-			.catch((error) => {
+			.catch(async (error) => {
+				// Sleep for a random time to simulate a bit slower API
+				await sleep(FAKE_DELAY_LIMITS);
+
 				if (options?.clearAfter) {
 					this._clearTimeoutId = setTimeout(this.clear, options.clearAfter);
 				}

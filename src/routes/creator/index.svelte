@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Button from '$lib/components/button/Button.svelte';
+	import PortraitPicker from '$lib/components/portraits/portrait-picker/PortraitPicker.svelte';
 	import SkillSelect from '$lib/components/skill-select/SkillSelect.svelte';
 	import { CLASSES } from '$lib/models/classes';
 	import { RACES } from '$lib/models/races';
@@ -36,8 +37,11 @@
 		secondaryClass = null;
 	};
 
-	let skills: Skill[];
+	let portrait: string;
+
 	let attributes: AttributeAllocation;
+
+	let skills: Skill[];
 
 	// TODO Should we validate inputs in the frontend as well as the backend?
 	const handleSubmit = () => {
@@ -46,8 +50,9 @@
 			race,
 			primaryClass,
 			secondaryClass,
-			skills,
+			portrait,
 			attributes,
+			skills,
 		};
 		saveCharacterApi
 			.fetch(
@@ -126,6 +131,11 @@
 			</label>
 		{/if}
 
+		<label class="input" for="portrait">
+			<span>Portrait</span>
+			<PortraitPicker id="portrait" bind:value={portrait} />
+		</label>
+
 		<label class="input" for="attributes">
 			<span>Attributes</span>
 			<AttributeOverview id="attributes" bind:value={attributes} />
@@ -137,7 +147,7 @@
 		</label>
 	</div>
 
-	<Button disabled={$isSavingCharacter} on:click={handleSubmit}
+	<Button variant="golden" disabled={$isSavingCharacter} on:click={handleSubmit}
 		>{$isSavingCharacter ? 'Saving character...' : 'Save character'}</Button
 	>
 
