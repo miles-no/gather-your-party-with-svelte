@@ -26,8 +26,10 @@ body {
 
 .rpgui-button--small-squared {
 	height: 30px;
+	width: 30px;
 	min-width: 30px;
-	padding: 10px;
+	max-width: 30px;
+	padding: 0;
 }
 
 .rpgui-content .readme h1 {

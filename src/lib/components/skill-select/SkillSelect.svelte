@@ -9,6 +9,7 @@
 
 	export let id: string = undefined;
 	export let value: Skill[] = [];
+	export let centered = false;
 
 	let availableSkillsCount = MAX_SKILLS;
 
@@ -50,7 +51,7 @@
 	};
 </script>
 
-<div class="container" {id}>
+<div {id} class="container" class:centered>
 	<div>
 		<div class="label">Chosen skills ({MAX_SKILLS - availableSkillsCount}/{MAX_SKILLS})</div>
 
@@ -92,6 +93,9 @@
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		gap: 1rem;
+	}
+	.container.centered {
+		margin: auto;
 	}
 
 	.label {

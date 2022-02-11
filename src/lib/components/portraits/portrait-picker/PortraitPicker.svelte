@@ -5,6 +5,7 @@
 
 	export let id: string = undefined;
 	export let value: string = undefined;
+	export let centered = false;
 
 	let showPortraitSelection = false;
 
@@ -15,7 +16,7 @@
 	};
 </script>
 
-<div {id} class="container">
+<div {id} class="container" class:centered>
 	<div class="preview-container">
 		<PortraitPreview big {value} />
 	</div>
@@ -30,6 +31,9 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+	}
+	.container.centered {
+		margin: auto;
 	}
 
 	.preview-container {

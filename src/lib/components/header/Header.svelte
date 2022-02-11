@@ -29,6 +29,7 @@
 		justify-content: space-around;
 		position: sticky;
 		top: 0;
+		z-index: 10000;
 	}
 
 	.corner {

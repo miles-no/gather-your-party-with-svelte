@@ -26,9 +26,9 @@
 	footer {
 		display: flex;
 		justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 2rem;
-    margin: 1rem;
+		flex-wrap: wrap;
+		gap: 2rem;
+		margin: 1rem;
 	}
 
 	.group {
