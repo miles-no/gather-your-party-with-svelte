@@ -1,5 +1,4 @@
-<footer>
-	<div class="left" />
+<footer class="grid">
 	<div class="center">
 		<a href="https://github.com/miles-no/booster2022-gather-your-party-with-svelte" target="_blank"
 			>GitHub</a
@@ -17,37 +16,47 @@
 
 <style>
 	footer {
-		display: flex;
-		padding: 0.5em 0;
-		justify-content: space-between;
-		flex-wrap: wrap;
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: 1fr;
+		gap: 0.25rem;
+		margin-bottom: 1rem;
 	}
 
 	footer a {
 		margin: 0 0.5em;
 	}
 
-	a {
-		white-space: nowrap;
-	}
-
-	.left,
-	.center,
-	.right {
-		width: 30%;
+	.center {
 		display: flex;
 		align-items: center;
-		flex-wrap: nowrap;
-		min-width: 250px;
-		flex-grow: 1;
-		padding: 0.25em 0;
-	}
-
-	.center {
 		justify-content: center;
+		grid-column: 2;
+		grid-row: 1;
 	}
 
 	.right {
+		display: flex;
+		align-items: center;
 		justify-content: flex-end;
+		grid-column: 3;
+		grid-row: 1;
+	}
+
+	@media (max-width: 1300px) {
+		footer {
+			grid-template-rows: 1fr 1fr;
+		}
+
+		.center {
+			grid-column: 1/4;
+			grid-row: 1;
+		}
+
+		.right {
+			justify-content: center;
+			grid-column: 1/4;
+			grid-row: 2;
+		}
 	}
 </style>
