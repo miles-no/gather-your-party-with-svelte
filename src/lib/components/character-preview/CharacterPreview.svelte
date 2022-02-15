@@ -1,4 +1,5 @@
 <script lang="ts">
+	import PortraitPreview from '$lib/components/portraits/portrait-preview/PortraitPreview.svelte';
 	import type { Character } from '$lib/types/character';
 
 	export let character: Character;
@@ -15,6 +16,9 @@
 	on:mouseenter={toggleHover}
 	on:mouseleave={toggleHover}
 >
+	<div class="portrait-container">
+		<PortraitPreview value={character.portrait} />
+	</div>
 	<span class="name">{character.name}</span>
 	<span class="race">{character.race}</span>
 	<span class="classes">
@@ -31,6 +35,12 @@
 
 	.character:hover {
 		text-decoration: none;
+	}
+
+	.portrait-container {
+		display: flex;
+		justify-content: center;
+		margin-bottom: 0.5rem;
 	}
 
 	.name {
