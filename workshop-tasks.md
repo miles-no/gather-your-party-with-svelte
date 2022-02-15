@@ -16,8 +16,6 @@ Description about what to do Button
 
 - `npm run hint 1`
 
-
-
 # Quest 2 - Boosting our Heroes with Stats
 
 _Some lore text_
@@ -34,8 +32,6 @@ Stats
 
 - `npm run hint 1`
 
-
-
 # Quest 3 - Skills to desire
 
 _Some lore text_
@@ -49,8 +45,6 @@ Skills
 #### Hints
 
 - `npm run hint 1`
-
-
 
 # Quest 4 - Indecisive Heroes
 
@@ -68,8 +62,6 @@ For this task you will be creating a randomizer
 
 - `npm run hint 1`
 
-
-
 # Quest 5 - Beauties and the Beasts
 
 _Someone has vandalized our hall of fame, and all our heroes pictures were stolen_
@@ -85,7 +77,6 @@ Some
 
 - `npm run hint 1`
 
-
 # Quest 6 - Recruitment lists
 
 _Some lore text_
@@ -99,7 +90,6 @@ Add Character List
 #### Hints
 
 - `npm run hint 1`
-
 
 # Quest 7 - ???
 
@@ -115,8 +105,8 @@ For this task you will be creating a randomizer
 
 - `npm run hint 1`
 
-
 ####
+
 - [Reactive Bindings](https://svelte.dev/tutorial/reactive-declarations)
 - [Logic Blocks](https://svelte.dev/tutorial/if-blocks)
 - [Bindings](https://svelte.dev/tutorial/text-inputs)
