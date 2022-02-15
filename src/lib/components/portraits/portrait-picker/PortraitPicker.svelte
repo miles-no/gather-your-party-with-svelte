@@ -2,7 +2,6 @@
 	import Modal from '$lib/components/modal/Modal.svelte';
 	import PortraitPreview from '$lib/components/portraits/portrait-preview/PortraitPreview.svelte';
 	import PortraitSelection from '$lib/components/portraits/portrait-selection/PortraitSelection.svelte';
-	import Space from '$lib/components/space/Space.svelte';
 
 	export let id: string = undefined;
 	export let value: string = undefined;
@@ -17,9 +16,9 @@
 </script>
 
 <div {id} class="container">
-	<Space bottom>
+	<div class="preview-container">
 		<PortraitPreview big {value} />
-	</Space>
+	</div>
 
 	<Modal label="Change portrait" bind:show={showPortraitSelection}
 		><PortraitSelection on:select={handleSelectPortrait} /></Modal
@@ -31,5 +30,9 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+	}
+
+	.preview-container {
+		margin-bottom: 0.5rem;
 	}
 </style>

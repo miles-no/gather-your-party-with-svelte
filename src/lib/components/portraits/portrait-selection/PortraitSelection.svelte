@@ -38,17 +38,15 @@
 	<Loader />
 {:then portraits}
 	<div class="portraits">
-		{#if portraits}
-			{#each portraits as portrait (portrait)}
-				{#await getPortrait(portrait)}
-					<PortraitPreview big isLoading clickable on:click={handleSelect} />
-				{:then payload}
-					<PortraitPreview big value={payload} clickable on:click={handleSelect} />
-				{:catch error}
-					<p>Could not fetch portrait</p>
-				{/await}
-			{/each}
-		{/if}
+		{#each portraits ?? [] as portrait (portrait)}
+			{#await getPortrait(portrait)}
+				<PortraitPreview big isLoading clickable on:click={handleSelect} />
+			{:then payload}
+				<PortraitPreview big value={payload} clickable on:click={handleSelect} />
+			{:catch error}
+				<p>Could not fetch portrait</p>
+			{/await}
+		{/each}
 	</div>
 {:catch error}
 	<p>Unable to fetch portraits.</p>
@@ -60,11 +58,5 @@
 		flex-wrap: wrap;
 		gap: 1rem;
 		justify-content: center;
-	}
-
-	.portrait-loader {
-		display: flex;
-    height: 180px;
-    width: 115px;
 	}
 </style>

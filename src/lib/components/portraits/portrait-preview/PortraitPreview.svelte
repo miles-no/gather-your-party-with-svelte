@@ -11,23 +11,37 @@
 	export let value: string;
 
 	const handleClick = () => {
+		if (isLoading) {
+			return;
+		}
+
 		dispatch('click', { portrait: value });
 	};
 </script>
 
-<div
-	class="rpgui-container framed container"
-	class:big
-	class:clickable={clickable && !isLoading}
-	class:rpgui-cursor-point={clickable && !isLoading}
-	on:click={handleClick}
->
-	{#if isLoading}
-		<div class="portrait"><Loader /></div>
-	{:else}
-		<img class="portrait active" src={value || noPerson} alt="Portrait" />
-	{/if}
-</div>
+{#if clickable}
+	<button
+		class="rpgui-container framed container"
+		class:big
+		class:clickable={!isLoading}
+		disabled={isLoading}
+		on:click={handleClick}
+	>
+		{#if isLoading}
+			<div class="portrait"><Loader /></div>
+		{:else}
+			<img class="portrait active" src={value || noPerson} alt="Portrait" />
+		{/if}
+	</button>
+{:else}
+	<div class="rpgui-container framed container" class:big>
+		{#if isLoading}
+			<div class="portrait"><Loader /></div>
+		{:else}
+			<img class="portrait active" src={value || noPerson} alt="Portrait" />
+		{/if}
+	</div>
+{/if}
 
 <style>
 	.container {
@@ -51,9 +65,9 @@
 		height: 100%;
 		min-width: 100%;
 	}
-  .portrait.active {
-    background: black;
-    object-fit: cover;
-    image-rendering: initial;
-  }
+	.portrait.active {
+		background: black;
+		object-fit: cover;
+		image-rendering: initial;
+	}
 </style>
