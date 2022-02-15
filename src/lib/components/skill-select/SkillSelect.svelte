@@ -50,7 +50,7 @@
 	};
 </script>
 
-<div class="container" {id}>
+<div {id} class="container">
 	<div>
 		<div class="label">Chosen skills ({MAX_SKILLS - availableSkillsCount}/{MAX_SKILLS})</div>
 
@@ -92,6 +92,7 @@
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		gap: 1rem;
+		margin: auto;
 	}
 
 	.label {

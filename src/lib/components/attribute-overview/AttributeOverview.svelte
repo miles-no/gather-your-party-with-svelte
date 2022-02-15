@@ -18,7 +18,6 @@
 	};
 
 	export let id: string = undefined;
-
 	export let value: AttributeAllocation = { ...initialAllocation };
 
 	let pointsRemaining = POINTS_TO_DISTRIBUTE;
@@ -65,7 +64,7 @@
 	};
 </script>
 
-<div class="container" {id}>
+<div {id} class="container">
 	<span>Points to distribute: {Math.round($displayedPointsRemaining)}</span>
 	<button class="randomize-btn rpgui-button rpgui-button--small" on:click={randomize}
 		>Randomize
@@ -86,10 +85,10 @@
 	.container {
 		display: flex;
 		flex-direction: column;
+		margin: auto;
 	}
 
 	.randomize-btn {
 		margin: 0.5em 0;
-		width: 275px;
 	}
 </style>

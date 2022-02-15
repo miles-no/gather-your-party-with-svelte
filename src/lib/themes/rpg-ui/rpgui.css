@@ -83,6 +83,7 @@ inside your html file.
 	max-width: 100%;
 	min-width: 140px;
 	height: 60px;
+	width: 256px;
 	display: inline-block;
 	/* padding */
 	padding-left: 35px;
@@ -445,6 +446,7 @@ label {
 	color: white;
 	/* default size */
 	min-height: 40px;
+	width: 256px;
 	margin-top: 0px;
 	/* border */
 	border-style: solid;
@@ -615,6 +617,7 @@ ul.rpgui-dropdown-imp {
 	font-size: 0.9em;
 	line-height: 32px;
 	background: #4e4a4e;
+	width: 256px;
 	max-width: 100%;
 	/*width: 100%;*/
 	padding-left: 10px;

@@ -77,12 +77,12 @@
 	<div class="container">
 		<label class="input">
 			<span>Name</span>
-			<input bind:value={name} />
+			<input class="input-content" bind:value={name} />
 		</label>
 
 		<label class="input">
 			<span>Race</span>
-			<select class="rpgui-dropdown-imp" bind:value={race}>
+			<select class="rpgui-dropdown-imp input-content" bind:value={race}>
 				<option value={null}>Please select...</option>
 
 				{#each RACE_OPTIONS as { id, name }}
@@ -91,23 +91,21 @@
 			</select>
 		</label>
 
-		<div class="input-group">
-			<label class="input">
-				<span>Class</span>
-				<select
-					class="rpgui-dropdown-imp"
-					bind:value={primaryClass}
-					on:change={handleSelectPrimaryClass}
-				>
-					<option value={null}>Please select...</option>
+		<label class="input">
+			<span>Class</span>
+			<select
+				class="rpgui-dropdown-imp input-content"
+				bind:value={primaryClass}
+				on:change={handleSelectPrimaryClass}
+			>
+				<option value={null}>Please select...</option>
 
-					{#each CLASS_OPTIONS as { id, name }}
-						<option value={id}>{name}</option>
-					{/each}
-				</select>
-			</label>
+				{#each CLASS_OPTIONS as { id, name }}
+					<option value={id}>{name}</option>
+				{/each}
+			</select>
 
-			<div>
+			<div class="suffix">
 				<input
 					id="is-dual-class"
 					class="rpgui-checkbox"
@@ -116,12 +114,12 @@
 				/>
 				<label for="is-dual-class">Dual class?</label>
 			</div>
-		</div>
+		</label>
 
 		{#if isDualClass}
 			<label class="input">
 				<span>Dual class</span>
-				<select class="rpgui-dropdown-imp" bind:value={secondaryClass}>
+				<select class="rpgui-dropdown-imp input-content" bind:value={secondaryClass}>
 					<option value={null}>Please select...</option>
 
 					{#each CLASS_OPTIONS as { id, name }}
@@ -168,19 +166,25 @@
 	.container {
 		display: flex;
 		flex-direction: column;
-		gap: 1rem;
-	}
-
-	.input-group {
-		display: flex;
-		gap: 1rem;
+		gap: 2rem;
+		width: calc(100% - 2rem);
 	}
 
 	.input {
+		position: relative;
 		display: flex;
+		justify-content: stretch;
 	}
 	.input > span {
 		width: 12rem;
-		padding-top: 0.25rem;
+	}
+
+	.input-content {
+		margin: auto;
+	}
+
+	.suffix {
+		position: absolute;
+		right: -1rem;
 	}
 </style>
