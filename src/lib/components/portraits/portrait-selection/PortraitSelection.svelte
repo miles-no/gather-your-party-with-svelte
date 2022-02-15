@@ -40,9 +40,9 @@
 	<div class="portraits">
 		{#each portraits ?? [] as portrait (portrait)}
 			{#await getPortrait(portrait)}
-				<PortraitPreview big isLoading clickable on:click={handleSelect} />
+				<PortraitPreview isLoading clickable on:click={handleSelect} />
 			{:then payload}
-				<PortraitPreview big value={payload} clickable on:click={handleSelect} />
+				<PortraitPreview value={payload} clickable on:click={handleSelect} />
 			{:catch error}
 				<p>Could not fetch portrait</p>
 			{/await}
