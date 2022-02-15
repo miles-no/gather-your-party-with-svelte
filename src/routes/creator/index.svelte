@@ -131,17 +131,17 @@
 
 		<label class="input" for="portrait">
 			<span>Portrait</span>
-			<PortraitPicker id="portrait" centered bind:value={portrait} />
+			<PortraitPicker id="portrait" bind:value={portrait} />
 		</label>
 
 		<label class="input" for="attributes">
 			<span>Attributes</span>
-			<AttributeOverview id="attributes" centered bind:value={attributes} />
+			<AttributeOverview id="attributes" bind:value={attributes} />
 		</label>
 
 		<label class="input" for="skills">
 			<span>Skills</span>
-			<SkillSelect id="skills" centered bind:value={skills} />
+			<SkillSelect id="skills" bind:value={skills} />
 		</label>
 	</div>
 
