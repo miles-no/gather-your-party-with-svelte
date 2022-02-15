@@ -32,7 +32,7 @@
 
 	const formatskill = (skill: Skill) =>
 		Object.entries(SKILLS)
-			.find(([_, value]) => value === skill)[0]
+			.find(([, value]) => value === skill)[0]
 			.replace(/([a-z])([A-Z])/g, '$1 $2');
 
 	const handleAddSkill = (skill: Skill) => {
