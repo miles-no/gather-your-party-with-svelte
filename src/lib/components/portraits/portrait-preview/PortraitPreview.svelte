@@ -5,7 +5,6 @@
 
 	const dispatch = createEventDispatcher();
 
-	export let big = false;
 	export let clickable = false;
 	export let isLoading = false;
 	export let value: string;
@@ -22,7 +21,6 @@
 {#if clickable}
 	<button
 		class="rpgui-container framed container"
-		class:big
 		class:clickable={!isLoading}
 		disabled={isLoading}
 		on:click={handleClick}
@@ -34,7 +32,7 @@
 		{/if}
 	</button>
 {:else}
-	<div class="rpgui-container framed container" class:big>
+	<div class="rpgui-container framed container">
 		{#if isLoading}
 			<div class="portrait"><Loader /></div>
 		{:else}
@@ -51,10 +49,6 @@
 		width: 153px;
 		padding: 0;
 		overflow: hidden;
-	}
-	.container.big {
-		height: 320px;
-		width: 204px;
 	}
 	.container.clickable:hover {
 		filter: drop-shadow(0 0 8px white) brightness(120%);

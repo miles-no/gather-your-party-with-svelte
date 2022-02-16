@@ -17,7 +17,7 @@
 
 <div {id} class="container">
 	<div class="preview-container">
-		<PortraitPreview big {value} />
+		<PortraitPreview {value} />
 	</div>
 
 	<Modal label="Change portrait" bind:show={showPortraitSelection}
