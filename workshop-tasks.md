@@ -6,6 +6,9 @@ Description about what to do Button
 
 `src/lib/components/button`
 
+#### Goal
+
+
 #### Useful links
 
 - [Event Forwarding](https://svelte.dev/tutorial/event-forwarding)
@@ -24,6 +27,8 @@ Stats
 
 `src/lib/components/stats`
 
+#### Goal
+
 #### Useful links
 
 - [Reactive Binding](https://svelte.dev/tutorial/event-forwarding)
@@ -40,6 +45,8 @@ Skills
 
 `src/lib/components/skill-select`
 
+#### Goal
+
 #### Useful links
 
 #### Hints
@@ -52,7 +59,10 @@ _Some of our heroes seem to need help to decide what attributes they have, and a
 
 For this task you will be creating a randomizer
 
+
 `src/lib/components/attribute`
+
+#### Goal
 
 #### Useful links
 
@@ -71,6 +81,8 @@ Some
 
 `src/lib/components/attribute`
 
+#### Goal
+
 #### Useful links
 
 #### Hints
@@ -85,6 +97,8 @@ Add Character List
 
 `src/routes/characters/index.svelte`
 
+#### Goal
+
 #### Useful links
 
 #### Hints
@@ -98,6 +112,8 @@ _Some of our heroes seem to need help to decide what attributes they have, and a
 For this task you will be creating a randomizer
 
 `src/lib/components/attribute`
+
+#### Goal
 
 #### Useful links
 
