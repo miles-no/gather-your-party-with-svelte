@@ -139,9 +139,10 @@
 			<span>Attributes</span>
 			<AttributeOverview id="attributes" bind:value={attributes} />
 		</label>
+
 		<label class="input" for="stats">
 			<span>Stats</span>
-			<Stats id="stats" bind:attributes />
+			<Stats id="stats" {attributes} />
 		</label>
 
 		<label class="input" for="skills">
