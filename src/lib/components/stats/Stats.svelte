@@ -15,15 +15,12 @@
 </script>
 
 <div {id} class="container">
-	<span class="name">Melee Damage</span><span class="value"
-		>{meleeDamageMin} - {meleeDamageMax}</span
-	>
-	<span class="name">Block Chance</span><span class="value">{blockChance}%</span>
-	<span class="name">Hitpoints</span><span class="value">{hitpoints}</span>
-
-	<span class="name">Mana</span><span class="value">{mana}</span>
-	<span class="name">Spellpower</span><span class="value">{spellpower}</span>
-	<span class="name">Speech</span><span class="value">{speech}</span>
+	<span>Melee Damage</span><span class="value">{meleeDamageMin} - {meleeDamageMax}</span>
+	<span>Block Chance</span><span class="value">{blockChance}%</span>
+	<span>Hitpoints</span><span class="value">{hitpoints}</span>
+	<span>Mana</span><span class="value">{mana}</span>
+	<span>Spellpower</span><span class="value">{spellpower}</span>
+	<span>Speech</span><span class="value">{speech}</span>
 </div>
 
 <style>
