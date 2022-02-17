@@ -9,12 +9,12 @@
 	const POINTS_TO_DISTRIBUTE = 20;
 
 	const initialAllocation: AttributeAllocation = {
-		[ATTRIBUTES.Charisma]: STARTING_VALUE,
-		[ATTRIBUTES.Constitution]: STARTING_VALUE,
-		[ATTRIBUTES.Intelligence]: STARTING_VALUE,
-		[ATTRIBUTES.Dexterity]: STARTING_VALUE,
 		[ATTRIBUTES.Strength]: STARTING_VALUE,
+		[ATTRIBUTES.Dexterity]: STARTING_VALUE,
+		[ATTRIBUTES.Constitution]: STARTING_VALUE,
 		[ATTRIBUTES.Wisdom]: STARTING_VALUE,
+		[ATTRIBUTES.Intelligence]: STARTING_VALUE,
+		[ATTRIBUTES.Charisma]: STARTING_VALUE,
 	};
 
 	export let id: string = undefined;
