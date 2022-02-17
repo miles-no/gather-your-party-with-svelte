@@ -12,6 +12,7 @@
 	import AttributeOverview from '$lib/components/attribute-overview/AttributeOverview.svelte';
 	import { AttributeAllocation } from '$lib/types/attribute-allocation';
 	import type { UpsertCharacterRequest } from '$lib/types/upsert-character-request';
+	import Stats from '$lib/components/stats/Stats.svelte';
 
 	const saveCharacterApi = new ApiService<Character>();
 	const {
@@ -139,6 +140,11 @@
 			<AttributeOverview id="attributes" bind:value={attributes} />
 		</label>
 
+		<label class="input" for="stats">
+			<span>Stats</span>
+			<Stats id="stats" {attributes} />
+		</label>
+
 		<label class="input" for="skills">
 			<span>Skills</span>
 			<SkillSelect id="skills" bind:value={skills} />
@@ -163,6 +169,7 @@
 		align-items: center;
 		gap: 1rem;
 	}
+
 	.container {
 		display: flex;
 		flex-direction: column;
@@ -175,6 +182,7 @@
 		display: flex;
 		justify-content: stretch;
 	}
+
 	.input > span {
 		width: 12rem;
 	}
