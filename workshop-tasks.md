@@ -4,16 +4,18 @@ _*click* *click*.... Our heroes journey can not start if we can not even click a
 
 For consistent design and functionality we wish to create a Button component that can be reused in our application.
 
-The component currently has the 3 variables `variant`, `small` and `disabled`, but they are not exposed, and can not be set by parent components.
+The component currently has the 3 variables `variant`, `small` and `disabled`, but they are not exposed, and can not be
+set by parent components.
 
 Read about [Component Bindings](https://svelte.dev/tutorial/component-bindings) to find out more.
 
-We also wish to expose the `click` event of the inner button so any parent components, as that is the main use case for a button.
+We also wish to expose the `click` event of the inner button so any parent components, as that is the main use case for
+a button.
 
-And lastly our button should also have some content. We wish for anything that is inside our Buttons tag to be reflected into the inner button.
-Example: `<Button>The should be displayed inside the button</Button>`
+And lastly our button should also have some content. We wish for anything that is inside our Buttons tag to be reflected
+into the inner button. Example: `<Button>The should be displayed inside the button</Button>`
 
-`src/lib/components/button/Button.svelte`
+Task can be found in: `src/lib/components/button/Button.svelte`
 
 #### Goal
 
@@ -33,9 +35,11 @@ Example: `<Button>The should be displayed inside the button</Button>`
 
 # Quest 2 - Boosting our Heroes stats
 
-_Our mighty heroes seem a bit weak. Luckily we are able to assist them by boosting their attributes effects on their stats._
+_Our mighty heroes seem a bit weak. Luckily we are able to assist them by boosting their attributes effects on their
+stats._
 
-The point of this task is to use [Reactive Declarations](https://svelte.dev/tutorial/reactive-declarations) to change one value whenever any referenced values change.
+The point of this task is to use [Reactive Declarations](https://svelte.dev/tutorial/reactive-declarations) to change
+one value whenever any referenced values change.
 
 Task can be found in: `src/lib/components/stats/Stats.svelte`
 
@@ -47,7 +51,8 @@ Task can be found in: `src/lib/components/stats/Stats.svelte`
 - 1 point in **constitution** should increase the **hitpoints** with **5**.
 - 1 point in **wisdom** should increase the **mana** with **10**.
 - 1 point in **intelligence** should increase the **spellpower** with **2.5**.
-- When the **charisma** is **< 12** speech should be **Timid**, **> 12** speech should be **Well Spoken**, **> 16** speech should be **Charming**.
+- When the **charisma** is **< 12** speech should be **Timid**, **> 12** speech should be **Well Spoken**, **> 16**
+  speech should be **Charming**.
 
 #### Useful links
 
@@ -59,15 +64,16 @@ Task can be found in: `src/lib/components/stats/Stats.svelte`
 
 # Quest 3 - Skills to desire
 
-_Some lore text_
+_Our heroes look mighty powerful! But they do still not seem satisfied... Maybe we should let them train som skills?_
 
-Skills
-
-`src/lib/components/skill-select`
+`src/lib/components/skill-select/SkillSelect.svelte`
 
 #### Goal
 
 #### Useful links
+
+- [Animations](https://svelte.dev/tutorial/animate)
+- [Transitions](https://svelte.dev/tutorial/transition)
 
 #### Hints
 
@@ -77,11 +83,18 @@ Skills
 
 _Some of our heroes seem to need help to decide what attributes they have, and are requesting our assistance._
 
-For this task you will be creating a randomizer
+Svelte is full of useful tools for animating changes. Start by looking
+into [Motion (Tween/Spring)](https://svelte.dev/tutorial/tweened) and how you can animate the attributes changing.
 
-`src/lib/components/attribute`
+When this is working for `addPoint` and `subtractPoint` fill inn the `randomize` button. Remember to also update and
+animate `pointsRemaining`.
+
+Task can be found in: `src/lib/components/attribute-overview/AttributeOverview.svelte`
 
 #### Goal
+
+- Use [Motion (Tween/Spring)](https://svelte.dev/tutorial/tweened) to animate numbers changing.
+- Fill inn the `randomize` method with logic to randomly assign attribute points.
 
 #### Useful links
 
