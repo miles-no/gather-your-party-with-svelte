@@ -1,6 +1,10 @@
 # Quest 1 - The Mighty Button
 
-_*click* *click*.... Our heroes journey can not start if we can not even click a button!_
+#### Lore
+
+_click_ _click_.... Our heroes journey can not start if we can not even click a button!
+
+#### Intro
 
 For consistent design and functionality we wish to create a Button component that can be reused in our application.
 
@@ -15,7 +19,9 @@ a button.
 And lastly our button should also have some content. We wish for anything that is inside our Buttons tag to be reflected
 into the inner button. Example: `<Button>The should be displayed inside the button</Button>`
 
-Task can be found in: `src/lib/components/button/Button.svelte`
+#### Files
+
+- `src/lib/components/button/Button.svelte`
 
 #### Goal
 
@@ -23,7 +29,7 @@ Task can be found in: `src/lib/components/button/Button.svelte`
 - Propagate the `click` event from the button to parent components.
 - Use `slots` to display the content our Buttons html tag in parent components.
 
-#### Useful links
+#### Links
 
 - [Event Forwarding](https://svelte.dev/tutorial/event-forwarding)
 - [Component Bindings](https://svelte.dev/tutorial/component-bindings)
@@ -35,13 +41,19 @@ Task can be found in: `src/lib/components/button/Button.svelte`
 
 # Quest 2 - ??
 
-_No one hero is the same! Let them show their uniqueness_
+#### Lore
+
+No one hero is the same! Let them show their uniqueness
+
+#### Intro
 
 Should we change bindings from attributes to class or race?
 
+#### Files
+
 #### Goal
 
-#### Useful links
+#### Links
 
 - [Text Inputs](https://svelte.dev/tutorial/text-inputs)
 
@@ -51,13 +63,19 @@ Should we change bindings from attributes to class or race?
 
 # Quest 3 - Boosting our Heroes stats
 
-_Our mighty heroes seem a bit weak. Luckily we are able to assist them by boosting their attributes effects on their
-stats._
+#### Lore
+
+Our mighty heroes seem a bit weak. Luckily we are able to assist them by boosting their attributes effects on their
+stats.
+
+#### Intro
 
 The point of this task is to use [Reactive Declarations](https://svelte.dev/tutorial/reactive-declarations) to change
 one value whenever any referenced values change.
 
-Task can be found in: `src/lib/components/stats/Stats.svelte`
+#### Files
+
+- `src/lib/components/stats/Stats.svelte`
 
 #### Goal
 
@@ -70,7 +88,7 @@ Task can be found in: `src/lib/components/stats/Stats.svelte`
 - When the **charisma** is **< 12** speech should be **Timid**, **> 12** speech should be **Well Spoken**, **> 16**
   speech should be **Charming**.
 
-#### Useful links
+#### Links
 
 - [Reactive Declarations](https://svelte.dev/tutorial/reactive-declarations)
 
@@ -80,11 +98,17 @@ Task can be found in: `src/lib/components/stats/Stats.svelte`
 
 # Quest 4 - Skills to desire
 
-_Our heroes look mighty powerful! But they do still not seem satisfied... Maybe we should let them train som skills?_
+#### Lore
+
+Our heroes look mighty powerful! But they do still not seem satisfied... Maybe we should let them train som skills?
+
+#### Intro
 
 The current solution provides a list of skills and those selected. The selection process offers no animation and just snaps.
 
 We want an animation to occur when selecting and removing skills.
+
+#### Files
 
 `src/lib/components/skill-select/SkillSelect.svelte`
 
@@ -92,7 +116,7 @@ We want an animation to occur when selecting and removing skills.
 
 - Use [Animations](https://svelte.dev/tutorial/animate) and [Transitions](https://svelte.dev/tutorial/transition) to animate the skill selection.
 
-#### Useful links
+#### Links
 
 - [Animations](https://svelte.dev/tutorial/animate)
 - [Transitions](https://svelte.dev/tutorial/transition)
@@ -103,7 +127,11 @@ We want an animation to occur when selecting and removing skills.
 
 # Quest 5 - Indecisive Heroes
 
-_Some of our heroes seem to need help to decide what attributes they have, and are requesting our assistance._
+#### Lore
+
+Some of our heroes seem to need help to decide what attributes they have, and are requesting our assistance.
+
+#### Intro
 
 Svelte is full of useful tools for animating changes. Start by looking
 into [Motion (Tween/Spring)](https://svelte.dev/tutorial/tweened) and how you can animate the attributes changing.
@@ -111,14 +139,16 @@ into [Motion (Tween/Spring)](https://svelte.dev/tutorial/tweened) and how you ca
 When this is working for `addPoint` and `subtractPoint` fill inn the `randomize` button. Remember to also update and
 animate `pointsRemaining`.
 
-Task can be found in: `src/lib/components/attribute-overview/AttributeOverview.svelte`
+#### Files
+
+- `src/lib/components/attribute-overview/AttributeOverview.svelte`
 
 #### Goal
 
 - Use [Motion (Tween/Spring)](https://svelte.dev/tutorial/tweened) to animate numbers changing.
 - Fill inn the `randomize` method with logic to randomly assign attribute points.
 
-#### Useful links
+#### Links
 
 - [Motion (Tween/Spring)](https://svelte.dev/tutorial/tweened)
 
@@ -128,16 +158,22 @@ Task can be found in: `src/lib/components/attribute-overview/AttributeOverview.s
 
 # Quest 6 - Beauties and the Beasts
 
-_Someone has vandalized our hall of fame, and all our heroes pictures were stolen_
-_Help them recreate their pictures._
+#### Lore
 
-`src/lib/components/portraits/portrait-selection/PortraitSelection.svelte`
+Someone has vandalized our hall of fame, and all our heroes pictures were stolen,
+Help them recreate their pictures.
+
+#### Intro
+
+#### Files
+
+- `src/lib/components/portraits/portrait-selection/PortraitSelection.svelte`
 
 #### Goal
 
 -
 
-#### Useful links
+#### Links
 
 - [Await Blocks](https://svelte.dev/tutorial/await-blocks)
 
@@ -147,16 +183,22 @@ _Help them recreate their pictures._
 
 # Quest 7 - Recruitment Board
 
+#### Lore
+
 _I swear I saw the recruitment board somewhere around here..._
 
-`src/routes/characters/index.svelte`
+#### Intro
+
+#### Files
+
+- `src/routes/characters/index.svelte`
 
 #### Goal
 
 - `Characters` should be displayed in the nav-bar.
 - When clicked it should go the URL `/characters`
 
-#### Useful links
+#### Links
 
 - [Await Blocks](https://svelte.dev/tutorial/await-blocks)
 - [Each Blocks](https://svelte.dev/tutorial/each-blocks)
@@ -167,15 +209,21 @@ _I swear I saw the recruitment board somewhere around here..._
 
 # Quest 8 - Recruitment List
 
-_Some lore text_
+#### Lore
+
+Some lore text
+
+#### Intro
 
 Add Character List
 
-`src/routes/characters/index.svelte`
+#### Files
+
+- `src/routes/characters/index.svelte`
 
 #### Goal
 
-#### Useful links
+#### Links
 
 - [Await Blocks](https://svelte.dev/tutorial/await-blocks)
 - [Each Blocks](https://svelte.dev/tutorial/each-blocks)
@@ -186,26 +234,36 @@ Add Character List
 
 # Titan Quest 1 - Select your hero!
 
-_Our heroes stand tall in our Hall of Fame, but some of our visitors want a personal audience with some of the heroes._
+#### Lore
+
+Our heroes stand tall in our Hall of Fame, but some of our visitors want a personal audience with some of the heroes.
+
+#### Intro
+
+#### Files
 
 #### Goal
 
-#### Useful links
+#### Links
 
 #### Hints
 
 - `npm run hint t1a `
 
-####
+# Titan Quest 2 - Select your hero!
 
-- [Reactive Bindings](https://svelte.dev/tutorial/reactive-declarations)
-- [Logic Blocks](https://svelte.dev/tutorial/if-blocks)
-- [Bindings](https://svelte.dev/tutorial/text-inputs)
-- [Events](https://svelte.dev/tutorial/event-forwarding)
-- [Lifecycle](https://svelte.dev/tutorial/onmount)
-- [Slots](https://svelte.dev/tutorial/slots)
-- [SvelteKit Routing](https://kit.svelte.dev/docs#routing)
-- [SvelteKit Loading](https://kit.svelte.dev/docs#loading)
-- [Motion (Tween/Spring)](https://svelte.dev/tutorial/tweened)
-- [Animations](https://svelte.dev/tutorial/animate)
-- [Transitions](https://svelte.dev/tutorial/transition)
+#### Lore
+
+Our heroes stand tall in our Hall of Fame, but some of our visitors want a personal audience with some of the heroes.
+
+#### Intro
+
+#### Files
+
+#### Goal
+
+#### Links
+
+#### Hints
+
+- `npm run hint t1a `
