@@ -3,7 +3,6 @@
 	import PortraitPicker from '$lib/components/portraits/portrait-picker/PortraitPicker.svelte';
 	import SkillSelect from '$lib/components/skill-select/SkillSelect.svelte';
 	import { CLASSES } from '$lib/models/classes';
-	import { RACES } from '$lib/models/races';
 	import type { Character } from '$lib/types/character';
 	import type { Class } from '$lib/types/class';
 	import type { Race } from '$lib/types/race';
@@ -13,6 +12,7 @@
 	import { AttributeAllocation } from '$lib/types/attribute-allocation';
 	import type { UpsertCharacterRequest } from '$lib/types/upsert-character-request';
 	import Stats from '$lib/components/stats/Stats.svelte';
+	import RaceSelect from '$lib/components/race-select/RaceSelect.svelte';
 
 	const saveCharacterApi = new ApiService<Character>();
 	const {
@@ -23,8 +23,6 @@
 
 	let name = '';
 
-	type RaceOption = { id: Race; name: string };
-	let RACE_OPTIONS: RaceOption[] = Object.entries(RACES).map(([name, id]) => ({ id, name }));
 	let race: Race;
 
 	type ClassOption = { id: Class; name: string };
@@ -81,15 +79,9 @@
 			<input class="input-content" bind:value={name} />
 		</label>
 
-		<label class="input">
+		<label class="input" for="race">
 			<span>Race</span>
-			<select class="rpgui-dropdown-imp input-content" bind:value={race}>
-				<option value={null}>Please select...</option>
-
-				{#each RACE_OPTIONS as { id, name }}
-					<option value={id}>{name}</option>
-				{/each}
-			</select>
+			<RaceSelect id="race" bind:race />
 		</label>
 
 		<label class="input">
