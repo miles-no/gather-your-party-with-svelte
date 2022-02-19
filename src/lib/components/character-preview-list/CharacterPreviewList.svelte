@@ -6,7 +6,7 @@
 </script>
 
 <div class="container">
-	{#each characters as character}
+	{#each characters ?? [] as character}
 		<CharacterPreview {character} />
 	{/each}
 </div>

@@ -1,18 +1,14 @@
 <script lang="ts">
-	import Loader from '$lib/components/loader/Loader.svelte';
-	import PortraitPreview from '$lib/components/portraits/portrait-preview/PortraitPreview.svelte';
-	import { ApiService } from '$lib/utils/ApiService';
+	import { apiFetch } from '$lib/utils/ApiService';
 	import { sleep } from '$lib/utils/sleep';
 	import { createEventDispatcher, onMount } from 'svelte';
 
 	const dispatch = createEventDispatcher();
 
-	const portraitsApi = new ApiService<string>();
-
 	let getPortraitsPromise: Promise<string> = undefined;
 
 	onMount(() => {
-		getPortraitsPromise = portraitsApi.fetch('/api/portraits');
+		getPortraitsPromise = apiFetch<string>('/api/portraits');
 	});
 
 	/***
