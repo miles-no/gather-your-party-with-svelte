@@ -33,7 +33,24 @@ Task can be found in: `src/lib/components/button/Button.svelte`
 
 - `npm run hint 1a`
 
-# Quest 2 - Boosting our Heroes stats
+# Quest 2 - ??
+
+_No one hero is the same! Let them show their uniqueness_
+
+Should we change bindings from attributes to class or race?
+
+#### Goal
+
+
+#### Useful links
+
+- [Text Inputs](https://svelte.dev/tutorial/text-inputs)
+
+#### Hints
+
+- `npm run hint 2a`
+
+# Quest 3 - Boosting our Heroes stats
 
 _Our mighty heroes seem a bit weak. Luckily we are able to assist them by boosting their attributes effects on their
 stats._
@@ -60,15 +77,21 @@ Task can be found in: `src/lib/components/stats/Stats.svelte`
 
 #### Hints
 
-- `npm run hint 2a`
+- `npm run hint 3a`
 
-# Quest 3 - Skills to desire
+# Quest 4 - Skills to desire
 
 _Our heroes look mighty powerful! But they do still not seem satisfied... Maybe we should let them train som skills?_
+
+The current solution provides a list of skills and those selected. The selection process offers no animation and just snaps.
+
+We want an animation to occur when selecting and removing skills.
 
 `src/lib/components/skill-select/SkillSelect.svelte`
 
 #### Goal
+
+- Use [Animations](https://svelte.dev/tutorial/animate) and [Transitions](https://svelte.dev/tutorial/transition) to animate the skill selection.
 
 #### Useful links
 
@@ -77,9 +100,9 @@ _Our heroes look mighty powerful! But they do still not seem satisfied... Maybe 
 
 #### Hints
 
-- `npm run hint 3a`
+- `npm run hint 4a`
 
-# Quest 4 - Indecisive Heroes
+# Quest 5 - Indecisive Heroes
 
 _Some of our heroes seem to need help to decide what attributes they have, and are requesting our assistance._
 
@@ -102,26 +125,52 @@ Task can be found in: `src/lib/components/attribute-overview/AttributeOverview.s
 
 #### Hints
 
-- `npm run hint 4a`
+- `npm run hint 5a`
 
-# Quest 5 - Beauties and the Beasts
+# Quest 6 - Beauties and the Beasts
 
 _Someone has vandalized our hall of fame, and all our heroes pictures were stolen_
 _Help them recreate their pictures._
 
-Some
 
-`src/lib/components/attribute`
+
+`src/lib/components/portraits/portrait-selection/PortraitSelection.svelte`
 
 #### Goal
 
+- 
+
 #### Useful links
+
+- [Await Blocks](https://svelte.dev/tutorial/await-blocks)
 
 #### Hints
 
-- `npm run hint 5a`
+- `npm run hint 6a`
 
-# Quest 6 - Recruitment lists
+# Quest 7 - Recruitment Board
+
+_I swear I saw the recruitment board somewhere around here..._
+
+
+
+`src/routes/characters/index.svelte`
+
+#### Goal
+- `Characters` should be displayed in the nav-bar.
+- When clicked it should go the URL `/characters`
+ 
+
+#### Useful links
+
+- [Await Blocks](https://svelte.dev/tutorial/await-blocks)
+- [Each Blocks](https://svelte.dev/tutorial/each-blocks)
+
+#### Hints
+
+- `npm run hint 7a`
+
+# Quest 8 - Recruitment List
 
 _Some lore text_
 
@@ -133,17 +182,19 @@ Add Character List
 
 #### Useful links
 
+- [Await Blocks](https://svelte.dev/tutorial/await-blocks)
+- [Each Blocks](https://svelte.dev/tutorial/each-blocks)
+
 #### Hints
 
-- `npm run hint 6a`
+- `npm run hint 7a`
 
-# Quest 7 - ???
 
-_Some of our heroes seem to need help to decide what attributes they have, and are requesting our assistance._
+# Titan Quest 1 - Select your hero!
 
-For this task you will be creating a randomizer
+_Our heroes stand tall in our Hall of Fame, but some of our visitors want a personal audience with some of the heroes._
 
-`src/lib/components/attribute`
+
 
 #### Goal
 
@@ -151,7 +202,7 @@ For this task you will be creating a randomizer
 
 #### Hints
 
-- `npm run hint 7a `
+- `npm run hint t1a `
 
 ####
 
