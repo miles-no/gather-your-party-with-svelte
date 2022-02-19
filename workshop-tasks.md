@@ -41,7 +41,6 @@ Should we change bindings from attributes to class or race?
 
 #### Goal
 
-
 #### Useful links
 
 - [Text Inputs](https://svelte.dev/tutorial/text-inputs)
@@ -132,13 +131,11 @@ Task can be found in: `src/lib/components/attribute-overview/AttributeOverview.s
 _Someone has vandalized our hall of fame, and all our heroes pictures were stolen_
 _Help them recreate their pictures._
 
-
-
 `src/lib/components/portraits/portrait-selection/PortraitSelection.svelte`
 
 #### Goal
 
-- 
+-
 
 #### Useful links
 
@@ -152,14 +149,12 @@ _Help them recreate their pictures._
 
 _I swear I saw the recruitment board somewhere around here..._
 
-
-
 `src/routes/characters/index.svelte`
 
 #### Goal
+
 - `Characters` should be displayed in the nav-bar.
 - When clicked it should go the URL `/characters`
- 
 
 #### Useful links
 
@@ -189,12 +184,9 @@ Add Character List
 
 - `npm run hint 7a`
 
-
 # Titan Quest 1 - Select your hero!
 
 _Our heroes stand tall in our Hall of Fame, but some of our visitors want a personal audience with some of the heroes._
-
-
 
 #### Goal
 
