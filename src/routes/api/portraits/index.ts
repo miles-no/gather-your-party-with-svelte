@@ -3,7 +3,7 @@
  *
  * It should not be necessary to familiarize oneself with this file for the workshop.
  *
- * This file contains API endpoints for getting all characters and adding new characters.
+ * This file contains API endpoints for getting all portraits.
  */
 
 import type { RequestHandler } from '@sveltejs/kit';

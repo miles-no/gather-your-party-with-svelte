@@ -26,6 +26,7 @@ export const apiFetch = async <T>(input: RequestInfo, init?: RequestInit): Promi
 		.catch(async (error) => {
 			// Sleep for a random time to simulate a bit slower API
 			await sleep(FAKE_DELAY_LIMITS);
+			console.error(error)
 			throw error;
 		});
 };
