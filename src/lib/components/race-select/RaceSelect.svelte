@@ -1,11 +1,12 @@
 <script lang="ts">
 	import { RACES } from '$lib/models/races';
 	import { Race } from '$lib/types/race';
-	export let id: string = undefined;
 
 	type RaceOption = { id: Race; name: string };
 
-	let RACE_OPTIONS: RaceOption[] = Object.entries(RACES).map(([name, id]) => ({ id, name }));
+	const RACE_OPTIONS: RaceOption[] = Object.entries(RACES).map(([name, id]) => ({ id, name }));
+
+	export let id: string = undefined;
 	export let race: Race;
 </script>
 

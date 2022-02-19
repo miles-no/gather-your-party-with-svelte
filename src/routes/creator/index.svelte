@@ -26,7 +26,7 @@
 	let race: Race;
 
 	type ClassOption = { id: Class; name: string };
-	let CLASS_OPTIONS: ClassOption[] = Object.entries(CLASSES).map(([name, id]) => ({ id, name }));
+	const CLASS_OPTIONS: ClassOption[] = Object.entries(CLASSES).map(([name, id]) => ({ id, name }));
 
 	let primaryClass: Class;
 	let isDualClass = false;
