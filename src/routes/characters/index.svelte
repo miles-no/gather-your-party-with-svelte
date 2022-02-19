@@ -1,19 +1,14 @@
 <script lang="ts">
-	import { ApiService, RESPONSE_STATUSES } from '$lib/utils/ApiService';
+	import { apiFetch } from '$lib/utils/ApiService';
 	import { Character } from '$lib/types/character';
 	import CharacterPreviewList from '$lib/components/character-preview-list/CharacterPreviewList.svelte';
 	import Loader from '$lib/components/loader/Loader.svelte';
 	import { onMount } from 'svelte';
 
-	const fetchCharacters = new ApiService<Character[]>();
-	const isLoading = fetchCharacters.isLoading;
-	const responseStatus = fetchCharacters.responseStatus;
-	const characters = fetchCharacters.response;
+	let getCharactersPromise: Promise<Character[]>;
 
 	onMount(async () => {
-		fetchCharacters.fetch('/api/characters').catch((error) => {
-			console.error(error);
-		});
+		getCharactersPromise = apiFetch<Character[]>('/api/characters');
 	});
 </script>
 
@@ -21,14 +16,14 @@
 	<title>Characters</title>
 </svelte:head>
 
-<section class="rpgui-container framed outer-container" class:loading={$isLoading}>
-	{#if $isLoading}
+<section class="rpgui-container framed outer-container">
+	{#await getCharactersPromise}
 		<Loader />
-	{:else if $responseStatus === RESPONSE_STATUSES.Success}
-		<CharacterPreviewList characters={$characters} />
-	{:else if $responseStatus === RESPONSE_STATUSES.Failure}
+	{:then characters}
+		<CharacterPreviewList {characters} />
+	{:catch error}
 		&cross; Error getting characters, see console for more info.
-	{/if}
+	{/await}
 </section>
 
 <style>
@@ -38,9 +33,5 @@
 		flex-grow: 1;
 		align-items: center;
 		gap: 1rem;
-	}
-
-	.loading {
-		justify-content: center;
 	}
 </style>

@@ -6,7 +6,7 @@
 	export const prerender = true;
 
 	export const load: Load<{ session: Session }> = async ({ session }) => ({
-		props: { readme: session.readme },
+		props: { readme: session.readme, quests: session.quests },
 	});
 </script>
 
@@ -14,8 +14,19 @@
 	import { slide } from 'svelte/transition';
 
 	export let readme: string;
+	export let quests: string;
+
+	let questsIsOpen = false;
 	let readmeIsOpen = false;
-	const toggleReadme = () => (readmeIsOpen = !readmeIsOpen);
+
+	const toggleQuests = () => {
+		questsIsOpen = !questsIsOpen;
+		readmeIsOpen = false;
+	};
+	const toggleReadme = () => {
+		readmeIsOpen = !readmeIsOpen;
+		questsIsOpen = false;
+	};
 </script>
 
 <svelte:head>
@@ -25,11 +36,19 @@
 <section>
 	<h1>Gather your party with Svelte!</h1>
 
-	<button class="toggle-readme rpgui-button" on:click={toggleReadme}>
+	<button class="toggle-markdown rpgui-button" on:click={toggleQuests}>
+		{questsIsOpen ? 'Hide' : 'Show'} Quests
+	</button>
+	<button class="toggle-markdown rpgui-button" on:click={toggleReadme}>
 		{readmeIsOpen ? 'Hide' : 'Show'} Readme
 	</button>
+	{#if questsIsOpen}
+		<div class="markdown" transition:slide={{ duration: 300 }}>
+			<SvelteMarkdown source={quests} />
+		</div>
+	{/if}
 	{#if readmeIsOpen}
-		<div class="readme" transition:slide={{ duration: 300 }}>
+		<div class="markdown" transition:slide={{ duration: 300 }}>
 			<SvelteMarkdown source={readme} />
 		</div>
 	{/if}
@@ -48,11 +67,16 @@
 		width: 100%;
 	}
 
-	.readme {
+	.toggle-markdown {
+		width: 200px;
+	}
+
+	.markdown {
 		display: inline-block;
 		max-height: 60vh;
 		overflow-y: scroll;
 		max-width: 100%;
 		padding: 0.25em;
+		width: 800px;
 	}
 </style>

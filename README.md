@@ -1,42 +1,23 @@
-# create-svelte
+# Gather your party with Svelte
 
-Everything you need to build a Svelte project, powered by [create-svelte](https://github.com/sveltejs/kit/tree/master/packages/create-svelte);
+Lorem ipsum introduction text
 
-## Creating a project
+## Getting started
 
-If you're seeing this, you've probably already done this step. Congrats!
+1. Install dependencies with `npm ci`.
 
-#### Create a new project in the current directory
+1. To start the development server and open the application: `npm run dev -- --open`
 
-```bash
-npm init svelte@next
-```
+## Workshop
 
-#### Create a new project in my-app
+All tasks are listed in file `workshop-tasks.md` located in the root of the project.
 
-```bash
-npm init svelte@next my-app
-```
+Both this file and the `workshop-tasks` file can be viewed on the [homepage](http://localhost:3000).
 
-> Note: the `@next` is temporary
+## Other
 
-## Developing
+Powered by [create-svelte](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+### Building
 
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-Before creating a production version of your app, install an [adapter](https://kit.svelte.dev/docs#adapters) for your target environment. Then:
-
-```bash
-npm run build
-```
-
-> You can preview the built app with `npm run preview`, regardless of whether you installed an adapter. This should _not_ be used to serve your app in production.
+To build the application run: `npm run build`

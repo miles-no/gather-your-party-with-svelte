@@ -7,19 +7,15 @@
 	import type { Class } from '$lib/types/class';
 	import type { Race } from '$lib/types/race';
 	import type { Skill } from '$lib/types/skill';
-	import { ApiService, RESPONSE_STATUSES } from '$lib/utils/ApiService';
 	import AttributeOverview from '$lib/components/attribute-overview/AttributeOverview.svelte';
 	import { AttributeAllocation } from '$lib/types/attribute-allocation';
 	import type { UpsertCharacterRequest } from '$lib/types/upsert-character-request';
 	import Stats from '$lib/components/stats/Stats.svelte';
 	import RaceSelect from '$lib/components/race-select/RaceSelect.svelte';
+	import { apiFetch } from '$lib/utils/ApiService';
 
-	const saveCharacterApi = new ApiService<Character>();
-	const {
-		isLoading: isSavingCharacter,
-		responseStatus: saveCharacterStatus,
-		response: savedCharacterResponse,
-	} = saveCharacterApi;
+	let saveCharacterPromise: Promise<Character>;
+	let isSavingCharacter = false;
 
 	let name = '';
 
@@ -44,6 +40,7 @@
 
 	// TODO Should we validate inputs in the frontend as well as the backend?
 	const handleSubmit = () => {
+		isSavingCharacter = true;
 		const character: UpsertCharacterRequest = {
 			name,
 			race,
@@ -53,18 +50,12 @@
 			attributes,
 			skills,
 		};
-		saveCharacterApi
-			.fetch(
-				'/api/characters',
-				{
-					method: 'POST',
-					body: JSON.stringify(character),
-				},
-				{ clearAfter: 5000 },
-			)
-			.catch((error) => {
-				console.error(error);
-			});
+		saveCharacterPromise = apiFetch<Character>('/api/characters', {
+			method: 'POST',
+			body: JSON.stringify(character),
+		}).finally(() => {
+			isSavingCharacter = false;
+		});
 	};
 </script>
 
@@ -143,15 +134,17 @@
 		</label>
 	</div>
 
-	<Button variant="golden" disabled={$isSavingCharacter} on:click={handleSubmit}
-		>{$isSavingCharacter ? 'Saving character...' : 'Save character'}</Button
-	>
+	<Button variant="golden" disabled={isSavingCharacter} on:click={handleSubmit}>
+		{isSavingCharacter ? 'Saving character...' : 'Save character'}
+	</Button>
 
-	{#if $saveCharacterStatus === RESPONSE_STATUSES.Success}
-		&check; Character "{$savedCharacterResponse.name}" saved.
-	{:else if $saveCharacterStatus === RESPONSE_STATUSES.Failure}
+	{#await saveCharacterPromise then savedCharacter}
+		{#if savedCharacter}
+			&check; Character "{savedCharacter.name}" saved.
+		{/if}
+	{:catch error}
 		&cross; Error saving character, see console for more info.
-	{/if}
+	{/await}
 </section>
 
 <style>
