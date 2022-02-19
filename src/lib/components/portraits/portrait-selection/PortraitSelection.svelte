@@ -22,7 +22,7 @@
 {:then portraits}
 	<div class="portraits">
 		{#each portraits ?? [] as portrait (portrait)}
-			{#await apiFetch('api/portraits/' + portrait)}
+			{#await apiFetch(`api/portraits/${portrait}`)}
 				<PortraitPreview isLoading clickable on:click={handleSelect} />
 			{:then payload}
 				<PortraitPreview value={payload.url} clickable on:click={handleSelect} />
