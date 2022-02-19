@@ -8,7 +8,7 @@
 
 	let availableSkillsCount = MAX_SKILLS;
 
-	const formatskill = (skill: Skill) =>
+	const formatSkill = (skill: Skill) =>
 		Object.entries(SKILLS)
 			.find(([, value]) => value === skill)[0]
 			.replace(/([a-z])([A-Z])/g, '$1 $2');
@@ -40,7 +40,7 @@
 		<div class="list">
 			{#each value as skill (skill)}
 				<button class="rpgui-button rpgui-button--small" on:click={() => handleRemoveSkill(skill)}
-					>{formatskill(skill)} &gt;</button
+					>{formatSkill(skill)} &gt;</button
 				>
 			{/each}
 		</div>
@@ -56,7 +56,7 @@
 				<button
 					class="rpgui-button rpgui-button--small"
 					disabled={availableSkillsCount === 0}
-					on:click={() => handleAddSkill(skill)}>&lt; {formatskill(skill)}</button
+					on:click={() => handleAddSkill(skill)}>&lt; {formatSkill(skill)}</button
 				>
 			{/each}
 		</div>
