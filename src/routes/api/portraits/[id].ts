@@ -12,5 +12,6 @@ import type { RequestHandler } from '@sveltejs/kit';
 export const get: RequestHandler = async (request) => {
 	const lookupId = request.params.id;
 	const path = `/portraits/${lookupId}`;
-	return { body: { url: path } };
+
+	return { body: { portrait: path } };
 };

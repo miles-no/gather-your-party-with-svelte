@@ -1,4 +1,12 @@
 /***
+ * NOT PART OF WORKSHOP
+ *
+ * It should not be necessary to familiarize oneself with this file for the workshop.
+ *
+ * This file contains logic for the RPGUI theme styles of the project.
+ */
+
+/***
  * Credit goes to the author of this UI library, Ronen Ness.
  * https://github.com/RonenNess/RPGUI
  * The sourcecode has been altered slightly from the original.

@@ -160,10 +160,32 @@ animate `pointsRemaining`.
 
 #### Lore
 
-Someone has vandalized our hall of fame, and all our heroes pictures were stolen,
-Help them recreate their pictures.
+Someone has vandalized our hall of fame, and all our heroes' pictures were stolen! Help them recreate their pictures.
 
 #### Intro
+
+Currently, the `PortraitPicker` component shows a modal where we should be able to pick a portrait for our character,
+but nothing shows up.
+
+To get a portrait we first have to fetch a list of portrait IDs from our server. We then have to fetch each portrait to
+show it. Now, this is a lot of asynchronous logic, and we'll be dealing with
+[Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise).
+
+Promises might seem scary, but luckily Svelte has a special construct for dealing with them, _directly in our markup_:
+[Await Blocks](https://svelte.dev/tutorial/await-blocks).
+
+Short explanation of promises: When you "fire" a promise with a target URL, it goes through a couple of states:
+
+1. First it's in a loading state while it resolves the URL.
+2. Then it either:
+   1. Resolves with a value.
+   2. Rejects with an error.
+
+In this task, you need to deal with two different promises, one which fetches all the portrait IDs, and another which
+fires based on the resolved value of the first promise, and use await blocks to handle this in your markup.
+
+To help you with dealing with the different states of the promises, the `Loader` and `PortraitPreview` components will
+be essential.
 
 #### Files
 
@@ -171,15 +193,29 @@ Help them recreate their pictures.
 
 #### Goal
 
--
+- Use an await block to show three different things, based on the state of the `getPortraitsPromise` promise:
+  - Loading: A `Loader` component.
+  - Resolved: For now, just show the IDs that were fetched, see next goal for improving this.
+  - Rejected: An error message.
+- When you have a working await block for the list of portrait IDs, use an
+  [each block](https://svelte.dev/tutorial/each-blocks) to iterate over each of the IDs and fetch the portrait itself.
+  - Note: The portrait is located at the URL `api/portraits/{ID}`.
+- Inside the each block, use another await block to render the different states of the portrait promises:
+  - Loading: A `PortraitPreview` where the `isLoading` prop is set to `true`.
+  - Resolved: A `PortraitPreview` with the value prop set to the `portrait` property on the resolved value.
+  - Rejected: An error message.
 
 #### Links
 
 - [Await Blocks](https://svelte.dev/tutorial/await-blocks)
+- [Each Blocks](https://svelte.dev/tutorial/each-blocks)
+- [Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 
 #### Hints
 
 - `npm run hint 6a`
+- `npm run hint 6b`
+- `npm run hint 6c`
 
 # Quest 7 - Recruitment Board
 
