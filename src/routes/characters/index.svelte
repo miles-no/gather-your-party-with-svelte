@@ -1,13 +1,13 @@
 <script lang="ts">
-	import { apiFetch } from '$lib/utils/ApiService';
+	import { apiFetch } from '$lib/utils/api-fetch';
 	import { Character } from '$lib/types/character';
 	import CharacterPreviewList from '$lib/components/character-preview-list/CharacterPreviewList.svelte';
 	import Loader from '$lib/components/loader/Loader.svelte';
 	import { onMount } from 'svelte';
 
-	let getCharactersPromise: Promise<Character[]>;
+	let getCharactersPromise: Promise<Character[]> = Promise.resolve([]);
 
-	onMount(async () => {
+	onMount(() => {
 		getCharactersPromise = apiFetch<Character[]>('/api/characters');
 	});
 </script>
@@ -16,7 +16,7 @@
 	<title>Characters</title>
 </svelte:head>
 
-<section class="rpgui-container framed outer-container">
+<section class="rpgui-container framed container">
 	{#await getCharactersPromise}
 		<Loader />
 	{:then characters}
@@ -27,11 +27,8 @@
 </section>
 
 <style>
-	.outer-container {
+	.container {
 		display: flex;
-		flex-direction: column;
 		flex-grow: 1;
-		align-items: center;
-		gap: 1rem;
 	}
 </style>

@@ -12,7 +12,7 @@
 	import type { UpsertCharacterRequest } from '$lib/types/upsert-character-request';
 	import Stats from '$lib/components/stats/Stats.svelte';
 	import RaceSelect from '$lib/components/race-select/RaceSelect.svelte';
-	import { apiFetch } from '$lib/utils/ApiService';
+	import { apiFetch } from '$lib/utils/api-fetch';
 
 	let saveCharacterPromise: Promise<Character>;
 	let isSavingCharacter = false;

@@ -6,7 +6,7 @@
 </script>
 
 <div class="container">
-	{#each characters ?? [] as character}
+	{#each characters as character (character.id)}
 		<CharacterPreview {character} />
 	{/each}
 </div>
@@ -15,7 +15,7 @@
 	.container {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-		gap: 10px;
+		gap: 1rem;
 		width: 100%;
 		height: 100%;
 	}

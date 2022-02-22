@@ -5,7 +5,10 @@
 	export let character: Character;
 
 	let hovered = false;
-	const toggleHover = () => (hovered = !hovered);
+
+	const toggleHover = () => {
+		hovered = !hovered;
+	};
 </script>
 
 <a

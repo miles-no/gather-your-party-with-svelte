@@ -11,8 +11,8 @@ import { sleep } from '$lib/utils/sleep';
 
 const FAKE_DELAY_LIMITS = { min: 1, max: 3 };
 
-export const apiFetch = async <T>(input: RequestInfo, init?: RequestInit): Promise<T> => {
-	return fetch(input, init)
+export const apiFetch = async <T>(input: RequestInfo, init?: RequestInit): Promise<T> =>
+	fetch(input, init)
 		.then(async (response) => {
 			// Sleep for a random time to simulate a bit slower API
 			await sleep(FAKE_DELAY_LIMITS);
@@ -26,7 +26,8 @@ export const apiFetch = async <T>(input: RequestInfo, init?: RequestInit): Promi
 		.catch(async (error) => {
 			// Sleep for a random time to simulate a bit slower API
 			await sleep(FAKE_DELAY_LIMITS);
+
 			console.error(error);
+
 			throw error;
 		});
-};
