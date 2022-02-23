@@ -6,7 +6,11 @@
 
 		<div class="separator">|</div>
 
-		<a href="https://svelte.dev/tutorial/basics" target="_blank">Svelte Docs</a>
+		<a href="https://svelte.dev/tutorial/basics" target="_blank">Svelte Tutorial</a>
+
+		<div class="separator">|</div>
+
+		<a href="https://svelte.dev/docs" target="_blank">Svelte Docs</a>
 
 		<div class="separator">|</div>
 
