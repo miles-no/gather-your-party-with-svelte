@@ -1,15 +1,15 @@
 <script lang="ts">
 	import Loader from '$lib/components/loader/Loader.svelte';
 	import PortraitPreview from '$lib/components/portraits/portrait-preview/PortraitPreview.svelte';
-	import { apiFetch } from '$lib/utils/ApiService';
+	import { apiFetch } from '$lib/utils/api-fetch';
 	import { createEventDispatcher, onMount } from 'svelte';
 
 	const dispatch = createEventDispatcher();
 
-	let getPortraitsPromise: Promise<string> = undefined;
+	let getPortraitsPromise: Promise<string[]> = Promise.resolve([]);
 
 	onMount(() => {
-		getPortraitsPromise = apiFetch<string>('/api/portraits');
+		getPortraitsPromise = apiFetch<string[]>('/api/portraits');
 	});
 
 	const handleSelect = ({ detail: { portrait } }) => {
@@ -21,18 +21,18 @@
 	<Loader />
 {:then portraits}
 	<div class="portraits">
-		{#each portraits ?? [] as portrait (portrait)}
+		{#each portraits as portrait (portrait)}
 			{#await apiFetch(`api/portraits/${portrait}`)}
-				<PortraitPreview isLoading clickable on:click={handleSelect} />
+				<PortraitPreview isLoading />
 			{:then payload}
-				<PortraitPreview value={payload.url} clickable on:click={handleSelect} />
+				<PortraitPreview value={payload.portrait} clickable on:click={handleSelect} />
 			{:catch error}
-				<p>Could not fetch portrait</p>
+				<p>Unable to fetch portrait {portrait}.</p>
 			{/await}
 		{/each}
 	</div>
 {:catch error}
-	<p>Unable to fetch portraits.</p>
+	<p>Unable to fetch list of portraits.</p>
 {/await}
 
 <style>

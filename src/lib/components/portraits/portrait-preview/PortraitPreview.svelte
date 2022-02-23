@@ -28,7 +28,7 @@
 		{#if isLoading}
 			<div class="portrait"><Loader /></div>
 		{:else}
-			<img class="portrait active" src={value || noPerson} alt="Portrait" />
+			<img class="portrait active" src={value || noPerson} alt="Clickable portrait preview" />
 		{/if}
 	</button>
 {:else}
@@ -36,7 +36,7 @@
 		{#if isLoading}
 			<div class="portrait"><Loader /></div>
 		{:else}
-			<img class="portrait active" src={value || noPerson} alt="Portrait" />
+			<img class="portrait active" src={value || noPerson} alt="Portrait preview" />
 		{/if}
 	</div>
 {/if}
