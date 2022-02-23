@@ -298,9 +298,7 @@ more information about the characters if you'd like.
 
 - `npm run hint 8a`
 
-# Titan Quest 1 - Select your hero!
-
-[comment]: <> (TODO Finish this quest)
+# Titan Quest 1 - Select your Hero!
 
 #### Lore
 
@@ -308,11 +306,38 @@ Our heroes stand tall in our Hall of Fame, but some of our visitors want a perso
 
 #### Intro
 
+After implementing the Recruitment Board in Quest 7, we're able to view a quick preview of all the heroes. But what if
+we wanted to view _all_ the information about a hero as well? To accomplish this, you should create a new page for
+displaying a character.
+
+To accomplish this, a SvelteKit route with a slug/parameter to reference the character ID is recommended. To access this
+parameter, SvelteKit's [load](https://kit.svelte.dev/docs#loading) function can be used in a
+`<script context="module" lang="ts">` tag in your component.
+
+The character page should be accessed by clicking one of the character previews in the Characters page. This link is
+already set up in the `CharacterPreview` component.
+
 #### Files
+
+- `src/lib/components/character-preview/CharacterPreview.svelte`
+- `src/routes/characters/[uid].svelte`
 
 #### Goal
 
+- Add a Character page component.
+- In a `<script context="module" lang="ts">` tag in your component, access the `uid` parameter in a `load` function and
+  expose it as a prop to the normal `<script>` tag.
+- In your normal `<script>` tag, fire a call to the API to get the character, handling loading states of the promise.
+- Display all the information about the character on the page, using any existing components you find relevant, and
+  implementing your own display of information about the character and your own CSS styles to achieve this.
+
 #### Links
+
+- [load](https://kit.svelte.dev/docs#loading)
+- [Routing: Pages](https://kit.svelte.dev/docs#routing-pages)
+- [onMount](https://svelte.dev/docs#run-time-svelte-onmount)
+- [svelte:head](https://svelte.dev/docs#template-syntax-svelte-head)
+- [Await Blocks](https://svelte.dev/tutorial/await-blocks)
 
 #### Hints
 
