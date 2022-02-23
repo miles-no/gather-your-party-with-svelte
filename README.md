@@ -41,5 +41,5 @@ To build the application run: `npm run build`
 - [Svelte Workshop Repository](https://github.com/miles-no/booster2022-gather-your-party-with-svelte)
 - [Svelte Workshop Presentation](https://github.com/miles-no/booster2022-gather-your-party-with-svelte)
 - [Svelte Tutorial](https://svelte.dev/tutorial/basics)
-- [Svelte Docs](https://svelte.dev/docs) 
+- [Svelte Docs](https://svelte.dev/docs)
 - [SvelteKit Docs](https://kit.svelte.dev/docs)
