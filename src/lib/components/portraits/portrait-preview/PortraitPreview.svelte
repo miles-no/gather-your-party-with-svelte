@@ -42,7 +42,7 @@
 {/if}
 
 <style>
-	.container {
+	.rpgui-container.framed.container {
 		display: flex;
 		justify-content: center;
 		height: 240px;

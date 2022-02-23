@@ -79,14 +79,14 @@ one value whenever any referenced values change.
 
 #### Goal
 
-- 1 point in **strength** should increase the **minimum damage** with **2**.
-- 1 point in **strength** should increase the **maximum damage** with **3**.
-- 1 point in **dexterity** should increase the **block chance** with **0.5**.
-- 1 point in **constitution** should increase the **hitpoints** with **5**.
-- 1 point in **wisdom** should increase the **mana** with **10**.
-- 1 point in **intelligence** should increase the **spellpower** with **2.5**.
-- When the **charisma** is **< 12** speech should be **Timid**, **> 12** speech should be **Well Spoken**, **> 16**
-  speech should be **Charming**.
+- strength increases minimum damage with 2.
+- strength increases maximum damage with 3.
+- dexterity increases block chance with 0.5.
+- constitution increases hitpoints with 5.
+- wisdom increases mana with 10.
+- intelligence increases spellpower with 2.5.
+- When charisma is <12 speech should be Timid, >12 speech should be Well Spoken, >16
+  speech should be Charming.
 
 #### Links
 
@@ -110,7 +110,7 @@ We want an animation to occur when selecting and removing skills.
 
 #### Files
 
-`src/lib/components/skill-select/SkillSelect.svelte`
+- `src/lib/components/skill-select/SkillSelect.svelte`
 
 #### Goal
 

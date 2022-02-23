@@ -6,7 +6,7 @@
 	export const prerender = true;
 
 	export const load: Load<{ session: Session }> = async ({ session }) => ({
-		props: { readme: session.readme, quests: session.quests },
+		props: { readme: session.readme },
 	});
 </script>
 
@@ -14,18 +14,11 @@
 	import { slide } from 'svelte/transition';
 
 	export let readme: string;
-	export let quests: string;
 
-	let questsIsOpen = false;
 	let readmeIsOpen = false;
 
-	const toggleQuests = () => {
-		questsIsOpen = !questsIsOpen;
-		readmeIsOpen = false;
-	};
 	const toggleReadme = () => {
 		readmeIsOpen = !readmeIsOpen;
-		questsIsOpen = false;
 	};
 </script>
 
@@ -36,17 +29,9 @@
 <section>
 	<h1>Gather your party with Svelte!</h1>
 
-	<button class="toggle-markdown rpgui-button" on:click={toggleQuests}>
-		{questsIsOpen ? 'Hide' : 'Show'} Quests
-	</button>
 	<button class="toggle-markdown rpgui-button" on:click={toggleReadme}>
 		{readmeIsOpen ? 'Hide' : 'Show'} Readme
 	</button>
-	{#if questsIsOpen}
-		<div class="markdown" transition:slide={{ duration: 300 }}>
-			<SvelteMarkdown source={quests} />
-		</div>
-	{/if}
 	{#if readmeIsOpen}
 		<div class="markdown" transition:slide={{ duration: 300 }}>
 			<SvelteMarkdown source={readme} />

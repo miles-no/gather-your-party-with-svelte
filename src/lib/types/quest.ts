@@ -1,10 +1,10 @@
 export type Quest = {
-	id: number;
+	id: string;
 	title: string;
 	lore: string;
 	intro: string;
 	files: string;
-	goals: string;
+	goal: string;
 	links: string;
 	hints: string;
 };
