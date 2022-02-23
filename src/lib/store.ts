@@ -1,13 +1,13 @@
-import { browser } from '$app/env';
-import type { Writable } from 'svelte/store';
-import { writable, get } from 'svelte/store';
-import type { QuestLogProgress } from '$lib/types/quest-log-progress';
-
 /***
  * NOT PART OF WORKSHOP
  *
  * It should not be necessary to familiarize oneself with this file for the workshop.
  */
+
+import { browser } from '$app/env';
+import type { Writable } from 'svelte/store';
+import { writable, get } from 'svelte/store';
+import type { QuestLogProgress } from '$lib/types/quest-log-progress';
 
 const storage = <T>(key: string, initValue: T): Writable<T> => {
 	const store = writable(initValue);
@@ -25,7 +25,6 @@ const storage = <T>(key: string, initValue: T): Writable<T> => {
 	});
 
 	window.addEventListener('storage', () => {
-		console.log('strr');
 		const storedValueStr = localStorage.getItem(key);
 		if (storedValueStr == null) return;
 
