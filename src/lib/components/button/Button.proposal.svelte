@@ -1,6 +1,6 @@
 <script lang="ts">
 	/**
-	 * Quest 1 - The Mighty Button
+	 * Quest 2 - The Mighty Button
 	 */
 	type ButtonVariant = 'golden';
 

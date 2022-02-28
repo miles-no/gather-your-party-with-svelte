@@ -27,7 +27,7 @@
 	});
 
 	let displayedPointsRemaining = spring(pointsRemaining, {
-		stiffness: 0.1,
+		stiffness: 0.01,
 	});
 
 	const subtractPoint = (key: Attribute) => {

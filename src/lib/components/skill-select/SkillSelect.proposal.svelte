@@ -13,11 +13,6 @@
 			.find(([, value]) => value === skill)[0]
 			.replace(/([a-z])([A-Z])/g, '$1 $2');
 
-	/**
-	 * Quest 3 - Skills to desire
-	 * @param skill
-	 */
-
 	const handleAddSkill = (skill: Skill) => {
 		if (availableSkillsCount === 0) {
 			return;
@@ -31,6 +26,10 @@
 		value = value.filter((s) => s !== skill);
 		availableSkillsCount++;
 	};
+
+	// Quest 4 - Skills to desire: Enter Typescript here START
+
+	// Quest 4 - Skills to desire: Enter Typescript here END
 </script>
 
 <div {id} class="container">
@@ -39,9 +38,11 @@
 
 		<div class="list">
 			{#each value as skill (skill)}
+				<!-- Quest 4 - Skills to desire: Enter HTML markup here START -->
 				<button class="rpgui-button rpgui-button--small" on:click={() => handleRemoveSkill(skill)}
 					>{formatSkill(skill)} &gt;</button
 				>
+				<!-- Quest 4 - Skills to desire: Enter HTML markup here END -->
 			{/each}
 		</div>
 	</div>
@@ -53,11 +54,13 @@
 
 		<div class="list">
 			{#each Object.values(SKILLS).filter((skill) => !value.includes(skill)) as skill (skill)}
+				<!-- Quest 4 - Skills to desire: Enter HTML markup here START -->
 				<button
 					class="rpgui-button rpgui-button--small"
 					disabled={availableSkillsCount === 0}
 					on:click={() => handleAddSkill(skill)}>&lt; {formatSkill(skill)}</button
 				>
+				<!-- Quest 4 - Skills to desire: Enter HTML markup here END -->
 			{/each}
 		</div>
 	</div>

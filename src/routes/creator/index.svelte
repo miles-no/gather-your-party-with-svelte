@@ -13,6 +13,10 @@
 	import Stats from '$lib/components/stats/Stats.svelte';
 	import RaceSelect from '$lib/components/race-select/RaceSelect.svelte';
 	import { apiFetch } from '$lib/utils/api-fetch';
+	import CharacterCreatorDebug from '$lib/components/character-creator-debug/CharacterCreatorDebug.svelte';
+
+	// Toggle this on to display the current character data JSON at the bottom of the character creation page.
+	const SHOW_CHARACTER_RAW_DATA = true;
 
 	let saveCharacterPromise: Promise<Character>;
 	let isSavingCharacter = false;
@@ -38,18 +42,20 @@
 
 	let skills: Skill[];
 
+	$: character = {
+		name,
+		race,
+		primaryClass,
+		secondaryClass,
+		portrait,
+		attributes,
+		skills,
+	} as UpsertCharacterRequest;
+
 	// TODO Should we validate inputs in the frontend as well as the backend?
 	const handleSubmit = () => {
 		isSavingCharacter = true;
-		const character: UpsertCharacterRequest = {
-			name,
-			race,
-			primaryClass,
-			secondaryClass,
-			portrait,
-			attributes,
-			skills,
-		};
+
 		saveCharacterPromise = apiFetch<Character>('/api/characters', {
 			method: 'POST',
 			body: JSON.stringify(character),
@@ -70,10 +76,12 @@
 			<input class="input-content" bind:value={name} />
 		</label>
 
+		<!-- Quest 1 - Choose your Origin: Enter HTML markup here START -->
 		<label class="input" for="race">
 			<span>Race</span>
-			<RaceSelect id="race" bind:race />
+			<RaceSelect id="race" />
 		</label>
+		<!-- Quest 1 - Choose your Origin: Enter HTML markup here END -->
 
 		<label class="input">
 			<span>Class</span>
@@ -145,6 +153,8 @@
 	{:catch error}
 		&cross; Error saving character, see console for more info.
 	{/await}
+
+	<CharacterCreatorDebug display={SHOW_CHARACTER_RAW_DATA} {character} />
 </section>
 
 <style>

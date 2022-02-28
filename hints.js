@@ -1,15 +1,50 @@
 import * as cowsay from 'cowsay';
 
 const hints = {
-	'1a': 'Hint number 1 will help you!',
+	'1a': `\
+In the file \`src/routes/creator/index.svelte\` 
+you can set \`SHOW_CHARACTER_RAW_DATA\` to \`true\`
+to view the character data at the bottom of the page.`,
+	'1b': '\
+Take a look at the referenced links for examples.',
+	'1c': '\
+Have you tried exporting `let race` in RaceSelect?',
+
 	'2a': `\
-Hint number 2 will not help you so much, but it is longer and a lot cooler 🆒
-It also includes line breaks which are
-Really
-cool
-Here is a link
-https://www.youtube.com/watch?v=dQw4w9WgXcQ\
+If you are looking to expose props, you should explore https://svelte.dev/tutorial/declaring-props.
+It should be similar to what you did in quest 1.
 `,
+	'2b': `\
+There are two ways you can expose events from a component.
+https://svelte.dev/tutorial/event-forwarding & https://svelte.dev/tutorial/dom-event-forwarding
+Explore both ways, both can help you solve this quest.
+`,
+
+	'3a': `\
+The parent component is already passing attributes, 
+but Stats is not receiving them yet, as they are not exposed.`,
+	'3b': `\
+You can assign multiple reactive bindings which each rely on 
+one prop of the object \`attributes\` each .`,
+	'3c': `\
+The syntax might seem wierd, but it is valid javascript. \`$: myVar = attributes.someProp;\``,
+
+	'4a': `\
+Look at crossfade, and use the send and receive methods to transition skills from list to the other.
+You can reuse the same transition for both buttons.`,
+	'4b': `\
+Add an animation, for example flip to make the buttons disappearing smoother.
+This can also be added and reused on both buttons`,
+
+	'5a': `\
+Start by getting the randomize function to work correctly.
+Use a for or while loop to simulate a random selection.`,
+	'5b': `\
+Instead of replacing the current values/object, 
+create a new springed object which you can set values for`,
+	'5c': `\
+Not sure if it is working? Try setting the stiffness to 0.02 to make it clearer,
+you should see the animation clearly now. Play around with the settings!`,
 
 	'6a': `\
 The first promise for fetching all the portrait IDs is already being fired when
@@ -56,12 +91,27 @@ is over can be a way to implement this.`,
 
 const args = process.argv.slice(2);
 
-const hintArg = args[0];
+const hintArg = args[0]?.toLowerCase();
+
+const isValidQuest =
+	(hintArg?.length === 2 &&
+		(hintArg?.startsWith('1') ||
+			hintArg?.startsWith('2') ||
+			hintArg?.startsWith('3') ||
+			hintArg?.startsWith('4') ||
+			hintArg?.startsWith('5') ||
+			hintArg?.startsWith('6') ||
+			hintArg?.startsWith('7'))) ||
+	(hintArg?.length === 3 && (hintArg?.startsWith('t1') || hintArg?.startsWith('t2')));
 
 if (hintArg === undefined) {
 	console.error('ERROR: Hint id must be specified. Example `npm run hint 1a`.');
+} else if (!isValidQuest) {
+	console.log(`ERROR: Invalid quest. Example \`npm run hint 1a\`.`);
 } else if (!hints[hintArg]) {
-	console.error(`ERROR: Could not find hint ${hintArg}. Example \`npm run hint 1a\`.`);
+	console.error(
+		`ERROR: There are no more hints for this quest, try looking another hint or ask for help 😊`,
+	);
 } else {
 	const output = cowsay.say({ text: hints[hintArg] });
 	console.log(output);

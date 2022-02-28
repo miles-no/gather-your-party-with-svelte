@@ -73,7 +73,7 @@
 		margin-top: 1.5rem;
 	}
 
-	h2 {
+	.quest h2 {
 		text-align: left;
 	}
 
