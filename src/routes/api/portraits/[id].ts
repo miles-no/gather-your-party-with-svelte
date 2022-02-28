@@ -9,8 +9,8 @@
 import type { RequestHandler } from '@sveltejs/kit';
 
 // GET /api/portraits/[id]
-export const get: RequestHandler = async (request) => {
-	const lookupId = request.params.id;
+export const get: RequestHandler = async ({ params }) => {
+	const lookupId = params.id;
 	const path = `/portraits/${lookupId}`;
 
 	return { body: { portrait: path } };

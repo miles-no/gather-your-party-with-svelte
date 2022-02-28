@@ -8,8 +8,8 @@
 
 	<nav>
 		<ul class="rpgui-container framed-golden-2">
-			<li class:active={$page.path === '/'}><a sveltekit:prefetch href="/">Home</a></li>
-			<li class:active={$page.path === '/creator'}>
+			<li class:active={$page.url.pathname === '/'}><a sveltekit:prefetch href="/">Home</a></li>
+			<li class:active={$page.url.pathname === '/creator'}>
 				<a sveltekit:prefetch href="/creator">Character Creator</a>
 			</li>
 			<!-- Quest 7 - Recruitment Board: Enter HTML markup here START -->
@@ -60,7 +60,7 @@
 		transition: color 0.1s linear;
 	}
 
-	a:hover {
+	nav a:hover {
 		color: var(--accent-color);
 	}
 </style>
