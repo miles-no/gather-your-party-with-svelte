@@ -8,11 +8,11 @@
 
 	<nav>
 		<ul class="rpgui-container framed-golden-2">
-			<li class:active={$page.path === '/'}><a sveltekit:prefetch href="/">Home</a></li>
-			<li class:active={$page.path === '/creator'}>
+			<li class:active={$page.url.pathname === '/'}><a sveltekit:prefetch href="/">Home</a></li>
+			<li class:active={$page.url.pathname === '/creator'}>
 				<a sveltekit:prefetch href="/creator">Character Creator</a>
 			</li>
-			<li class:active={$page.path === '/characters'}>
+			<li class:active={$page.url.pathname === '/characters'}>
 				<a sveltekit:prefetch href="/characters">Characters</a>
 			</li>
 		</ul>
