@@ -1,7 +1,4 @@
 <script lang="ts">
-	/**
-	 * Quest 1 - Choose your origin
-	 */
 	import { RACES } from '$lib/models/races';
 	import { Race } from '$lib/types/race';
 
@@ -10,7 +7,7 @@
 	const RACE_OPTIONS: RaceOption[] = Object.entries(RACES).map(([name, id]) => ({ id, name }));
 
 	export let id: string = undefined;
-	let race: Race = undefined;
+	export let race: Race = undefined;
 </script>
 
 <select {id} class="rpgui-dropdown-imp input-content" bind:value={race}>

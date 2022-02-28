@@ -17,11 +17,29 @@
 	};
 </script>
 
-<!-- Quest 6 - Beauties and the Beasts: Enter HTML markup here START -->
+{#await getPortraitsPromise}
+	<Loader />
+{:then portraits}
+	<div class="portraits">
+		{#each portraits as portrait (portrait)}
+			{#await apiFetch(`api/portraits/${portrait}`)}
+				<PortraitPreview isLoading />
+			{:then payload}
+				<PortraitPreview value={payload.portrait} clickable on:click={handleSelect} />
+			{:catch error}
+				<p>Unable to fetch portrait {portrait}.</p>
+			{/await}
+		{/each}
+	</div>
+{:catch error}
+	<p>Unable to fetch list of portraits.</p>
+{/await}
 
-<!-- Quest 6 - Beauties and the Beasts: Enter HTML markup here END -->
 <style>
-	/* Quest 6 - Beauties and the Beasts: Enter CSS styles here START */
-
-	/* Quest 6 - Beauties and the Beasts: Enter CSS styles here END */
+	.portraits {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1rem;
+		justify-content: center;
+	}
 </style>

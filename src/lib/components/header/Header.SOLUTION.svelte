@@ -12,9 +12,9 @@
 			<li class:active={$page.path === '/creator'}>
 				<a sveltekit:prefetch href="/creator">Character Creator</a>
 			</li>
-			<!-- Quest 7 - Recruitment Board: Enter HTML markup here START -->
-
-			<!-- Quest 7 - Recruitment Board: Enter HTML markup here END -->
+			<li class:active={$page.path === '/characters'}>
+				<a sveltekit:prefetch href="/characters">Characters</a>
+			</li>
 		</ul>
 	</nav>
 </header>
@@ -60,7 +60,7 @@
 		transition: color 0.1s linear;
 	}
 
-	a:hover {
+	nav a:hover {
 		color: var(--accent-color);
 	}
 </style>

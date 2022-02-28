@@ -16,7 +16,7 @@
 	import CharacterCreatorDebug from '$lib/components/character-creator-debug/CharacterCreatorDebug.svelte';
 
 	// Toggle this on to display the current character data JSON at the bottom of the character creation page.
-	const SHOW_CHARACTER_RAW_DATA = true;
+	const SHOW_CHARACTER_RAW_DATA = false;
 
 	let saveCharacterPromise: Promise<Character>;
 	let isSavingCharacter = false;

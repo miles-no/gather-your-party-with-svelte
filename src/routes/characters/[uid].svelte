@@ -4,10 +4,15 @@
 	interface LoadProps {
 		uid: string;
 	}
+	type LoadFunction = Load<LoadInput<LoadProps>, LoadOutput<LoadProps>>;
 
-	export const load: Load<LoadInput<LoadProps>, LoadOutput<LoadProps>> = async ({
-		page: { params },
-	}) => ({ props: { uid: params.uid } });
+	/**
+	 * Titan Quest 1 - Select your Hero: Implement load function here START
+	 */
+	export const load: LoadFunction = () => {};
+	/**
+	 * Titan Quest 1 - Select your Hero: Implement load function here END
+	 */
 </script>
 
 <script lang="ts">
@@ -18,30 +23,25 @@
 
 	export let uid: string = undefined;
 
-	let getCharacterPromise: Promise<Character> = new Promise(() => {});
+	/**
+	 * Titan Quest 1 - Select your Hero: Implement fetching of character here START
+	 */
 
-	onMount(() => {
-		getCharacterPromise = apiFetch<Character>(`/api/characters/${uid}`);
-	});
+	/**
+	 * Titan Quest 1 - Select your Hero: Implement fetching of character here END
+	 */
 </script>
 
-<svelte:head>
-	{#await getCharacterPromise}
-		<title>Loading character...</title>
-	{:then character}
-		<title>{character.name}</title>
-	{:catch error}
-		<title>Not found character</title>
-	{/await}
-</svelte:head>
+<!-- Titan Quest 1 - Select your Hero: Replace HTML markup here START -->
+<p>You've discovered a Titan Quest!</p>
 
-{#await getCharacterPromise}
-	<Loader />
-{:then character}
-	<pre><code>{JSON.stringify(character, undefined, 2)}</code></pre>
-{:catch error}
-	<p>Could not fetch character.</p>
-{/await}
+<p>This page has been rampaged by the Terrible Odious Demon Overlord and we need your help!</p>
+<p>We were supposed to see information about our heroes here, but it has been stolen from us.</p>
+<p>Can you help?</p>
 
+<!-- Titan Quest 1 - Select your Hero: Replace HTML markup here END -->
 <style>
+	/* Titan Quest 1 - Select your Hero: Enter CSS styles here START */
+
+	/* Titan Quest 1 - Select your Hero: Enter CSS styles here END */
 </style>

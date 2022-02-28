@@ -1,12 +1,9 @@
 <script lang="ts">
-	/**
-	 * Quest 2 - The Mighty Button
-	 */
 	type ButtonVariant = 'golden';
 
-	let variant: ButtonVariant = undefined;
-	let small: boolean = undefined;
-	let disabled: boolean = undefined;
+	export let variant: ButtonVariant = undefined;
+	export let small: boolean = undefined;
+	export let disabled: boolean = undefined;
 </script>
 
 <button
@@ -14,4 +11,5 @@
 	class:golden={variant === 'golden'}
 	class:rpgui-button--small={small}
 	{disabled}
-/>
+	on:click><slot /></button
+>

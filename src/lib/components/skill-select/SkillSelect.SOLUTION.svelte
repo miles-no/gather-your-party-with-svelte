@@ -1,6 +1,10 @@
 <script lang="ts">
 	import { SKILLS } from '$lib/models/skills';
 	import type { Skill } from '$lib/types/skill';
+	import { quintOut } from 'svelte/easing';
+	import { crossfade } from 'svelte/transition';
+	import { flip } from 'svelte/animate';
+
 	const MAX_SKILLS = 4;
 
 	export let id: string = undefined;
@@ -8,7 +12,25 @@
 
 	let availableSkillsCount = MAX_SKILLS;
 
-	const formatSkill = (skill: Skill) =>
+	const [send, receive] = crossfade({
+		duration: (d) => Math.sqrt(d * 100),
+
+		fallback(node) {
+			const style = getComputedStyle(node);
+			const transform = style.transform === 'none' ? '' : style.transform;
+
+			return {
+				duration: 600,
+				easing: quintOut,
+				css: (t) => `
+					transform: ${transform} scale(${t});
+					opacity: ${t}
+				`,
+			};
+		},
+	});
+
+	const formatskill = (skill: Skill) =>
 		Object.entries(SKILLS)
 			.find(([, value]) => value === skill)[0]
 			.replace(/([a-z])([A-Z])/g, '$1 $2');
@@ -26,10 +48,6 @@
 		value = value.filter((s) => s !== skill);
 		availableSkillsCount++;
 	};
-
-	// Quest 4 - Skills to desire: Enter Typescript here START
-
-	// Quest 4 - Skills to desire: Enter Typescript here END
 </script>
 
 <div {id} class="container">
@@ -38,11 +56,13 @@
 
 		<div class="list">
 			{#each value as skill (skill)}
-				<!-- Quest 4 - Skills to desire: Enter HTML markup here START -->
-				<button class="rpgui-button rpgui-button--small" on:click={() => handleRemoveSkill(skill)}
-					>{formatSkill(skill)} &gt;</button
+				<button
+					class="rpgui-button rpgui-button--small"
+					on:click={() => handleRemoveSkill(skill)}
+					in:receive|local={{ key: skill }}
+					out:send|local={{ key: skill }}
+					animate:flip>{formatskill(skill)} &gt;</button
 				>
-				<!-- Quest 4 - Skills to desire: Enter HTML markup here END -->
 			{/each}
 		</div>
 	</div>
@@ -54,13 +74,14 @@
 
 		<div class="list">
 			{#each Object.values(SKILLS).filter((skill) => !value.includes(skill)) as skill (skill)}
-				<!-- Quest 4 - Skills to desire: Enter HTML markup here START -->
 				<button
 					class="rpgui-button rpgui-button--small"
 					disabled={availableSkillsCount === 0}
-					on:click={() => handleAddSkill(skill)}>&lt; {formatSkill(skill)}</button
+					on:click={() => handleAddSkill(skill)}
+					in:receive|local={{ key: skill }}
+					out:send|local={{ key: skill }}
+					animate:flip>&lt; {formatskill(skill)}</button
 				>
-				<!-- Quest 4 - Skills to desire: Enter HTML markup here END -->
 			{/each}
 		</div>
 	</div>
