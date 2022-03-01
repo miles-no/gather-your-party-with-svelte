@@ -1,6 +1,6 @@
 <script lang="ts">
 	import AttributePicker from '$lib/components/attribute-picker/AttributePicker.svelte';
-	import { AttributeAllocation } from '$lib/types/attribute-allocation';
+	import type { AttributeAllocation } from '$lib/types/attribute-allocation';
 	import type { Attribute } from '$lib/types/attribute';
 	import { ATTRIBUTES } from '$lib/models/attributes';
 	import { spring } from 'svelte/motion';

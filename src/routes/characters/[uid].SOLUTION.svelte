@@ -1,13 +1,13 @@
 <script context="module" lang="ts">
-	import type { Load, LoadInput, LoadOutput } from '@sveltejs/kit';
+	import type { Load } from '@sveltejs/kit';
 
 	interface LoadProps {
 		uid: string;
 	}
 
-	export const load: Load<LoadInput<LoadProps>, LoadOutput<LoadProps>> = async ({
-		page: { params },
-	}) => ({ props: { uid: params.uid } });
+	export const load: Load<LoadProps, LoadProps> = async ({ params }) => ({
+		props: { uid: params.uid },
+	});
 </script>
 
 <script lang="ts">

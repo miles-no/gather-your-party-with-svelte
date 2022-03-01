@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { RACES } from '$lib/models/races';
-	import { Race } from '$lib/types/race';
+	import type { Race } from '$lib/types/race';
 
 	type RaceOption = { id: Race; name: string };
 

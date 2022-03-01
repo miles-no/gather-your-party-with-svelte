@@ -14,7 +14,7 @@ import { v4 as uuid } from '@lukeed/uuid';
 import { validateCharacter } from '$lib/validation/character-validation';
 
 // GET /api/characters
-export const get: RequestHandler = async () => {
+export const get: RequestHandler<void, Character[] | string> = () => {
 	const response = getCharacters();
 	if (isApiError(response)) {
 		return { status: response.status, body: response.error };
@@ -23,10 +23,10 @@ export const get: RequestHandler = async () => {
 };
 
 // POST /api/characters
-export const post: RequestHandler = async (request) => {
+export const post: RequestHandler = async ({ request }) => {
 	let data;
 	try {
-		data = JSON.parse(request.body as string);
+		data = await request.json();
 	} catch (error) {
 		return { status: 400, body: 'Request body must be a string containing valid JSON' };
 	}

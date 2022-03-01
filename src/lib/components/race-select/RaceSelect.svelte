@@ -3,7 +3,7 @@
 	 * Quest 1 - Choose your origin
 	 */
 	import { RACES } from '$lib/models/races';
-	import { Race } from '$lib/types/race';
+	import type { Race } from '$lib/types/race';
 
 	type RaceOption = { id: Race; name: string };
 

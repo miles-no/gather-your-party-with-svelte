@@ -10,8 +10,8 @@ import type { RequestHandler } from '@sveltejs/kit';
 import { isApiError, getCharacters } from '$lib/utils/api-utils';
 
 // GET /api/characters/[id]
-export const get: RequestHandler = async (request) => {
-	const lookupId = request.params.id;
+export const get: RequestHandler = async ({ params }) => {
+	const lookupId = params.id;
 	const characters = getCharacters();
 	if (isApiError(characters)) {
 		return { status: characters.status, body: characters.error };
