@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Loader from '$lib/components/loader/Loader.svelte';
 	import { createEventDispatcher } from 'svelte';
+	import Loader from '$lib/components/loader/Loader.svelte';
 	import noPerson from './no-person.png';
 
 	const dispatch = createEventDispatcher();

@@ -2,6 +2,7 @@
 	/**
 	 * Quest 1 - Choose your origin
 	 */
+
 	import { RACES } from '$lib/models/races';
 	import type { Race } from '$lib/types/race';
 

@@ -1,15 +1,6 @@
 <script lang="ts">
-	/***
-	 * NOT PART OF WORKSHOP
-	 *
-	 * It should not be necessary to familiarize oneself with this file for the workshop.
-	 *
-	 * This file contains logic for creating a modal overlaying the screen with an optional
-	 * title and some content.
-	 */
-
-	import Button from '$lib/components/button/Button.svelte';
 	import { createEventDispatcher } from 'svelte';
+	import Button from '$lib/components/button/Button.svelte';
 
 	const MODAL_ID = 'modal-overlay';
 

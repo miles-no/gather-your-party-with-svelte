@@ -93,16 +93,7 @@ const args = process.argv.slice(2);
 
 const hintArg = args[0]?.toLowerCase();
 
-const isValidQuest =
-	(hintArg?.length === 2 &&
-		(hintArg?.startsWith('1') ||
-			hintArg?.startsWith('2') ||
-			hintArg?.startsWith('3') ||
-			hintArg?.startsWith('4') ||
-			hintArg?.startsWith('5') ||
-			hintArg?.startsWith('6') ||
-			hintArg?.startsWith('7'))) ||
-	(hintArg?.length === 3 && (hintArg?.startsWith('t1') || hintArg?.startsWith('t2')));
+const isValidQuest = /^([1-7]\w)|(t[1-2]\w)$/.test(hintArg);
 
 if (hintArg === undefined) {
 	console.error('ERROR: Hint id must be specified. Example `npm run hint 1a`.');

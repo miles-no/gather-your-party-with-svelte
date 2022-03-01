@@ -73,7 +73,7 @@ In Svelte this is done using [Slots](https://svelte.dev/tutorial/slots).
 - `npm run hint 2a`
 - `npm run hint 2b`
 
-# Quest 3 - Boosting our Heroes stats
+# Quest 3 - Boosting our Heroes' stats
 
 #### Lore
 
@@ -93,7 +93,7 @@ The parent component is already passing the attributes to the Stats component in
 
 #### Files
 
-- `src/lib/components/stats/Stats.svelte`
+- `src/lib/components/attributes/stats/Stats.svelte`
 
 #### Goal
 
@@ -165,7 +165,7 @@ Play around with the motion settings to see how it effects the animation
 
 #### Files
 
-- `src/lib/components/attribute-overview/AttributeOverview.svelte`
+- `src/lib/components/attributes/attribute-overview/AttributeOverview.svelte`
 
 #### Goal
 
@@ -269,9 +269,9 @@ more information about the characters if you'd like.
 
 #### Files
 
-- `src/lib/components/header/Header.svelte`
+- `src/lib/components/page-layout/header/Header.svelte`
 - `src/routes/...`
-- `src/lib/components/character-preview/CharacterPreview.svelte`
+- `src/lib/components/characters/character-preview/CharacterPreview.svelte`
 
 #### Goal
 
@@ -322,7 +322,7 @@ already set up in the `CharacterPreview` component.
 
 #### Files
 
-- `src/lib/components/character-preview/CharacterPreview.svelte`
+- `src/lib/components/characters/character-preview/CharacterPreview.svelte`
 - `src/routes/characters/[uid].svelte`
 
 #### Goal
