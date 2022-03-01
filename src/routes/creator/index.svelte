@@ -8,7 +8,7 @@
 	import type { Race } from '$lib/types/race';
 	import type { Skill } from '$lib/types/skill';
 	import AttributeOverview from '$lib/components/attribute-overview/AttributeOverview.svelte';
-	import { AttributeAllocation } from '$lib/types/attribute-allocation';
+	import type { AttributeAllocation } from '$lib/types/attribute-allocation';
 	import type { UpsertCharacterRequest } from '$lib/types/upsert-character-request';
 	import Stats from '$lib/components/stats/Stats.svelte';
 	import RaceSelect from '$lib/components/race-select/RaceSelect.svelte';

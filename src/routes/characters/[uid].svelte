@@ -1,15 +1,16 @@
 <script context="module" lang="ts">
-	import type { Load, LoadInput, LoadOutput } from '@sveltejs/kit';
+	import type { Load } from '@sveltejs/kit';
 
 	interface LoadProps {
 		uid: string;
 	}
-	type LoadFunction = Load<LoadInput<LoadProps>, LoadOutput<LoadProps>>;
 
 	/**
 	 * Titan Quest 1 - Select your Hero: Implement load function here START
 	 */
-	export const load: LoadFunction = () => {};
+	export const load: Load<LoadProps, LoadProps> = () => {
+		return {};
+	};
 	/**
 	 * Titan Quest 1 - Select your Hero: Implement load function here END
 	 */

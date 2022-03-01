@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { apiFetch } from '$lib/utils/api-fetch';
-	import { Character } from '$lib/types/character';
+	import type { Character } from '$lib/types/character';
 	import CharacterPreviewList from '$lib/components/character-preview-list/CharacterPreviewList.svelte';
 	import Loader from '$lib/components/loader/Loader.svelte';
 	import { onMount } from 'svelte';

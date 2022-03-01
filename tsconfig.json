@@ -12,9 +12,8 @@
 		/**
 			TypeScript doesn't know about import usages in the template because it only sees the
 			script of a Svelte file. Therefore preserve all value imports. Requires TS 4.5 or higher.
-
-		This breaks our build for some reason. It is enabled by default
-		"preserveValueImports": true,*/
+		*/
+		"preserveValueImports": true,
 		"isolatedModules": true,
 		"resolveJsonModule": true,
 		/**

@@ -6,7 +6,7 @@
  * This file contains API endpoints for getting all characters and adding new characters.
  */
 
-import type { RequestHandler, RequestHandlerOutput } from '@sveltejs/kit';
+import type { RequestHandler } from '@sveltejs/kit';
 import type { Character } from '$lib/types/character';
 import type { UpsertCharacterRequest } from '$lib/types/upsert-character-request';
 import { isApiError, getCharacters, saveCharacters } from '$lib/utils/api-utils';
