@@ -22,6 +22,7 @@ Use this knowledge at your own discretion, but we HIGHLY recommend not looking a
 
 ## Tips
 
+- To clear local data (characters that have been saved), run `npm run clear-data`.
 - If you're unfamiliar with TypeScript and do not wish to use it in your Svelte component files, you can remove
   the `lang="ts"` attribute at the top of the `<script>` tag.
 - While it's not necessary, if you like using a code style formatter, `prettier` is set up in this project.

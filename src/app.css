@@ -1,4 +1,10 @@
-@import '$lib/themes/rpg-ui/rpgui.css';
+/***
+ * NOT PART OF WORKSHOP
+ *
+ * It should not be necessary to familiarize oneself with this file for the workshop.
+ */
+
+@import '$lib/_workshop-internals/style/rpgui/rpgui.css';
 
 :root {
 	font-family: Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
@@ -59,10 +65,14 @@ body {
 .rpgui-content .markdown code,
 .rpgui-content .quest code {
 	background-color: #ffff00;
-	color: #000;
-	padding: 0.125em;
+	color: black;
+	padding: 0 0.125em;
 	line-height: 1.25;
 	text-shadow: none;
+}
+
+.rpgui-content .markdown *,
+.rpgui-content .quest-log .quest > div * {
 	-webkit-touch-callout: default;
 	-webkit-user-select: text;
 	-khtml-user-select: text;

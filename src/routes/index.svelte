@@ -1,12 +1,12 @@
 <script context="module" lang="ts">
-	import type { Session } from '$lib/types/session';
 	import type { Load } from '@sveltejs/kit';
 	import SvelteMarkdown from 'svelte-markdown';
+	import type { Session } from '$lib/_workshop-internals/types/session';
 
 	export const prerender = true;
 
-	export const load: Load<{ session: Session }> = async ({ session }) => ({
-		props: { readme: session.readme },
+	export const load: Load = async ({ session }) => ({
+		props: { readme: (session as Session).readme },
 	});
 </script>
 
@@ -15,10 +15,10 @@
 
 	export let readme: string;
 
-	let readmeIsOpen = false;
+	let isReadmeOpen = false;
 
 	const toggleReadme = () => {
-		readmeIsOpen = !readmeIsOpen;
+		isReadmeOpen = !isReadmeOpen;
 	};
 </script>
 
@@ -30,9 +30,9 @@
 	<h1>Gather your party with Svelte!</h1>
 
 	<button class="toggle-markdown rpgui-button" on:click={toggleReadme}>
-		{readmeIsOpen ? 'Hide' : 'Show'} Readme
+		{isReadmeOpen ? 'Hide' : 'Show'} Readme
 	</button>
-	{#if readmeIsOpen}
+	{#if isReadmeOpen}
 		<div class="markdown" transition:slide={{ duration: 300 }}>
 			<SvelteMarkdown source={readme} />
 		</div>

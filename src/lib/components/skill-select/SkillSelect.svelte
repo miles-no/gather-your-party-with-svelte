@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { SKILLS } from '$lib/models/skills';
 	import type { Skill } from '$lib/types/skill';
+
 	const MAX_SKILLS = 4;
 
 	export let id: string = undefined;

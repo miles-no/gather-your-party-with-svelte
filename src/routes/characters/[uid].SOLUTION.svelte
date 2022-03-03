@@ -31,7 +31,7 @@
 	{:then character}
 		<title>{character.name}</title>
 	{:catch error}
-		<title>Not found character</title>
+		<title>Character not found</title>
 	{/await}
 </svelte:head>
 

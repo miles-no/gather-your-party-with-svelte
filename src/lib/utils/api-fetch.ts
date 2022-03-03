@@ -7,7 +7,7 @@
  * as well as logic for handling states of an API-call.
  */
 
-import { sleep } from '$lib/utils/sleep';
+import { sleep } from '$lib/_workshop-internals/utils/sleep';
 
 const FAKE_DELAY_LIMITS = { min: 1, max: 3 };
 

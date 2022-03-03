@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { SKILLS } from '$lib/models/skills';
-	import type { Skill } from '$lib/types/skill';
+	import { flip } from 'svelte/animate';
 	import { quintOut } from 'svelte/easing';
 	import { crossfade } from 'svelte/transition';
-	import { flip } from 'svelte/animate';
+	import { SKILLS } from '$lib/models/skills';
+	import type { Skill } from '$lib/types/skill';
 
 	const MAX_SKILLS = 4;
 

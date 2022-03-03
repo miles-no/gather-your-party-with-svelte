@@ -1,8 +1,8 @@
 <script lang="ts">
+	import { createEventDispatcher, onMount } from 'svelte';
 	import Loader from '$lib/components/loader/Loader.svelte';
 	import PortraitPreview from '$lib/components/portraits/portrait-preview/PortraitPreview.svelte';
 	import { apiFetch } from '$lib/utils/api-fetch';
-	import { createEventDispatcher, onMount } from 'svelte';
 
 	const dispatch = createEventDispatcher();
 

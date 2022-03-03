@@ -8,8 +8,8 @@
 	 * title and some content.
 	 */
 
-	import Button from '$lib/components/button/Button.svelte';
 	import { createEventDispatcher } from 'svelte';
+	import Button from '$lib/components/button/Button.svelte';
 
 	const MODAL_ID = 'modal-overlay';
 

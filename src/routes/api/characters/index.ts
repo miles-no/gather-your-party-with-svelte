@@ -7,11 +7,15 @@
  */
 
 import type { RequestHandler } from '@sveltejs/kit';
+import { v4 as uuid } from '@lukeed/uuid';
 import type { Character } from '$lib/types/character';
 import type { UpsertCharacterRequest } from '$lib/types/upsert-character-request';
-import { isApiError, getCharacters, saveCharacters } from '$lib/utils/api-utils';
-import { v4 as uuid } from '@lukeed/uuid';
-import { validateCharacter } from '$lib/validation/character-validation';
+import {
+	isApiError,
+	getCharacters,
+	saveCharacters,
+} from '$lib/_workshop-internals/utils/api-utils';
+import { validateCharacter } from '$lib/_workshop-internals/utils/character-validation';
 
 // GET /api/characters
 export const get: RequestHandler<void, Character[] | string> = () => {

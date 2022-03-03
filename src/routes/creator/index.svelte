@@ -1,21 +1,21 @@
 <script lang="ts">
+	import CharacterCreatorDebug from '$lib/_workshop-internals/components/character-creator-debug/CharacterCreatorDebug.svelte';
+	import AttributeOverview from '$lib/components/attributes/attribute-overview/AttributeOverview.svelte';
+	import Stats from '$lib/components/attributes/stats/Stats.svelte';
 	import Button from '$lib/components/button/Button.svelte';
 	import PortraitPicker from '$lib/components/portraits/portrait-picker/PortraitPicker.svelte';
+	import RaceSelect from '$lib/components/race-select/RaceSelect.svelte';
 	import SkillSelect from '$lib/components/skill-select/SkillSelect.svelte';
 	import { CLASSES } from '$lib/models/classes';
+	import type { AttributeAllocation } from '$lib/types/attribute-allocation';
 	import type { Character } from '$lib/types/character';
 	import type { Class } from '$lib/types/class';
 	import type { Race } from '$lib/types/race';
 	import type { Skill } from '$lib/types/skill';
-	import AttributeOverview from '$lib/components/attribute-overview/AttributeOverview.svelte';
-	import type { AttributeAllocation } from '$lib/types/attribute-allocation';
 	import type { UpsertCharacterRequest } from '$lib/types/upsert-character-request';
-	import Stats from '$lib/components/stats/Stats.svelte';
-	import RaceSelect from '$lib/components/race-select/RaceSelect.svelte';
 	import { apiFetch } from '$lib/utils/api-fetch';
-	import CharacterCreatorDebug from '$lib/components/character-creator-debug/CharacterCreatorDebug.svelte';
 
-	// Toggle this on to display the current character data JSON at the bottom of the character creation page.
+	// Toggle this on to display the current character data JSON at the bottom of the character creation page
 	const SHOW_CHARACTER_RAW_DATA = false;
 
 	let saveCharacterPromise: Promise<Character>;
@@ -52,7 +52,6 @@
 		skills,
 	} as UpsertCharacterRequest;
 
-	// TODO Should we validate inputs in the frontend as well as the backend?
 	const handleSubmit = () => {
 		isSavingCharacter = true;
 
