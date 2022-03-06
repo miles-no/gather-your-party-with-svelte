@@ -1,4 +1,13 @@
 <script context="module" lang="ts">
+	/***
+	 * NOT PART OF WORKSHOP
+	 *
+	 * It should not be necessary to familiarize oneself with this file for the workshop.
+	 *
+	 * The frontpage
+	 *
+	 */
+
 	import type { Load } from '@sveltejs/kit';
 	import SvelteMarkdown from 'svelte-markdown';
 	import type { Session } from '$lib/_workshop-internals/types/session';

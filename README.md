@@ -2,9 +2,11 @@
 
 ## Getting started
 
-1. Install dependencies with `npm ci`.
+1. Clone the repository to your work environment: `git clone git@github.com:miles-no/booster2022-gather-your-party-with-svelte.git`
 
-1. To start the development server and open the application: `npm run dev -- --open`.
+2. Install dependencies with `npm ci`.
+
+3. To start the development server and open the application: `npm run dev -- --open`.
 
 ## Workshop
 
@@ -40,7 +42,7 @@ To build the application run: `npm run build`
 - Powered by [create-svelte](https://github.com/sveltejs/kit/tree/master/packages/create-svelte)
 - [Code Sandbox IDE](TODO)
 - [Svelte Workshop Repository](https://github.com/miles-no/booster2022-gather-your-party-with-svelte)
-- [Svelte Workshop Presentation](https://github.com/miles-no/booster2022-gather-your-party-with-svelte)
+- [Svelte Workshop Presentation](https://github.com/miles-no/booster2022-gather-your-party-with-svelte/presentation.pdf)
 - [Svelte Tutorial](https://svelte.dev/tutorial/basics)
 - [Svelte Docs](https://svelte.dev/docs)
 - [SvelteKit Docs](https://kit.svelte.dev/docs)
