@@ -40,12 +40,12 @@ To build the application run: `npm run build`
 
 #### Use existing template (Recommended)
 
-1. Create an account on `https://codesandbox.io`
-1. Go to `https://codesandbox.io/s/booster2022-gather-your-party-with-svelte-74wzwu` and start hacking!
+1. Create an account on [https://codesandbox.io](https://codesandbox.io)
+1. Go to [https://codesandbox.io/s/booster2022-gather-your-party-with-svelte-74wzwu](https://codesandbox.io/s/booster2022-gather-your-party-with-svelte-74wzwu) and start hacking!
 
 #### Create new template
 
-1. Go to `https://codesandbox.io`
+1. Go to [https://codesandbox.io](https://codesandbox.io)
 2. Login with your user
 3. Click `Create Sandbox`
 4. Select `Import Project`
