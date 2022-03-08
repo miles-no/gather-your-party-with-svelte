@@ -393,3 +393,4 @@ You are free to simulate the combat any way you want to, but here's a few ideas 
 #### Hints
 
 - `npm run hint t2a`
+- `npm run hint t2b`

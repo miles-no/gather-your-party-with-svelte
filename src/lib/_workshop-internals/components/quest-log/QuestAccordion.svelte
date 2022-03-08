@@ -63,7 +63,7 @@
 		margin: 0;
 	}
 
-	input[type='checkbox'].rpgui-checkbox + label {
+	input[type='checkbox'].rpgui-checkbox.toggle-completed + label {
 		margin: 0;
 		padding-left: 1.5em;
 	}

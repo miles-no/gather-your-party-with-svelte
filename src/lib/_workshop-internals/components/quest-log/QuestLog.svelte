@@ -36,8 +36,15 @@
 		{#each quests.ordinary as quest (quest.id)}
 			<Quest
 				{quest}
-				completed={getQuestProgress($questLog, `o${quest.id}`)}
-				on:toggleCompleted={({ detail: completed }) => setQuestProgress(`o${quest.id}`, completed)}
+				completed={getQuestProgress($questLog, quest.id)}
+				on:toggleCompleted={({ detail: completed }) => setQuestProgress(quest.id, completed)}
+			/>
+		{/each}
+		{#each quests.titans as quest (quest.id)}
+			<Quest
+				{quest}
+				completed={getQuestProgress($questLog, quest.id)}
+				on:toggleCompleted={({ detail: completed }) => setQuestProgress(quest.id, completed)}
 			/>
 		{/each}
 	</div>

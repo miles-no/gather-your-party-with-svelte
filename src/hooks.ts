@@ -15,7 +15,7 @@ const getPart = (key: string, text: string): string => {
 	return parts[1].split('####')[0];
 };
 
-const parseQuest = (rawQuest: string): Quest => {
+const parseQuest = (rawQuest: string, titan = false): Quest => {
 	const firstLine = rawQuest.split('\n')[0];
 	const id = firstLine.split(' - ')[0];
 	const title = firstLine.split(' - ')[1];
@@ -26,7 +26,7 @@ const parseQuest = (rawQuest: string): Quest => {
 	const links = getPart('Links', rawQuest);
 	const hints = getPart('Hints', rawQuest);
 	return {
-		id,
+		id: titan ? 'Titan ' + id : id,
 		title,
 		lore,
 		intro,
@@ -42,8 +42,8 @@ const parseQuests = (markdown: string): Quests => {
 	const rawTitanQuests = splitByTitanQuests.slice(1);
 	const rawOrdinaryQuests = splitByTitanQuests[0].split('# Quest ').slice(1);
 
-	const ordinary = rawOrdinaryQuests.map(parseQuest);
-	const titans = rawTitanQuests.map(parseQuest);
+	const ordinary = rawOrdinaryQuests.map((quest) => parseQuest(quest));
+	const titans = rawTitanQuests.map((quest) => parseQuest(quest, true));
 
 	return { ordinary, titans };
 };
