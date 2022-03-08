@@ -66,9 +66,11 @@ body {
 .rpgui-content .quest code {
 	background-color: #ffff00;
 	color: black;
-	padding: 0 0.125em;
+	padding: 0.125em 0.5em;
 	line-height: 1.25;
 	text-shadow: none;
+	font-family: monospace;
+	font-weight: 600;
 }
 
 .rpgui-content .markdown *,
