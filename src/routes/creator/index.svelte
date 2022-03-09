@@ -15,9 +15,6 @@
 	import type { UpsertCharacterRequest } from '$lib/types/upsert-character-request';
 	import { apiFetch } from '$lib/utils/api-fetch';
 
-	// Toggle this on to display the current character data JSON at the bottom of the character creation page
-	const SHOW_CHARACTER_RAW_DATA = false;
-
 	let saveCharacterPromise: Promise<Character>;
 	let isSavingCharacter = false;
 
@@ -67,6 +64,8 @@
 <svelte:head>
 	<title>Character Creator</title>
 </svelte:head>
+
+<CharacterCreatorDebug {character} />
 
 <section class="rpgui-container framed outer-container">
 	<div class="container">
@@ -152,8 +151,6 @@
 	{:catch error}
 		&cross; Error saving character, see console for more info.
 	{/await}
-
-	<CharacterCreatorDebug display={SHOW_CHARACTER_RAW_DATA} {character} />
 </section>
 
 <style>
