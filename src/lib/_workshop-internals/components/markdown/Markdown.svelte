@@ -1,6 +1,4 @@
 <script lang="ts">
-	import AttributeOverview from '$lib/components/attributes/attribute-overview/AttributeOverview.SOLUTION.svelte';
-
 	/***
 	 * NOT PART OF WORKSHOP
 	 *
@@ -8,6 +6,7 @@
 	 */
 
 	import SvelteMarkdown from 'svelte-markdown';
+	import MarkdownCodespanRenderer from './MarkdownCodespanRenderer.svelte';
 	import MarkdownLinkRenderer from './MarkdownLinkRenderer.svelte';
 
 	export let source: string = undefined;
@@ -15,7 +14,11 @@
 	export let options: object = undefined;
 	export let isInline: boolean = undefined;
 
-	$: renderersWithDefault = { ...(renderers ?? {}), link: MarkdownLinkRenderer };
+	$: renderersWithDefault = {
+		...(renderers ?? {}),
+		codespan: MarkdownCodespanRenderer,
+		link: MarkdownLinkRenderer,
+	};
 </script>
 
 <SvelteMarkdown {source} renderers={renderersWithDefault} {options} {isInline} on:parsed />

@@ -50,8 +50,8 @@ const parseQuests = (markdown: string): Quests => {
 
 export const getSession = (): Session => {
 	const readme = fs.readFileSync(path.resolve('README.md'), { encoding: 'utf8' });
-	const rawQuests = fs.readFileSync(path.resolve('workshop-tasks.md'), { encoding: 'utf8' });
 
+	const rawQuests = fs.readFileSync(path.resolve('workshop-tasks.md'), { encoding: 'utf8' });
 	const quests = parseQuests(rawQuests);
 
 	return { readme, quests };
