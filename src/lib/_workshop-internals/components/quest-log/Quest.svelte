@@ -6,9 +6,9 @@
 	 */
 
 	import { createEventDispatcher } from 'svelte';
-	import SvelteMarkdown from 'svelte-markdown';
 	import QuestAccordion from '$lib/_workshop-internals/components/quest-log/QuestAccordion.svelte';
 	import type { Quest } from '$lib/_workshop-internals/types/quest';
+	import Markdown from '../markdown/Markdown.svelte';
 
 	const dispatch = createEventDispatcher();
 
@@ -32,20 +32,20 @@
 		{completed}
 		on:toggleCompleted={toggleCompleted}
 	>
-		<span class="lore"><SvelteMarkdown source={quest.lore} /></span>
-		<span class="intro"><SvelteMarkdown source={quest.intro} /></span>
+		<span class="lore"><Markdown source={quest.lore} /></span>
+		<span class="intro"><Markdown source={quest.intro} /></span>
 
 		<h2>File{showPlural(quest.files)}</h2>
-		<span class="files"><SvelteMarkdown source={quest.files} /></span>
+		<span class="files"><Markdown source={quest.files} /></span>
 
 		<h2>Goal{showPlural(quest.goal)}</h2>
-		<span class="goal"><SvelteMarkdown source={quest.goal} /></span>
+		<span class="goal"><Markdown source={quest.goal} /></span>
 
 		<h2>Useful Links</h2>
-		<span class="links"><SvelteMarkdown source={quest.links} /></span>
+		<span class="links"><Markdown source={quest.links} /></span>
 
 		<h2>Hint{showPlural(quest.hints)}</h2>
-		<span class="hints"><SvelteMarkdown source={quest.hints} /></span>
+		<span class="hints"><Markdown source={quest.hints} /></span>
 	</QuestAccordion>
 </div>
 
