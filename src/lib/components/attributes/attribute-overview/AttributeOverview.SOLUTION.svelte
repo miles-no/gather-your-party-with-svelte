@@ -62,6 +62,10 @@
 		displayedPointsRemaining.set(pointsRemaining);
 		displayedAttributes.set(allocation);
 	};
+
+	function getAttributes(displayedAttributes: AttributeAllocation): [Attribute, number][] {
+		return Object.entries(displayedAttributes) as [Attribute, number][];
+	}
 </script>
 
 <div {id} class="container">
@@ -69,7 +73,7 @@
 	<button class="randomize-btn rpgui-button rpgui-button--small" on:click={randomize}
 		>Randomize
 	</button>
-	{#each Object.entries($displayedAttributes) as [name, attributeValue]}
+	{#each getAttributes($displayedAttributes) as [name, attributeValue]}
 		<AttributePicker
 			{name}
 			value={Math.round(attributeValue)}

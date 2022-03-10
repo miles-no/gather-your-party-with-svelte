@@ -20,7 +20,7 @@
 	export let value: AttributeAllocation = { ...initialAllocation };
 
 	/**
-	 * Quest 4 - Indecisive Heroes
+	 * Quest 5 - Indecisive Heroes
 	 */
 
 	let pointsRemaining = POINTS_TO_DISTRIBUTE;
@@ -41,16 +41,30 @@
 		pointsRemaining--;
 	};
 
-	// eslint-disable-next-line @typescript-eslint/no-empty-function
-	const randomize = () => {};
+	const randomize = () => {
+		const allocation = { ...initialAllocation };
+		const attributeNames = Object.values(ATTRIBUTES);
+
+		for (let count = 0; count < POINTS_TO_DISTRIBUTE; count++) {
+			const randomAttribute = attributeNames[(Math.random() * attributeNames.length) | 0];
+			allocation[randomAttribute]++;
+		}
+
+		pointsRemaining = 0;
+		value = allocation;
+	};
+
+	function getAttributes(displayedAttributes: AttributeAllocation): [Attribute, number][] {
+		return Object.entries(displayedAttributes) as [Attribute, number][];
+	}
 </script>
 
 <div {id} class="container">
 	<span>Points to distribute: {pointsRemaining}</span>
-	<button class="randomize-btn rpgui-button rpgui-button--small" on:click={randomize}
-		>Randomize
+	<button class="randomize-btn rpgui-button rpgui-button--small">
+		Randomize
 	</button>
-	{#each Object.entries(value) as [name, attributeValue]}
+	{#each getAttributes(value) as [name, attributeValue]}
 		<AttributePicker
 			{name}
 			value={Math.round(attributeValue)}
