@@ -21,6 +21,7 @@
 
 <script lang="ts">
 	import { slide } from 'svelte/transition';
+	import Markdown from '$lib/_workshop-internals/components/markdown/Markdown.svelte';
 
 	export let readme: string;
 
@@ -43,7 +44,7 @@
 	</button>
 	{#if isReadmeOpen}
 		<div class="markdown" transition:slide={{ duration: 300 }}>
-			<SvelteMarkdown source={readme} />
+			<Markdown source={readme} />
 		</div>
 	{/if}
 </section>
