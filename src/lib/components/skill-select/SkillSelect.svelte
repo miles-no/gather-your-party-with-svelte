@@ -38,13 +38,13 @@
 		<div class="label">Chosen skills ({MAX_SKILLS - availableSkillsCount}/{MAX_SKILLS})</div>
 
 		<div class="list">
+			<!-- Quest 4 - Skills to desire: Enter HTML markup here START -->
 			{#each value as skill (skill)}
-				<!-- Quest 4 - Skills to desire: Enter HTML markup here START -->
 				<button class="rpgui-button rpgui-button--small" on:click={() => handleRemoveSkill(skill)}
 					>{formatSkill(skill)} &gt;</button
 				>
-				<!-- Quest 4 - Skills to desire: Enter HTML markup here END -->
 			{/each}
+			<!-- Quest 4 - Skills to desire: Enter HTML markup here END -->
 		</div>
 	</div>
 
@@ -54,15 +54,15 @@
 		</div>
 
 		<div class="list">
+			<!-- Quest 4 - Skills to desire: Enter HTML markup here START -->
 			{#each Object.values(SKILLS).filter((skill) => !value.includes(skill)) as skill (skill)}
-				<!-- Quest 4 - Skills to desire: Enter HTML markup here START -->
 				<button
 					class="rpgui-button rpgui-button--small"
 					disabled={availableSkillsCount === 0}
 					on:click={() => handleAddSkill(skill)}>&lt; {formatSkill(skill)}</button
 				>
-				<!-- Quest 4 - Skills to desire: Enter HTML markup here END -->
 			{/each}
+			<!-- Quest 4 - Skills to desire: Enter HTML markup here END -->
 		</div>
 	</div>
 </div>

@@ -61,9 +61,7 @@
 
 <div {id} class="container">
 	<span>Points to distribute: {pointsRemaining}</span>
-	<button class="randomize-btn rpgui-button rpgui-button--small">
-		Randomize
-	</button>
+	<button class="randomize-btn rpgui-button rpgui-button--small">Randomize</button>
 	{#each getAttributes(value) as [name, attributeValue]}
 		<AttributePicker
 			{name}
