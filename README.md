@@ -2,9 +2,11 @@
 
 ## Getting started
 
-1. Clone the repository to your work environment: `git clone git@github.com:miles-no/booster2022-gather-your-party-with-svelte.git`
+0. Make sure you have Node v16 or v17 installed with `node --version`.
 
-2. Install dependencies with `npm ci`.
+1. Clone the repository to your work environment: `git clone https://github.com/miles-no/booster2022-gather-your-party-with-svelte.git`
+
+2. Install dependencies with `npm install`.
 
 3. To start the development server and open the application: `npm run dev -- --open`.
 

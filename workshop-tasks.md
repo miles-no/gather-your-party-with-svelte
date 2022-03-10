@@ -7,8 +7,8 @@ Born different, but with one same goal on their mind.
 #### Intro
 
 One of the main qualities of components is its ability to pass data in and out.
-In Svelte one method to accomplish this is by exposing [props](https://svelte.dev/tutorial/declaring-props)
-and using [bindings](https://svelte.dev/tutorial/text-inputs), which is the 2-way binding for Svelte.
+In Svelte, one way to accomplish this is by exposing [props](https://svelte.dev/tutorial/declaring-props)
+and using [bindings](https://svelte.dev/tutorial/text-inputs), which is the two-way binding for Svelte.
 
 #### Files
 
@@ -41,8 +41,7 @@ _click_ _click_.... Our heroes journey can not start if we can not even click a 
 
 For consistent design and functionality we wish to create a Button component that can be reused in our application.
 
-The component currently has the 3 variables `variant`, `small` and `disabled`, but they are currently not exposed,
-and can not be set by parent components.
+The Button component currently has the three variables `variant`, `small` and `disabled`, but they are currently not exposed, and can not be set by parent components.
 
 We also wish to expose the `click` event of the inner button so any parent components, as that is the main use case for
 a button.
@@ -103,8 +102,7 @@ The parent component is already passing the attributes to the Stats component in
 - constitution increases hitpoints with 5.
 - wisdom increases mana with 10.
 - intelligence increases spellpower with 2.5.
-- When charisma is <12 speech should be Timid, >12 speech should be Well Spoken, >16
-  speech should be Charming.
+- when charisma is < 12 speech should be `Timid`, >= 12 speech should be `Well Spoken`, >16 speech should be `Charming`.
 
 #### Links
 
@@ -158,8 +156,7 @@ Some of our heroes seem to need help to decide what attributes they have, and ar
 Svelte is full of useful tools for animating changes. Start by looking
 into [Motion (Tween/Spring)](https://svelte.dev/tutorial/tweened) and how you can animate the attributes changing.
 
-When this is working for `addPoint` and `subtractPoint` fill inn the `randomize` button. Remember to also update and
-animate `pointsRemaining`.
+When this is working for `addPoint` and `subtractPoint` fill in the `randomize` button. Remember to also update and animate `pointsRemaining`.
 
 Play around with the motion settings to see how it effects the animation
 
@@ -170,7 +167,7 @@ Play around with the motion settings to see how it effects the animation
 #### Goal
 
 - Use [Motion (Tween/Spring)](https://svelte.dev/tutorial/tweened) to animate numbers changing.
-- Fill inn the `randomize` method with logic to randomly assign attribute points.
+- Fill in the `randomize` method with logic to randomly assign attribute points.
 
 #### Links
 
