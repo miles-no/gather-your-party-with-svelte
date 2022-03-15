@@ -35,19 +35,20 @@ and using [bindings](https://svelte.dev/tutorial/text-inputs), which is the two-
 
 #### Lore
 
-_click_ _click_.... Our heroes journey can not start if we can not even click a button!
+_click_ _click_.... Our heroes' journey can not start if we can not even click a button!
 
 #### Intro
 
 For consistent design and functionality we wish to create a Button component that can be reused in our application.
 
-The Button component currently has the three variables `variant`, `small` and `disabled`, but they are currently not exposed, and can not be set by parent components.
+The Button component currently has the three variables `variant`, `small` and `disabled`, but they are currently not
+exposed, and can not be set by parent components.
 
 We also wish to expose the `click` event of the inner button so any parent components, as that is the main use case for
 a button.
 
-Lastly our button should also have some content. We wish for anything that is inside our Buttons tag to be reflected
-into the inner button. Example: `<Button>The should be displayed inside the button</Button>`.
+Lastly, our button should also have some content. We wish for anything that is inside our Buttons tag to be reflected
+into the inner button. Example: `<Button>This should be displayed inside the button</Button>`.
 In Svelte this is done using [Slots](https://svelte.dev/tutorial/slots).
 
 #### Files
