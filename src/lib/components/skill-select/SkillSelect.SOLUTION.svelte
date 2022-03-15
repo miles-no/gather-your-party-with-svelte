@@ -12,24 +12,6 @@
 
 	let availableSkillsCount = MAX_SKILLS;
 
-	const [send, receive] = crossfade({
-		duration: (d) => Math.sqrt(d * 100),
-
-		fallback(node) {
-			const style = getComputedStyle(node);
-			const transform = style.transform === 'none' ? '' : style.transform;
-
-			return {
-				duration: 600,
-				easing: quintOut,
-				css: (t) => `
-					transform: ${transform} scale(${t});
-					opacity: ${t}
-				`,
-			};
-		},
-	});
-
 	const formatskill = (skill: Skill) =>
 		Object.entries(SKILLS)
 			.find(([, value]) => value === skill)[0]
@@ -48,6 +30,24 @@
 		value = value.filter((s) => s !== skill);
 		availableSkillsCount++;
 	};
+
+	const [send, receive] = crossfade({
+		duration: (d) => Math.sqrt(d * 100),
+
+		fallback(node) {
+			const style = getComputedStyle(node);
+			const transform = style.transform === 'none' ? '' : style.transform;
+
+			return {
+				duration: 600,
+				easing: quintOut,
+				css: (t) => `
+					transform: ${transform} scale(${t});
+					opacity: ${t}
+				`,
+			};
+		},
+	});
 </script>
 
 <div {id} class="container">

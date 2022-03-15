@@ -124,9 +124,24 @@ Our heroes look mighty powerful! But they do still not seem satisfied... Maybe w
 #### Intro
 
 The current solution provides a list of skills and those selected.
-The selection process offers no animation and just snaps into the correct positions.
+Currently, when selecting a skill, the skill is instantly moved between the two lists.
 
-We want an animation to occur when selecting and removing skills.
+To ease our heroes' weary eyes we want to animate the items moving between the two lists.
+
+Svelte offers powerful motion tools to deal with simple transitions, or more advanced animations when taking elements
+in or out of the DOM and moving them somewhere else.
+
+Here, when selecting a skill, the button is removed from the list it was in, and added to the DOM in the other list.
+For removing and adding elements to the DOM Svelte offers several transition directives, each with a different effect.
+Most of these deal only with the position the element is in when it's removed or should appear when it's added.
+But others have logic for transitioning the element between where it's added, i.e. received, and where it's removed,
+i.e. sent. These are called [Deferred Transitions](https://svelte.dev/tutorial/deferred-transitions).
+
+These kind of transitions allows us to move an element between where it's added or removed and to where it's new
+position is.
+
+Svelte _also_ offers us animation directives for animating the _surrounding_ elements in the DOM, which aren't
+transitioning. This allows us to make very convincing animations where many elements move "naturally".
 
 #### Files
 
@@ -134,12 +149,15 @@ We want an animation to occur when selecting and removing skills.
 
 #### Goal
 
-- Use [Animations](https://svelte.dev/tutorial/animate) and [Transitions](https://svelte.dev/tutorial/transition) to animate the skill selection.
+- Use [Deferred Transitions](https://svelte.dev/tutorial/deferred-transitions) to animate the skill selection,
+  making a clicked skill move smoothly from one list to the other.
+- Use [Animations](https://svelte.dev/tutorial/animate) to animate the movement of the other elements in the list
+  when an element is clicked and moves between them.
 
 #### Links
 
+- [Deferred Transitions](https://svelte.dev/tutorial/deferred-transitions)
 - [Animations](https://svelte.dev/tutorial/animate)
-- [Transitions](https://svelte.dev/tutorial/transition)
 
 #### Hints
 
