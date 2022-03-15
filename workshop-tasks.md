@@ -172,12 +172,19 @@ Some of our heroes seem to need help to decide what attributes they have, and ar
 
 #### Intro
 
-Svelte is full of useful tools for animating changes. Start by looking
-into [Motion (Tween/Spring)](https://svelte.dev/tutorial/tweened) and how you can animate the attributes changing.
+Svelte is full of useful tools for animating changes. Start by looking into
+[Motion (Tweened)](https://svelte.dev/tutorial/tweened) or
+[Motion (Spring)](https://svelte.dev/tutorial/spring) and how you can animate the attributes changing.
 
-When this is working for `addPoint` and `subtractPoint` fill in the `randomize` button. Remember to also update and animate `pointsRemaining`.
+Remember to also update and animate `pointsRemaining`.
 
-Play around with the motion settings to see how it effects the animation
+Play around with the motion settings to see how it affects the animation.
+
+Tip: It's often a good idea to maintain two separate variables when working with animating UI elements: one for the
+_actual_ value, and another "display"-value that animates/moves towards the real value when it changes.
+
+Tip 2: It can be difficult to see the attributes changing when increasing or decreasing them by 1 with the +/- buttons,
+but using the randomize button will produce a more visible effect.
 
 #### Files
 
@@ -185,12 +192,13 @@ Play around with the motion settings to see how it effects the animation
 
 #### Goal
 
-- Use [Motion (Tween/Spring)](https://svelte.dev/tutorial/tweened) to animate numbers changing.
-- Fill in the `randomize` method with logic to randomly assign attribute points.
+- Use [Motion (Tweened)](https://svelte.dev/tutorial/tweened) or [Motion (Spring)](https://svelte.dev/tutorial/spring)
+  to animate the attributes changing and points remaining when they are increased, decreased, or randomized.
 
 #### Links
 
-- [Motion (Tween/Spring)](https://svelte.dev/tutorial/tweened)
+- [Motion (Tweened)](https://svelte.dev/tutorial/tweened)
+- [Motion (Spring)](https://svelte.dev/tutorial/spring)
 
 #### Hints
 
