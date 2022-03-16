@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { AttributeAllocation } from '$lib/types/attribute-allocation';
+	import type { AttributeAllocation } from '$lib/types/attribute-allocation';
 
 	export let id: string = undefined;
 	export let attributes: AttributeAllocation;

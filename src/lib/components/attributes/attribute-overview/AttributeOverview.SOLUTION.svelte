@@ -22,13 +22,13 @@
 
 	let pointsRemaining = POINTS_TO_DISTRIBUTE;
 
-	let displayedAttributes = spring(value, {
-		stiffness: 0.2,
-	});
-
-	let displayedPointsRemaining = spring(pointsRemaining, {
-		stiffness: 0.01,
-	});
+	let displayedAttributes = spring(value, { stiffness: 0.1 });
+	let displayedPointsRemaining = spring(pointsRemaining, { stiffness: 0.1 });
+	// Or, one can use tweened for a slightly different effect:
+	/*
+	let displayedAttributes = tweened(value, { duration: 200 });
+	let displayedPointsRemaining = tweened(pointsRemaining, { duration: 200 });
+	*/
 
 	const subtractPoint = (key: Attribute) => {
 		if (pointsRemaining >= POINTS_TO_DISTRIBUTE || value[key] <= STARTING_VALUE) {

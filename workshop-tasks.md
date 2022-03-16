@@ -35,19 +35,20 @@ and using [bindings](https://svelte.dev/tutorial/text-inputs), which is the two-
 
 #### Lore
 
-_click_ _click_.... Our heroes journey can not start if we can not even click a button!
+_click_ _click_.... Our heroes' journey can not start if we can not even click a button!
 
 #### Intro
 
 For consistent design and functionality we wish to create a Button component that can be reused in our application.
 
-The Button component currently has the three variables `variant`, `small` and `disabled`, but they are currently not exposed, and can not be set by parent components.
+The Button component currently has the three variables `variant`, `small` and `disabled`, but they are currently not
+exposed, and can not be set by parent components.
 
 We also wish to expose the `click` event of the inner button so any parent components, as that is the main use case for
 a button.
 
-Lastly our button should also have some content. We wish for anything that is inside our Buttons tag to be reflected
-into the inner button. Example: `<Button>The should be displayed inside the button</Button>`.
+Lastly, our button should also have some content. We wish for anything that is inside our Buttons tag to be reflected
+into the inner button. Example: `<Button>This should be displayed inside the button</Button>`.
 In Svelte this is done using [Slots](https://svelte.dev/tutorial/slots).
 
 #### Files
@@ -123,9 +124,24 @@ Our heroes look mighty powerful! But they do still not seem satisfied... Maybe w
 #### Intro
 
 The current solution provides a list of skills and those selected.
-The selection process offers no animation and just snaps into the correct positions.
+Currently, when selecting a skill, the skill is instantly moved between the two lists.
 
-We want an animation to occur when selecting and removing skills.
+To ease our heroes' weary eyes we want to animate the items moving between the two lists.
+
+Svelte offers powerful motion tools to deal with simple transitions, or more advanced animations when taking elements
+in or out of the DOM and moving them somewhere else.
+
+Here, when selecting a skill, the button is removed from the list it was in, and added to the DOM in the other list.
+For removing and adding elements to the DOM Svelte offers several transition directives, each with a different effect.
+Most of these deal only with the position the element is in when it's removed or should appear when it's added.
+But others have logic for transitioning the element between where it's added, i.e. received, and where it's removed,
+i.e. sent. These are called [Deferred Transitions](https://svelte.dev/tutorial/deferred-transitions).
+
+These kind of transitions allows us to move an element between where it's added or removed and to where it's new
+position is.
+
+Svelte _also_ offers us animation directives for animating the _surrounding_ elements in the DOM, which aren't
+transitioning. This allows us to make very convincing animations where many elements move "naturally".
 
 #### Files
 
@@ -133,12 +149,15 @@ We want an animation to occur when selecting and removing skills.
 
 #### Goal
 
-- Use [Animations](https://svelte.dev/tutorial/animate) and [Transitions](https://svelte.dev/tutorial/transition) to animate the skill selection.
+- Use [Deferred Transitions](https://svelte.dev/tutorial/deferred-transitions) to animate the skill selection,
+  making a clicked skill move smoothly from one list to the other.
+- Use [Animations](https://svelte.dev/tutorial/animate) to animate the movement of the other elements in the list
+  when an element is clicked and moves between them.
 
 #### Links
 
+- [Deferred Transitions](https://svelte.dev/tutorial/deferred-transitions)
 - [Animations](https://svelte.dev/tutorial/animate)
-- [Transitions](https://svelte.dev/tutorial/transition)
 
 #### Hints
 
@@ -153,12 +172,19 @@ Some of our heroes seem to need help to decide what attributes they have, and ar
 
 #### Intro
 
-Svelte is full of useful tools for animating changes. Start by looking
-into [Motion (Tween/Spring)](https://svelte.dev/tutorial/tweened) and how you can animate the attributes changing.
+Svelte is full of useful tools for animating changes. Start by looking into
+[Motion (Tweened)](https://svelte.dev/tutorial/tweened) or
+[Motion (Spring)](https://svelte.dev/tutorial/spring) and how you can animate the attributes changing.
 
-When this is working for `addPoint` and `subtractPoint` fill in the `randomize` button. Remember to also update and animate `pointsRemaining`.
+Remember to also update and animate `pointsRemaining`.
 
-Play around with the motion settings to see how it effects the animation
+Play around with the motion settings to see how it affects the animation.
+
+Tip: It's often a good idea to maintain two separate variables when working with animating UI elements: one for the
+_actual_ value, and another "display"-value that animates/moves towards the real value when it changes.
+
+Tip 2: It can be difficult to see the attributes changing when increasing or decreasing them by 1 with the +/- buttons,
+but using the randomize button will produce a more visible effect.
 
 #### Files
 
@@ -166,12 +192,13 @@ Play around with the motion settings to see how it effects the animation
 
 #### Goal
 
-- Use [Motion (Tween/Spring)](https://svelte.dev/tutorial/tweened) to animate numbers changing.
-- Fill in the `randomize` method with logic to randomly assign attribute points.
+- Use [Motion (Tweened)](https://svelte.dev/tutorial/tweened) or [Motion (Spring)](https://svelte.dev/tutorial/spring)
+  to animate the attributes changing and points remaining when they are increased, decreased, or randomized.
 
 #### Links
 
-- [Motion (Tween/Spring)](https://svelte.dev/tutorial/tweened)
+- [Motion (Tweened)](https://svelte.dev/tutorial/tweened)
+- [Motion (Spring)](https://svelte.dev/tutorial/spring)
 
 #### Hints
 
