@@ -14,6 +14,7 @@
 	import type { Skill } from '$lib/types/skill';
 	import type { UpsertCharacterRequest } from '$lib/types/upsert-character-request';
 	import { apiFetch } from '$lib/utils/api-fetch';
+	import {INITIAL_ATTRIBUTES} from "$lib/constants/initial-attributes";
 
 	let saveCharacterPromise: Promise<Character>;
 	let isSavingCharacter = false;
@@ -35,7 +36,7 @@
 
 	let portrait: string;
 
-	let attributes: AttributeAllocation;
+	let attributes: AttributeAllocation = INITIAL_ATTRIBUTES;
 
 	let skills: Skill[];
 
