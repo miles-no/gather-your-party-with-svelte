@@ -55,6 +55,10 @@
 		<div class="label">Chosen skills ({MAX_SKILLS - availableSkillsCount}/{MAX_SKILLS})</div>
 
 		<div class="list">
+			<!--
+			For information about the `|local` directive,
+			see https://svelte.dev/tutorial/local-transitions
+			-->
 			{#each value as skill (skill)}
 				<button
 					class="rpgui-button rpgui-button--small"
@@ -73,6 +77,10 @@
 		</div>
 
 		<div class="list">
+			<!--
+			For information about the `|local` directive,
+			see https://svelte.dev/tutorial/local-transitions
+			-->
 			{#each Object.values(SKILLS).filter((skill) => !value.includes(skill)) as skill (skill)}
 				<button
 					class="rpgui-button rpgui-button--small"
