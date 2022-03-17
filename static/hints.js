@@ -1,3 +1,5 @@
+/* eslint max-len: ["error", { "code": 72 }] */
+
 export const hints = {
 	'1a': `\
 On the 'Character Creator' page you can toggle 
