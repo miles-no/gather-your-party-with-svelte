@@ -6,8 +6,8 @@
 
 	const RACE_OPTIONS: RaceOption[] = Object.entries(RACES).map(([name, id]) => ({ id, name }));
 
-	export let id: string = undefined;
-	export let value: Race = undefined;
+	export let id: string;
+	export let value: Race;
 </script>
 
 <select {id} class="rpgui-dropdown-imp input-content" bind:value>

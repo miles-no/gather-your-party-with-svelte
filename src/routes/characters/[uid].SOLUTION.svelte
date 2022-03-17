@@ -16,7 +16,7 @@
 	import { apiFetch } from '$lib/utils/api-fetch';
 	import { onMount } from 'svelte';
 
-	export let uid: string = undefined;
+	export let uid: string;
 
 	let getCharacterPromise: Promise<Character> = new Promise(() => {});
 

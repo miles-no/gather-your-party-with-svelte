@@ -10,7 +10,7 @@
 
 	const initialAllocation: AttributeAllocation = INITIAL_ATTRIBUTES;
 
-	export let id: string = undefined;
+	export let id: string;
 	export let value: AttributeAllocation = { ...initialAllocation };
 
 	/**

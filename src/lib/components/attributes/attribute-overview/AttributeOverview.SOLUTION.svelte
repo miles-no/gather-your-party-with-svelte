@@ -17,7 +17,7 @@
 		[ATTRIBUTES.Charisma]: STARTING_VALUE,
 	};
 
-	export let id: string = undefined;
+	export let id: string;
 	export let value: AttributeAllocation = { ...initialAllocation };
 
 	let pointsRemaining = POINTS_TO_DISTRIBUTE;

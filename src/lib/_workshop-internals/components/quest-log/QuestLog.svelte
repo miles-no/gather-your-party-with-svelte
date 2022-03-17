@@ -10,7 +10,7 @@
 	import { questLog } from '$lib/_workshop-internals/stores/quest-log-store';
 	import type { Quests } from '$lib/_workshop-internals/types/quests';
 
-	export let quests: Quests = undefined;
+	export let quests: Quests;
 
 	let showQuestLog = false;
 

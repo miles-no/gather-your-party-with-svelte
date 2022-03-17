@@ -6,7 +6,7 @@
 	 */
 
 	export let href = '';
-	export let title: string = undefined;
+	export let title: string;
 </script>
 
 <a {href} target="_blank" {title}><slot /></a>

@@ -22,7 +22,7 @@
 	import { apiFetch } from '$lib/utils/api-fetch';
 	import { onMount } from 'svelte';
 
-	export let uid: string = undefined;
+	export let uid: string;
 
 	/**
 	 * Titan Quest 1 - Select your Hero: Implement fetching of character here START

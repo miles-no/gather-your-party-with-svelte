@@ -7,7 +7,7 @@
 
 	import type { UpsertCharacterRequest } from '$lib/types/upsert-character-request';
 
-	export let character: UpsertCharacterRequest = undefined;
+	export let character: UpsertCharacterRequest;
 
 	let display = false;
 

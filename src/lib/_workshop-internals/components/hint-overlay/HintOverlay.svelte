@@ -14,8 +14,10 @@
 	let hints: Hints;
 
 	hintStore.subscribe((hintKey) => {
-		if (hintKey) {
+		if (hints?.[hintKey]) {
 			hint = say(hints[hintKey], { nowrap: true });
+		} else {
+			hint = undefined;
 		}
 	});
 
@@ -27,7 +29,6 @@
 
 	const handleCloseHint = () => {
 		hintStore.set(undefined);
-		hint = undefined;
 	};
 </script>
 

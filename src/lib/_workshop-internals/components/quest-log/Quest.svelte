@@ -12,7 +12,7 @@
 
 	const dispatch = createEventDispatcher();
 
-	export let quest: Quest = undefined;
+	export let quest: Quest;
 	export let completed = false;
 
 	const toggleCompleted = ({ detail: completed }): void => {

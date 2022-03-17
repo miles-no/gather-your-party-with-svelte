@@ -4,7 +4,7 @@
 
 	const MAX_SKILLS = 4;
 
-	export let id: string = undefined;
+	export let id: string;
 	export let value: Skill[] = [];
 
 	let availableSkillsCount = MAX_SKILLS;

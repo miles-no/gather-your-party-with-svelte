@@ -15,7 +15,7 @@
 
 	const dispatch = createEventDispatcher();
 
-	export let label: string = undefined;
+	export let label: string;
 
 	export let show = false;
 

@@ -4,9 +4,9 @@
 	 */
 	type ButtonVariant = 'golden';
 
-	let variant: ButtonVariant = undefined;
-	let small: boolean = undefined;
-	let disabled: boolean = undefined;
+	let variant: ButtonVariant;
+	let small: boolean;
+	let disabled: boolean;
 </script>
 
 <button

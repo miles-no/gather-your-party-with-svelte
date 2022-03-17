@@ -11,7 +11,7 @@
 		counter++;
 	};
 
-	let clear: NodeJS.Timer = undefined;
+	let clear: NodeJS.Timer;
 	$: {
 		clearInterval(clear);
 		clear = setInterval(incr, ms);

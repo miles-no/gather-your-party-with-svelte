@@ -3,8 +3,8 @@
 	import PortraitPreview from '$lib/components/portraits/portrait-preview/PortraitPreview.svelte';
 	import PortraitSelection from '$lib/components/portraits/portrait-selection/PortraitSelection.svelte';
 
-	export let id: string = undefined;
-	export let value: string = undefined;
+	export let id: string;
+	export let value: string;
 
 	let showPortraitSelection = false;
 
