@@ -4,14 +4,14 @@
 	export let id: string = undefined;
 	export let attributes: AttributeAllocation;
 
-	$: meleeDamageMin = (attributes?.strength ?? 8) * 2;
-	$: meleeDamageMax = (attributes?.strength ?? 8) * 3;
-	$: blockChance = 10 + (attributes?.dexterity ?? 0) * 0.5;
-	$: hitpoints = (attributes?.constitution ?? 8) * 5;
-	$: mana = (attributes?.wisdom ?? 8) * 10;
-	$: spellpower = (attributes?.intelligence ?? 8) * 2.5;
+	$: meleeDamageMin = attributes.strength * 2;
+	$: meleeDamageMax = attributes.strength * 3;
+	$: blockChance = attributes.dexterity * 0.5;
+	$: hitpoints = attributes.constitution * 5;
+	$: mana = attributes.wisdom * 10;
+	$: spellpower = attributes.intelligence * 2.5;
 	$: speech =
-		attributes?.charisma >= 16 ? 'Charming' : attributes?.charisma >= 12 ? 'Well Spoken' : 'Timid';
+		attributes.charisma >= 16 ? 'Charming' : attributes.charisma >= 12 ? 'Well Spoken' : 'Timid';
 </script>
 
 <div {id} class="container">

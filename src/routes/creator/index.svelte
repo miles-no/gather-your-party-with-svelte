@@ -6,6 +6,7 @@
 	import PortraitPicker from '$lib/components/portraits/portrait-picker/PortraitPicker.svelte';
 	import RaceSelect from '$lib/components/race-select/RaceSelect.svelte';
 	import SkillSelect from '$lib/components/skill-select/SkillSelect.svelte';
+	import { INITIAL_ATTRIBUTES } from '$lib/constants/initial-attributes';
 	import { CLASSES } from '$lib/models/classes';
 	import type { AttributeAllocation } from '$lib/types/attribute-allocation';
 	import type { Character } from '$lib/types/character';
@@ -35,7 +36,7 @@
 
 	let portrait: string;
 
-	let attributes: AttributeAllocation;
+	let attributes: AttributeAllocation = INITIAL_ATTRIBUTES;
 
 	let skills: Skill[];
 

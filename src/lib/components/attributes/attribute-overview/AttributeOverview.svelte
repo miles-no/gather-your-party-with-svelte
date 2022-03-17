@@ -1,5 +1,6 @@
 <script lang="ts">
 	import AttributePicker from '$lib/components/attributes/attribute-picker/AttributePicker.svelte';
+	import { INITIAL_ATTRIBUTES } from '$lib/constants/initial-attributes';
 	import { ATTRIBUTES } from '$lib/models/attributes';
 	import type { Attribute } from '$lib/types/attribute';
 	import type { AttributeAllocation } from '$lib/types/attribute-allocation';
@@ -7,14 +8,7 @@
 	const STARTING_VALUE = 8;
 	const POINTS_TO_DISTRIBUTE = 20;
 
-	const initialAllocation: AttributeAllocation = {
-		[ATTRIBUTES.Strength]: STARTING_VALUE,
-		[ATTRIBUTES.Dexterity]: STARTING_VALUE,
-		[ATTRIBUTES.Constitution]: STARTING_VALUE,
-		[ATTRIBUTES.Wisdom]: STARTING_VALUE,
-		[ATTRIBUTES.Intelligence]: STARTING_VALUE,
-		[ATTRIBUTES.Charisma]: STARTING_VALUE,
-	};
+	const initialAllocation: AttributeAllocation = INITIAL_ATTRIBUTES;
 
 	export let id: string = undefined;
 	export let value: AttributeAllocation = { ...initialAllocation };
@@ -61,7 +55,9 @@
 
 <div {id} class="container">
 	<span>Points to distribute: {pointsRemaining}</span>
-	<button class="randomize-btn rpgui-button rpgui-button--small">Randomize</button>
+	<button class="randomize-btn rpgui-button rpgui-button--small" on:click={randomize}
+		>Randomize</button
+	>
 	{#each getAttributes(value) as [name, attributeValue]}
 		<AttributePicker
 			{name}

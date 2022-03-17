@@ -98,13 +98,15 @@ The parent component is already passing the attributes to the Stats component in
 
 #### Goal
 
-- strength increases minimum damage with 2.
-- strength increases maximum damage with 3.
-- dexterity increases block chance with 0.5.
-- constitution increases hitpoints with 5.
-- wisdom increases mana with 10.
-- intelligence increases spellpower with 2.5.
-- when charisma is < 12 speech should be `Timid`, >= 12 speech should be `Well Spoken`, >16 speech should be `Charming`.
+- Use Reactive Declarations to set minimum damage as a reactive variable based on the strength attribute, 
+  replacing the existing implementation of the `minimumDamage` variable.
+  - Minimum damage should be equal to strength x 2.
+- Maximum damage equals strength x 3.
+- Block change equals dexterity x 0.5.
+- Hitpoints equals constitution x 5.
+- Mana equals wisdom x 10.
+- Spellpower equals intelligence x 2.5.
+- When charisma is < 12 speech should be `Timid`, >= 12 speech should be `Well Spoken`, >16 speech should be `Charming`.
 
 #### Links
 

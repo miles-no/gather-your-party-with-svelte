@@ -1,5 +1,8 @@
 <script lang="ts">
+	import type { AttributeAllocation } from '$lib/types/attribute-allocation';
+
 	export let id: string = undefined;
+	export let attributes: AttributeAllocation;
 
 	/**
 	 * Quest 2 - Boosting our Heroes' stats
