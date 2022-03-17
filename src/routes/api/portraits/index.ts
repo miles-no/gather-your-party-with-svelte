@@ -8,7 +8,7 @@
 
 import type { RequestHandler } from '@sveltejs/kit';
 
-const Index = [
+const portraits = [
 	'portrait_01.jpg',
 	'portrait_02.jpg',
 	'portrait_03.jpg',
@@ -37,5 +37,5 @@ const Index = [
 
 // GET /api/portraits
 export const get: RequestHandler = async () => {
-	return { body: Index };
+	return { body: portraits };
 };

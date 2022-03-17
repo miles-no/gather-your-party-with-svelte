@@ -22,10 +22,10 @@
 {:then portraits}
 	<div class="portraits">
 		{#each portraits as portrait (portrait)}
-			{#await apiFetch(`api/portraits/${portrait}`)}
+			{#await apiFetch(`/api/portraits/${portrait}`)}
 				<PortraitPreview isLoading />
 			{:then payload}
-				<PortraitPreview value={payload.portrait} clickable on:click={handleSelect} />
+				<PortraitPreview value={payload} clickable on:click={handleSelect} />
 			{:catch error}
 				<p>Unable to fetch portrait {portrait}.</p>
 			{/await}

@@ -7,11 +7,13 @@
  */
 
 import type { RequestHandler } from '@sveltejs/kit';
+import fs from 'fs';
 
 // GET /api/portraits/[id]
 export const get: RequestHandler = async ({ params }) => {
 	const lookupId = params.id;
-	const path = `/portraits/${lookupId}`;
+	const path = `src/lib/_workshop-internals/assets/portraits/${lookupId}`;
+	const data = fs.readFileSync(path, 'base64');
 
-	return { body: { portrait: path } };
+	return { body: `"data:image/jpeg;base64,${data}"` };
 };

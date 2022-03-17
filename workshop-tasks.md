@@ -250,7 +250,7 @@ be essential.
   - Rejected: An error message.
 - When you have a working await block for the list of portrait IDs, use an
   [each block](https://svelte.dev/tutorial/each-blocks) to iterate over each of the IDs and fetch the portrait itself.
-  - Note: The portrait is located at the URL `api/portraits/{ID}`.
+  - Note: The portrait data is located at the URL `/api/portraits/{ID}`.
 - Inside the each block, use another await block to render the different states of the portrait promises:
   - Loading: A `PortraitPreview` where the `isLoading` prop is set to `true`.
   - Resolved: A `PortraitPreview` with the value prop set to the `portrait` property on the resolved value.
