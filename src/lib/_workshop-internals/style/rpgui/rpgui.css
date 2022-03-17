@@ -77,7 +77,8 @@ inside your html file.
 	overflow: hidden;
 	outline: none;
 	/* background */
-	background: url('src/lib/_workshop-internals/style/rpgui/img/button.png') no-repeat no-repeat;
+	background: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/button.png') no-repeat
+		no-repeat;
 	background-clip: padding-box;
 	background-origin: padding-box;
 	background-position: center;
@@ -101,13 +102,13 @@ inside your html file.
 /* button hover */
 .rpgui-button.hover,
 .rpgui-button:hover {
-	background-image: url('src/lib/_workshop-internals/style/rpgui/img/button-hover.png');
+	background-image: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/button-hover.png');
 }
 
 /* button clicked */
 .rpgui-button.down,
 .rpgui-button:active {
-	background-image: url('src/lib/_workshop-internals/style/rpgui/img/button-down.png');
+	background-image: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/button-down.png');
 }
 
 /* golden button stuff */
@@ -124,7 +125,7 @@ inside your html file.
 	overflow: hidden;
 	outline: none;
 	/* background */
-	background: url('src/lib/_workshop-internals/style/rpgui/img/button-golden.png') no-repeat
+	background: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/button-golden.png') no-repeat
 		no-repeat;
 	background-clip: padding-box;
 	background-origin: padding-box;
@@ -148,13 +149,13 @@ inside your html file.
 /* button hover */
 .rpgui-button.golden.hover,
 .rpgui-button.golden:hover {
-	background-image: url('src/lib/_workshop-internals/style/rpgui/img/button-golden-hover.png');
+	background-image: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/button-golden-hover.png');
 }
 
 /* button clicked */
 .rpgui-button.golden.down,
 .rpgui-button.golden:active {
-	background-image: url('src/lib/_workshop-internals/style/rpgui/img/button-golden-down.png');
+	background-image: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/button-golden-down.png');
 }
 
 .rpgui-button.golden:before {
@@ -164,8 +165,9 @@ inside your html file.
 	width: 34px;
 	display: block;
 	height: 110%;
-	background: transparent url('src/lib/_workshop-internals/style/rpgui/img/button-golden-left.png')
-		no-repeat right center;
+	background: transparent
+		url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/button-golden-left.png') no-repeat right
+		center;
 	background-size: 100% 100%;
 	margin: 0 0 0 0;
 	left: 0px;
@@ -180,8 +182,9 @@ inside your html file.
 	content: '';
 	width: 34px;
 	height: 110%;
-	background: transparent url('src/lib/_workshop-internals/style/rpgui/img/button-golden-right.png')
-		no-repeat left center;
+	background: transparent
+		url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/button-golden-right.png') no-repeat left
+		center;
 	background-size: 100% 100%;
 	margin: 0 0 0 0;
 	right: 0px;
@@ -210,7 +213,7 @@ inside your html file.
 }
 
 .rpgui-content input[type='checkbox'].rpgui-checkbox + label {
-	background: url('src/lib/_workshop-internals/style/rpgui/img/checkbox-off.png') no-repeat;
+	background: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/checkbox-off.png') no-repeat;
 	line-height: 24px;
 	display: inline-block;
 	background-size: auto 100%;
@@ -221,7 +224,7 @@ inside your html file.
 }
 
 .rpgui-content input[type='checkbox'].rpgui-checkbox:checked + label {
-	background: url('src/lib/_workshop-internals/style/rpgui/img/checkbox-on.png') no-repeat;
+	background: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/checkbox-on.png') no-repeat;
 	line-height: 24px;
 	display: inline-block;
 	background-size: auto 100%;
@@ -231,12 +234,14 @@ inside your html file.
 
 /* golden checkbox */
 .rpgui-content input[type='checkbox'].rpgui-checkbox.golden + label {
-	background: url('src/lib/_workshop-internals/style/rpgui/img/checkbox-golden-off.png') no-repeat;
+	background: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/checkbox-golden-off.png')
+		no-repeat;
 	background-size: auto 100%;
 }
 
 .rpgui-content input[type='checkbox'].rpgui-checkbox.golden:checked + label {
-	background: url('src/lib/_workshop-internals/style/rpgui/img/checkbox-golden-on.png') no-repeat;
+	background: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/checkbox-golden-on.png')
+		no-repeat;
 	background-size: auto 100%;
 }
 
@@ -301,7 +306,7 @@ inside your html file.
 .rpgui-container.framed {
 	/* border */
 	border-style: solid;
-	border-image-source: url('src/lib/_workshop-internals/style/rpgui/img/border-image.png');
+	border-image-source: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/border-image.png');
 	border-image-repeat: repeat;
 	border-image-slice: 6 6 6 6;
 	border-image-width: 18px;
@@ -312,7 +317,8 @@ inside your html file.
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	/* background */
-	background: url('src/lib/_workshop-internals/style/rpgui/img/background-image.png') repeat repeat;
+	background: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/background-image.png') repeat
+		repeat;
 	background-clip: padding-box;
 	background-origin: padding-box;
 	background-position: center;
@@ -322,7 +328,7 @@ inside your html file.
 .rpgui-container.framed-golden {
 	/* border */
 	border-style: solid;
-	border-image-source: url('src/lib/_workshop-internals/style/rpgui/img/border-image-golden.png');
+	border-image-source: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/border-image-golden.png');
 	border-image-repeat: repeat;
 	border-image-slice: 4 4 4 4;
 	border-image-width: 18px;
@@ -333,8 +339,8 @@ inside your html file.
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	/* background */
-	background: url('src/lib/_workshop-internals/style/rpgui/img/background-image-golden.png') repeat
-		repeat;
+	background: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/background-image-golden.png')
+		repeat repeat;
 	background-clip: padding-box;
 	background-origin: padding-box;
 	background-position: center;
@@ -344,7 +350,7 @@ inside your html file.
 .rpgui-container.framed-golden-2 {
 	/* border */
 	border-style: solid;
-	border-image-source: url('src/lib/_workshop-internals/style/rpgui/img/border-image-golden2.png');
+	border-image-source: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/border-image-golden2.png');
 	border-image-repeat: repeat;
 	border-image-slice: 8 8 8 8;
 	border-image-width: 18px;
@@ -355,8 +361,8 @@ inside your html file.
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	/* background */
-	background: url('src/lib/_workshop-internals/style/rpgui/img/background-image-golden2.png') repeat
-		repeat;
+	background: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/background-image-golden2.png')
+		repeat repeat;
 	background-clip: padding-box;
 	background-origin: padding-box;
 	background-position: center;
@@ -367,7 +373,7 @@ inside your html file.
 	position: relative;
 	/* border */
 	border-style: solid;
-	border-image-source: url('src/lib/_workshop-internals/style/rpgui/img/border-image-grey.png');
+	border-image-source: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/border-image-grey.png');
 	border-image-repeat: repeat;
 	border-image-slice: 3 3 3 3;
 	border-image-width: 7px;
@@ -378,8 +384,8 @@ inside your html file.
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	/* background */
-	background: url('src/lib/_workshop-internals/style/rpgui/img/background-image-grey.png') repeat
-		repeat;
+	background: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/background-image-grey.png')
+		repeat repeat;
 	background-clip: padding-box;
 	background-origin: padding-box;
 	background-position: center;
@@ -391,20 +397,20 @@ inside your html file.
 /* default cursor important */
 /* this rule is for when you specifically request this cursor class */
 .rpgui-cursor-default {
-	cursor: url('src/lib/_workshop-internals/style/rpgui/img/cursor/default.png'), auto !important;
+	cursor: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/cursor/default.png'), auto !important;
 }
 
 /* default cursor, not important, for all elements without any other rule. */
 .rpgui-content,
 label {
-	cursor: url('src/lib/_workshop-internals/style/rpgui/img/cursor/default.png'), auto;
+	cursor: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/cursor/default.png'), auto;
 }
 
 /* pointer / hand cursor important */
 /* this rule is for when you specifically request this cursor class */
 .rpgui-cursor-point,
 .rpgui-cursor-point * {
-	cursor: url('src/lib/_workshop-internals/style/rpgui/img/cursor/point.png') 10 0, auto !important;
+	cursor: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/cursor/point.png') 10 0, auto !important;
 }
 
 /* pointer / hand cursor, not important, for all elements that have pointer by-default */
@@ -416,35 +422,35 @@ label {
 .rpgui-list-imp,
 .rpgui-dropdown-imp,
 .rpgui-content input[type='checkbox'].rpgui-checkbox + label {
-	cursor: url('src/lib/_workshop-internals/style/rpgui/img/cursor/point.png') 10 0, auto;
+	cursor: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/cursor/point.png') 10 0, auto;
 }
 
 /* for input / text selection important */
 /* this rule is for when you specifically request this cursor class */
 .rpgui-cursor-select,
 .rpgui-cursor-select * {
-	cursor: url('src/lib/_workshop-internals/style/rpgui/img/cursor/select.png') 10 0, auto !important;
+	cursor: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/cursor/select.png') 10 0, auto !important;
 }
 
 /* for input / text selection, not important, for all elements that have pointer by-default */
 .rpgui-cursor-select,
 .rpgui-content input,
 .rpgui-content textarea {
-	cursor: url('src/lib/_workshop-internals/style/rpgui/img/cursor/select.png') 10 0, auto;
+	cursor: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/cursor/select.png') 10 0, auto;
 }
 
 /* for grabbing stuff */
 /* this rule is for when you specifically request this cursor class */
 .rpgui-cursor-grab-open,
 .rpgui-cursor-grab-open * {
-	cursor: url('src/lib/_workshop-internals/style/rpgui/img/cursor/grab-open.png') 10 0, auto !important;
+	cursor: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/cursor/grab-open.png') 10 0, auto !important;
 }
 
 /* for grabbing stuff */
 /* this rule is for when you specifically request this cursor class */
 .rpgui-cursor-grab-close,
 .rpgui-cursor-grab-close * {
-	cursor: url('src/lib/_workshop-internals/style/rpgui/img/cursor/grab-close.png') 10 0, auto !important;
+	cursor: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/cursor/grab-close.png') 10 0, auto !important;
 }
 
 /**
@@ -465,14 +471,14 @@ label {
 	/* border */
 	border-style: solid;
 	border-width: 7px 7px 7px 7px;
-	-moz-border-image: url('src/lib/_workshop-internals/style/rpgui/img/select-border-image.png') 10%
-		repeat repeat;
-	-webkit-border-image: url('src/lib/_workshop-internals/style/rpgui/img/select-border-image.png')
+	-moz-border-image: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/select-border-image.png')
 		10% repeat repeat;
-	-o-border-image: url('src/lib/_workshop-internals/style/rpgui/img/select-border-image.png') 10%
-		repeat repeat;
-	border-image: url('src/lib/_workshop-internals/style/rpgui/img/select-border-image.png') 10%
-		repeat repeat;
+	-webkit-border-image: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/select-border-image.png')
+		10% repeat repeat;
+	-o-border-image: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/select-border-image.png')
+		10% repeat repeat;
+	border-image: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/select-border-image.png')
+		10% repeat repeat;
 	/* background */
 	background-color: #854c30;
 	/*background: url('img/select-background-image.png') repeat repeat;*/
@@ -536,7 +542,7 @@ ul.rpgui-dropdown-imp {
 	display: block;
 	border: 0px;
 	height: 10px;
-	background: url('src/lib/_workshop-internals/style/rpgui/img/hr.png') repeat-x top left;
+	background: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/hr.png') repeat-x top left;
 }
 
 /* rpgui golden hr */
@@ -544,7 +550,8 @@ ul.rpgui-dropdown-imp {
 	display: block;
 	border: 0px;
 	height: 10px;
-	background: url('src/lib/_workshop-internals/style/rpgui/img/hr-golden.png') no-repeat top left;
+	background: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/hr-golden.png') no-repeat top
+		left;
 	background-size: 100% 100%;
 }
 
@@ -560,63 +567,63 @@ ul.rpgui-dropdown-imp {
 }
 
 .rpgui-icon.sword {
-	background-image: url('src/lib/_workshop-internals/style/rpgui/img/icons/sword.png');
+	background-image: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/icons/sword.png');
 }
 
 .rpgui-icon.shield {
-	background-image: url('src/lib/_workshop-internals/style/rpgui/img/icons/shield.png');
+	background-image: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/icons/shield.png');
 }
 
 .rpgui-icon.exclamation {
-	background-image: url('src/lib/_workshop-internals/style/rpgui/img/icons/exclamation.png');
+	background-image: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/icons/exclamation.png');
 }
 
 .rpgui-icon.potion-red {
-	background-image: url('src/lib/_workshop-internals/style/rpgui/img/icons/potion-red.png');
+	background-image: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/icons/potion-red.png');
 }
 
 .rpgui-icon.potion-green {
-	background-image: url('src/lib/_workshop-internals/style/rpgui/img/icons/potion-green.png');
+	background-image: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/icons/potion-green.png');
 }
 
 .rpgui-icon.potion-blue {
-	background-image: url('src/lib/_workshop-internals/style/rpgui/img/icons/potion-blue.png');
+	background-image: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/icons/potion-blue.png');
 }
 
 .rpgui-icon.weapon-slot {
-	background-image: url('src/lib/_workshop-internals/style/rpgui/img/icons/weapon-slot.png');
+	background-image: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/icons/weapon-slot.png');
 }
 
 .rpgui-icon.shield-slot {
-	background-image: url('src/lib/_workshop-internals/style/rpgui/img/icons/shield-slot.png');
+	background-image: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/icons/shield-slot.png');
 }
 
 .rpgui-icon.armor-slot {
-	background-image: url('src/lib/_workshop-internals/style/rpgui/img/icons/armor-slot.png');
+	background-image: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/icons/armor-slot.png');
 }
 
 .rpgui-icon.helmet-slot {
-	background-image: url('src/lib/_workshop-internals/style/rpgui/img/icons/helmet-slot.png');
+	background-image: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/icons/helmet-slot.png');
 }
 
 .rpgui-icon.ring-slot {
-	background-image: url('src/lib/_workshop-internals/style/rpgui/img/icons/ring-slot.png');
+	background-image: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/icons/ring-slot.png');
 }
 
 .rpgui-icon.potion-slot {
-	background-image: url('src/lib/_workshop-internals/style/rpgui/img/icons/potion-slot.png');
+	background-image: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/icons/potion-slot.png');
 }
 
 .rpgui-icon.magic-slot {
-	background-image: url('src/lib/_workshop-internals/style/rpgui/img/icons/magic-slot.png');
+	background-image: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/icons/magic-slot.png');
 }
 
 .rpgui-icon.shoes-slot {
-	background-image: url('src/lib/_workshop-internals/style/rpgui/img/icons/shoes-slot.png');
+	background-image: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/icons/shoes-slot.png');
 }
 
 .rpgui-icon.empty-slot {
-	background-image: url('src/lib/_workshop-internals/style/rpgui/img/icons/empty-slot.png');
+	background-image: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/icons/empty-slot.png');
 }
 
 /**
@@ -686,17 +693,17 @@ ul.rpgui-dropdown-imp {
 	/* border */
 	border-style: solid;
 	border-width: 7px 7px 7px 7px;
-	-moz-border-image: url('src/lib/_workshop-internals/style/rpgui/img/select-border-image.png') 10%
-		repeat repeat;
-	-webkit-border-image: url('src/lib/_workshop-internals/style/rpgui/img/select-border-image.png')
+	-moz-border-image: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/select-border-image.png')
 		10% repeat repeat;
-	-o-border-image: url('src/lib/_workshop-internals/style/rpgui/img/select-border-image.png') 10%
-		repeat repeat;
-	border-image: url('src/lib/_workshop-internals/style/rpgui/img/select-border-image.png') 10%
-		repeat repeat;
+	-webkit-border-image: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/select-border-image.png')
+		10% repeat repeat;
+	-o-border-image: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/select-border-image.png')
+		10% repeat repeat;
+	border-image: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/select-border-image.png')
+		10% repeat repeat;
 	/* background */
-	background: url('src/lib/_workshop-internals/style/rpgui/img/select-background-image.png') repeat
-		repeat;
+	background: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/select-background-image.png')
+		repeat repeat;
 	background-clip: padding-box;
 	background-origin: padding-box;
 	background-position: center;
@@ -723,8 +730,8 @@ ul.rpgui-list-imp {
 	padding-bottom: 6px;
 	padding-left: 6px;
 	/* background */
-	background: url('src/lib/_workshop-internals/style/rpgui/img/select-background-image.png') repeat
-		repeat;
+	background: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/select-background-image.png')
+		repeat repeat;
 	background-clip: padding-box;
 	background-origin: padding-box;
 	background-position: center;
@@ -882,7 +889,7 @@ ul.rpgui-list-imp {
 	height: 42px;
 	width: 40px;
 	left: 0px;
-	background-image: url('src/lib/_workshop-internals/style/rpgui/img/progress-bar-left.png');
+	background-image: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/progress-bar-left.png');
 	background-size: 100% 100%;
 }
 
@@ -892,7 +899,7 @@ ul.rpgui-list-imp {
 	height: 42px;
 	width: 40px;
 	right: 0px;
-	background-image: url('src/lib/_workshop-internals/style/rpgui/img/progress-bar-right.png');
+	background-image: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/progress-bar-right.png');
 	background-size: 100% 100%;
 }
 
@@ -902,7 +909,7 @@ ul.rpgui-list-imp {
 	height: 42px;
 	left: 40px;
 	right: 40px;
-	background-image: url('src/lib/_workshop-internals/style/rpgui/img/progress-bar-track.png');
+	background-image: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/progress-bar-track.png');
 	background-repeat: repeat-x;
 	background-size: 36px 100%;
 }
@@ -914,24 +921,24 @@ ul.rpgui-list-imp {
 	bottom: 8px;
 	left: 0;
 	width: 100%;
-	background-image: url('src/lib/_workshop-internals/style/rpgui/img/progress.png');
+	background-image: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/progress.png');
 	background-repeat: repeat-x;
 	background-size: 36px 100%;
 }
 
 /* progress bar - blue color */
 .rpgui-progress-fill.blue {
-	background-image: url('src/lib/_workshop-internals/style/rpgui/img/progress-blue.png');
+	background-image: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/progress-blue.png');
 }
 
 /* progress bar - green color */
 .rpgui-progress-fill.green {
-	background-image: url('src/lib/_workshop-internals/style/rpgui/img/progress-green.png');
+	background-image: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/progress-green.png');
 }
 
 /* progress bar - red color */
 .rpgui-progress-fill.red {
-	background-image: url('src/lib/_workshop-internals/style/rpgui/img/progress-red.png');
+	background-image: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/progress-red.png');
 }
 
 /**
@@ -943,7 +950,7 @@ ul.rpgui-list-imp {
 }
 
 .rpgui-content input[type='radio'].rpgui-radio + label {
-	background: url('src/lib/_workshop-internals/style/rpgui/img/radio-off.png') no-repeat;
+	background: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/radio-off.png') no-repeat;
 	line-height: 24px;
 	display: inline-block;
 	background-size: auto 100%;
@@ -954,7 +961,7 @@ ul.rpgui-list-imp {
 }
 
 .rpgui-content input[type='radio'].rpgui-radio:checked + label {
-	background: url('src/lib/_workshop-internals/style/rpgui/img/radio-on.png') no-repeat;
+	background: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/radio-on.png') no-repeat;
 	line-height: 24px;
 	display: inline-block;
 	background-size: auto 100%;
@@ -964,12 +971,14 @@ ul.rpgui-list-imp {
 
 /* golden radio */
 .rpgui-content .rpgui-radio.golden + label {
-	background: url('src/lib/_workshop-internals/style/rpgui/img/radio-golden-off.png') no-repeat !important;
+	background: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/radio-golden-off.png')
+		no-repeat !important;
 	background-size: auto 100% !important;
 }
 
 .rpgui-content .rpgui-radio.golden:checked + label {
-	background: url('src/lib/_workshop-internals/style/rpgui/img/radio-golden-on.png') no-repeat !important;
+	background: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/radio-golden-on.png')
+		no-repeat !important;
 	background-size: auto 100% !important;
 }
 
@@ -985,7 +994,7 @@ ul.rpgui-list-imp {
 /* Track */
 .rpgui-content ::-webkit-scrollbar-track,
 .rpgui-content::-webkit-scrollbar-track {
-	background-image: url('src/lib/_workshop-internals/style/rpgui/img/scrollbar-track.png');
+	background-image: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/scrollbar-track.png');
 	background-size: 18px 60px;
 	background-repeat: repeat-y;
 }
@@ -993,7 +1002,7 @@ ul.rpgui-list-imp {
 /* Handle */
 .rpgui-content ::-webkit-scrollbar-thumb,
 .rpgui-content::-webkit-scrollbar-thumb {
-	background-image: url('src/lib/_workshop-internals/style/rpgui/img/scrollbar-thumb.png');
+	background-image: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/scrollbar-thumb.png');
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
 }
@@ -1001,7 +1010,7 @@ ul.rpgui-list-imp {
 /* buttons */
 .rpgui-content ::-webkit-scrollbar-button,
 .rpgui-content::-webkit-scrollbar-button {
-	background-image: url('src/lib/_workshop-internals/style/rpgui/img/scrollbar-button.png');
+	background-image: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/scrollbar-button.png');
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
 }
@@ -1018,7 +1027,7 @@ ul.rpgui-list-imp {
 .rpgui-content :disabled + .rpgui-dropdown-imp,
 .rpgui-content :disabled + .rpgui-dropdown-imp + .rpgui-dropdown-imp,
 .rpgui-content :disabled + .rpgui-list-imp {
-	cursor: url('src/lib/_workshop-internals/style/rpgui/img/cursor/default.png'), auto;
+	cursor: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/cursor/default.png'), auto;
 	-webkit-filter: grayscale(1);
 	-webkit-filter: grayscale(100%);
 	filter: grayscale(100%);
@@ -1047,7 +1056,7 @@ ul.rpgui-list-imp {
 	height: 20px;
 	width: 20px;
 	left: 0px;
-	background-image: url('src/lib/_workshop-internals/style/rpgui/img/slider-left.png');
+	background-image: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/slider-left.png');
 	background-size: 100% 100%;
 }
 
@@ -1057,7 +1066,7 @@ ul.rpgui-list-imp {
 	height: 20px;
 	width: 20px;
 	right: 0px;
-	background-image: url('src/lib/_workshop-internals/style/rpgui/img/slider-right.png');
+	background-image: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/slider-right.png');
 	background-size: 100% 100%;
 }
 
@@ -1067,7 +1076,7 @@ ul.rpgui-list-imp {
 	height: 20px;
 	left: 0;
 	right: 0;
-	background-image: url('src/lib/_workshop-internals/style/rpgui/img/slider-track.png');
+	background-image: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/slider-track.png');
 	background-repeat: repeat-x;
 	background-size: 24px 100%;
 }
@@ -1079,7 +1088,7 @@ ul.rpgui-list-imp {
 	width: 15px;
 	margin-top: -5px;
 	left: 40px;
-	background-image: url('src/lib/_workshop-internals/style/rpgui/img/slider-thumb.png');
+	background-image: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/slider-thumb.png');
 	background-size: 100% 100%;
 }
 
@@ -1099,7 +1108,7 @@ ul.rpgui-list-imp {
 	height: 30px;
 	width: 30px;
 	left: 0px;
-	background-image: url('src/lib/_workshop-internals/style/rpgui/img/slider-left-golden.png');
+	background-image: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/slider-left-golden.png');
 	background-size: 100% 100%;
 }
 
@@ -1109,7 +1118,7 @@ ul.rpgui-list-imp {
 	height: 30px;
 	width: 30px;
 	right: 0px;
-	background-image: url('src/lib/_workshop-internals/style/rpgui/img/slider-right-golden.png');
+	background-image: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/slider-right-golden.png');
 	background-size: 100% 100%;
 }
 
@@ -1119,7 +1128,7 @@ ul.rpgui-list-imp {
 	height: 30px;
 	left: 0;
 	right: 0;
-	background-image: url('src/lib/_workshop-internals/style/rpgui/img/slider-track-golden.png');
+	background-image: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/slider-track-golden.png');
 	background-repeat: repeat-x;
 	background-size: 40px 100%;
 }
@@ -1131,6 +1140,6 @@ ul.rpgui-list-imp {
 	width: 18px;
 	margin-top: -4px;
 	left: 40px;
-	background-image: url('src/lib/_workshop-internals/style/rpgui/img/slider-thumb-golden.png');
+	background-image: url('$lib/_workshop-internals/style/rpgui/img/rpgui/img/slider-thumb-golden.png');
 	background-size: 100% 100%;
 }
