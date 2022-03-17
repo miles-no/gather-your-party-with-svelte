@@ -8,13 +8,14 @@
 	 */
 
 	import type { Load } from '@sveltejs/kit';
-	import type { Session } from '$lib/_workshop-internals/types/session';
 
 	export const prerender = true;
 
-	export const load: Load = async ({ session }) => ({
-		props: { readme: (session as Session).readme },
-	});
+	export const load: Load = async ({ fetch }) => {
+		const readmeResponse = await fetch('/api/metadata/readme');
+		const readme = await readmeResponse.text();
+		return { props: { readme } };
+	};
 </script>
 
 <script lang="ts">

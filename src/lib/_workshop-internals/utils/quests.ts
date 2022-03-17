@@ -4,11 +4,8 @@
  * It should not be necessary to familiarize oneself with this file for the workshop.
  */
 
-import fs from 'fs';
-import path from 'path';
 import type { Quest } from '$lib/_workshop-internals/types/quest';
 import type { Quests } from '$lib/_workshop-internals/types/quests';
-import type { Session } from '$lib/_workshop-internals/types/session';
 
 const getPart = (key: string, text: string): string => {
 	const parts = text.split(`#### ${key}`);
@@ -37,7 +34,7 @@ const parseQuest = (rawQuest: string, titan = false): Quest => {
 	};
 };
 
-const parseQuests = (markdown: string): Quests => {
+export const parseQuests = (markdown: string): Quests => {
 	const splitByTitanQuests = markdown.split('# Titan Quest ');
 	const rawTitanQuests = splitByTitanQuests.slice(1);
 	const rawOrdinaryQuests = splitByTitanQuests[0].split('# Quest ').slice(1);
@@ -46,13 +43,4 @@ const parseQuests = (markdown: string): Quests => {
 	const titans = rawTitanQuests.map((quest) => parseQuest(quest, true));
 
 	return { ordinary, titans };
-};
-
-export const getSession = (): Session => {
-	const readme = fs.readFileSync(path.resolve('README.md'), { encoding: 'utf8' });
-
-	const rawQuests = fs.readFileSync(path.resolve('workshop-tasks.md'), { encoding: 'utf8' });
-	const quests = parseQuests(rawQuests);
-
-	return { readme, quests };
 };

@@ -9,13 +9,16 @@
 	 */
 
 	import type { Load } from '@sveltejs/kit';
-	import type { Session } from '$lib/_workshop-internals/types/session';
+	import { parseQuests } from '$lib/_workshop-internals/utils/quests';
 
 	export const prerender = true;
 
-	export const load: Load = async ({ session }) => ({
-		props: { quests: (session as Session).quests },
-	});
+	export const load: Load = async ({ fetch }) => {
+		const questsResponse = await fetch('/api/metadata/quests');
+		const questsRawText = await questsResponse.text();
+		const quests = parseQuests(questsRawText);
+		return { props: { quests } };
+	};
 </script>
 
 <script lang="ts">
