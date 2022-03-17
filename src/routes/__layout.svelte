@@ -19,6 +19,7 @@
 </script>
 
 <script lang="ts">
+	import HintOverlay from '$lib/_workshop-internals/components/hint-overlay/HintOverlay.svelte';
 	import QuestLog from '$lib/_workshop-internals/components/quest-log/QuestLog.svelte';
 	import type { Quests } from '$lib/_workshop-internals/types/quests';
 	import Footer from '$lib/components/page-layout/footer/Footer.svelte';
@@ -37,6 +38,8 @@
 </main>
 
 <Footer />
+
+<HintOverlay />
 
 <style>
 	main {
