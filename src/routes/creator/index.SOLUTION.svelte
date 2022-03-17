@@ -76,7 +76,7 @@
 
 		<label class="input" for="race">
 			<span>Race</span>
-			<RaceSelect id="race" bind:race />
+			<RaceSelect id="race" bind:value={race} />
 		</label>
 
 		<label class="input">
