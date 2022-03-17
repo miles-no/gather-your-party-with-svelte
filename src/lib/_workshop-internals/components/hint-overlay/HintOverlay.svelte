@@ -14,7 +14,6 @@
 	let hints: Hints;
 
 	hintStore.subscribe((hintKey) => {
-		console.log({ hintKey, hints });
 		if (hintKey) {
 			hint = say(hints[hintKey], { nowrap: true });
 		}
@@ -62,6 +61,7 @@
 		font-size: 120%;
 		line-height: 1.8em;
 		color: white;
+		user-select: text;
 	}
 
 	.close-hint-button {
