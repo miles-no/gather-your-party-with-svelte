@@ -27,14 +27,15 @@ Explore both ways, both can help you solve this quest.
 `,
 
 	'3a': `\
-The parent component is already passing attributes, 
-but Stats is not receiving them yet, as they are not exposed.`,
-	'3b': `\
 You can assign multiple reactive bindings which each rely on 
-one prop of the object \`attributes\` each .`,
-	'3c': `\
-The syntax might seem wierd, but it is valid javascript.
+one prop inside the object \`attributes\`.`,
+	'3b': `\
+The syntax of Reactive Bindings might seem wierd, 
+but it is valid javascript.
 \`$: myVar = attributes.someProp;\``,
+	'3c': `\
+Minimum damage can be set like this:
+$: meleeDamageMin = attributes.strength * 2;\``,
 
 	'4a': `\
 Look at crossfade, and use the send and receive methods to
