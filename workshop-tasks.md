@@ -98,7 +98,7 @@ The parent component is already passing the attributes to the Stats component in
 
 #### Goal
 
-- Use Reactive Declarations to set minimum damage as a reactive variable based on the strength attribute, 
+- Use Reactive Declarations to set minimum damage as a reactive variable based on the strength attribute,
   replacing the existing implementation of the `minimumDamage` variable.
   - Minimum damage should be equal to strength x 2.
 - Maximum damage equals strength x 3.
