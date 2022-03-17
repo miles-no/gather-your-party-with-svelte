@@ -34,7 +34,7 @@
 	"dependencies": {
 		"@lukeed/uuid": "2.0.0",
 		"cookie": "0.4.1",
-		"cowsay2": "^2.0.4",
+		"cowsay2": "2.0.4",
 		"svelte-markdown": "0.2.2"
 	}
 }
