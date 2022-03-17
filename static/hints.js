@@ -1,14 +1,16 @@
 export const hints = {
 	'1a': `\
-On the 'Character Creator' page you can toggle the 'Character Debug'
-to view the raw character data json. Try changing the class to see what happens.
+On the 'Character Creator' page you can toggle 
+'Character Debug' to view the raw character data json.
+Try changing the class to see what happens.
 This can be used to see if 'race' is set and is being updated.`,
 	'1b': '\
 Take a look at the referenced links for examples.',
 	'1c': '\
 Have you tried exporting `let race` in RaceSelect?',
 	'1d': `\
-Have you bound the 'race' value in 'src/routes/creator/index.svelte'? Look at how 'primaryClass' is bound.`,
+Have you bound the 'race' value in 'src/routes/creator/index.svelte'?
+Look at how 'primaryClass' is bound.`,
 
 	'2a': `\
 If you are looking to expose props, you should explore

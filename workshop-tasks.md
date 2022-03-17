@@ -30,6 +30,7 @@ and using [bindings](https://svelte.dev/tutorial/text-inputs), which is the two-
 - `npm run hint 1a`
 - `npm run hint 1b`
 - `npm run hint 1c`
+- `npm run hint 1d`
 
 # Quest 2 - The Mighty Button
 
