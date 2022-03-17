@@ -205,7 +205,6 @@ but using the randomize button will produce a more visible effect.
 - `npm run hint 5a`
 - `npm run hint 5b`
 - `npm run hint 5c`
-- `npm run hint 5d`
 
 # Quest 6 - Beauties and the Beasts
 
