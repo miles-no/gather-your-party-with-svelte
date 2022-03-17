@@ -17,7 +17,7 @@ and using [bindings](https://svelte.dev/tutorial/text-inputs), which is the two-
 
 #### Goal
 
-- The variable `race` should be exposed in the component RaceSelect
+- Changing the race selector should update the character data, see the 'Character Debug' panel for details. (See hint 1a)
 - Changing the race of the character should be reflected in the parent component.
 
 #### Links

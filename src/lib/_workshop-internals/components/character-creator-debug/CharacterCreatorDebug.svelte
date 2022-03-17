@@ -19,7 +19,6 @@
 <div class="container">
 	{#if display}
 		<div class="rpgui-container framed-grey debug-character-data">
-			<p>DEBUG CHARACTER DATA</p>
 			<pre><code>{JSON.stringify(character, undefined, 2)}</code></pre>
 		</div>
 	{/if}
@@ -41,12 +40,6 @@
 
 	.debug-character-data {
 		background: white;
-	}
-
-	.debug-character-data p {
-		color: black;
-		font-weight: 300;
-		text-shadow: none;
 	}
 
 	.debug-character-data pre {
