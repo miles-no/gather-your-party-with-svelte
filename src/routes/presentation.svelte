@@ -1,8 +1,12 @@
 <script lang="ts">
+	import AnimationsExample from '$lib/_presentation-examples/AnimationsExample/index.svelte';
 	import NameInput from '$lib/_presentation-examples/BindingsAndEventsExample/index.svelte';
 	import PortraitPreview from '$lib/_presentation-examples/BlocksExample/index.svelte';
 	import Button from '$lib/_presentation-examples/ComponentsExample/index.svelte';
+	import PortraitsViewer from '$lib/_presentation-examples/LifecycleExample/index.svelte';
+	import StrengthPicker from '$lib/_presentation-examples/MotionExample/index.svelte';
 	import Counter from '$lib/_presentation-examples/ReactivityExample/index.svelte';
+	import HelloMessage from '$lib/_presentation-examples/TransitionsExample/index.svelte';
 </script>
 
 <svelte:head>
@@ -34,6 +38,26 @@
 			on:you-shall-not-enter={() => alert('No!!!')}
 		/>
 	</div>
+
+	<h2>Lifecycle Example</h2>
+	<div>
+		<PortraitsViewer />
+	</div>
+
+	<h2>Motion Example</h2>
+	<div>
+		<StrengthPicker />
+	</div>
+
+	<h2>Transitions Example</h2>
+	<div>
+		<HelloMessage />
+	</div>
+
+	<h2>Animations Example</h2>
+	<div>
+		<AnimationsExample />
+	</div>
 </section>
 
 <style>
@@ -44,11 +68,13 @@
 	}
 
 	section > h2 {
-		margin: 4rem 0;
+		padding: 2rem 0;
+		margin: 2rem 0;
+		text-align: left;
+		border-top: 1px solid black;
 	}
 
 	section > div {
-		margin-bottom: 2rem;
 	}
 
 	:global(button) {
