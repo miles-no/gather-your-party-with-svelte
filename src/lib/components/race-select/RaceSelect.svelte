@@ -1,6 +1,6 @@
 <script lang="ts">
 	/**
-	 * Quest 1 - Choose your origin
+	 * Quest 1 - Choose your Origin
 	 */
 
 	import { RACES } from '$lib/models/races';

@@ -17,45 +17,68 @@ Look at how 'primaryClass' is bound.`,
 	'2a': `\
 If you are looking to expose props, you should explore
 https://svelte.dev/tutorial/declaring-props.
-It should be similar to what you did in quest 1.
-`,
+It should be similar to what you did in Quest 1.`,
 	'2b': `\
 There are two ways you can expose events from a component.
 https://svelte.dev/tutorial/event-forwarding &
 https://svelte.dev/tutorial/dom-event-forwarding
-Explore both ways, both can help you solve this quest.
-`,
+Explore both ways, both can help you solve this quest.`,
+	'2c': `\
+As the inner 'button' in our Button component is a simple DOM
+element, we can use DOM event forwarding: \`<button on:click>\`
+without dispatching any events ourselves.
+Now, any parent component should be able to declare an event
+listener on our Button component:
+\`<Button on:click={handleClick}>\`.`,
 
 	'3a': `\
 You can assign multiple reactive bindings which each rely on 
 one prop inside the object \`attributes\`.`,
 	'3b': `\
-The syntax of Reactive Bindings might seem wierd, 
-but it is valid javascript.
-\`$: myVar = attributes.someProp;\``,
+The syntax of Reactive Bindings might seem weird, 
+but it is actually valid JavaScript, the 'labeled statement'.
+\`$: myVar = attributes.someProp * 2;\``,
 	'3c': `\
 Minimum damage can be set like this:
-$: meleeDamageMin = attributes.strength * 2;\``,
+\`$: meleeDamageMin = attributes.strength * 2;\``,
+	'3d': `\
+All of the variable declarations in our Stats file can be
+replaced by reactive declarations based on our
+\`attributes\` variable.`,
 
 	'4a': `\
-Look at crossfade, and use the send and receive methods to
-transition skills from list to the other.
-You can reuse the same transition for both buttons.`,
+The Svelte tutorial for Animations is _very_ helpful here:
+https://svelte.dev/tutorial/animate`,
 	'4b': `\
-Add an animation, for example flip to make the buttons
-disappearing smoother.
-This can also be added and reused on both buttons`,
+Look at crossfade, and use the send and receive methods to
+transition skills from one list to the other.
+You can reuse the same transition for both buttons.`,
+	'4c': `\
+The crossfade transition's functions, send and receive,
+both need a configuration specifying a \`key\` to know
+where to send and receive an element when it's removed
+from one place in the DOM and added to another.`,
+	'4d': `\
+Add an animation, flip, to make the movements of the other
+buttons in the list smoother when a skill is clicked.
+This can also be added and reused on both button elements.`,
 
 	'5a': `\
-Start by getting the randomize function to work correctly.
-Use a for or while loop to simulate a random selection.`,
+It can be difficult to see the attributes changing when
+increasing or decreasing them by 1 with the +/- buttons,
+but using the randomize button will produce a more visible effect.`,
 	'5b': `\
-Instead of replacing the current values/object, 
-create a new springed object which you can set values for`,
+Instead of replacing the current values/object, create a new
+springed/tweened object to use as the "display value", and set
+this value to "target" the real value when the real value changes.`,
 	'5c': `\
+Remember to update the display values when the real values are updated,
+in your event handlers.`,
+	'5d': `\
 Not sure if it is working? Try setting the stiffness to
-0.02 to make it clearer,
-you should see the animation clearly now.
+0.02 (spring) or the duration to a large number, e.g. 2000 (tweened)
+to make it clearer.
+You should see the animation clearly now.
 Play around with the settings!`,
 
 	'6a': `\
@@ -89,6 +112,11 @@ It might be a good idea to check out the other routes
 to see examples of how to create a new page which loads
 some data on mount.
 Perhaps the Character creator page would be a good place to start?`,
+	'7c': `\
+The path where you should create your filebased route can be one of two:
+- \`src/routes/characters/index.svelte\`.
+- \`src/routes/characters.svelte\`.
+These two routes are equivalent.`,
 
 	t1a: `\
 We recommend exposing the \`uid\` param as a prop to

@@ -5,7 +5,7 @@
 	export let attributes: AttributeAllocation;
 
 	/**
-	 * Quest 2 - Boosting our Heroes' stats
+	 * Quest 3 - Boosting our Heroes' stats
 	 */
 
 	let meleeDamageMin = 1;
