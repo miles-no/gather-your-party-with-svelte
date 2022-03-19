@@ -12,7 +12,6 @@
 	onMount(async () => {
 		portrait = await apiFetch('/api/portraits/portrait_15.jpg');
 	});
-
 	onDestroy(() => {
 		clearInterval(interval);
 	});

@@ -2,8 +2,8 @@
 	import ClickIcon from './ClickIcon.svelte';
 
 	export let hint = '';
-	export let small: boolean = undefined;
-	export let disabled: boolean = undefined;
+	export let small: boolean;
+	export let disabled: boolean;
 </script>
 
 <button class="my-button" class:small {disabled} on:click>

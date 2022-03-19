@@ -1,11 +1,10 @@
 <script lang="ts">
 	import { createEventDispatcher } from 'svelte';
-
 	const dispatch = createEventDispatcher();
 
 	let name = 'world';
 
-	const handleNameChange = () => {
+	const handleChange = () => {
 		dispatch('change', { value: name });
 	};
 	const handleEnter = (event) => {
@@ -15,6 +14,6 @@
 	};
 </script>
 
-<input bind:value={name} on:input={handleNameChange} on:keyup={handleEnter} />
+<input bind:value={name} on:input={handleChange} on:keyup={handleEnter} />
 
 <p>Hello {name}!</p>

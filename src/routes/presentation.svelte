@@ -18,7 +18,7 @@
 
 	<h2>Components Example</h2>
 	<div>
-		<Button hint="< Click me" small={false} disabled={false}>Click me!</Button>
+		<Button hint="< Click me" small={false}>Click me!</Button>
 	</div>
 
 	<h2>Reactivity Example</h2>
@@ -28,7 +28,7 @@
 
 	<h2>Blocks Example</h2>
 	<div>
-		<PortraitPreview id="portrait_11.jpg" tags={['Human', 'Paladin']} />
+		<PortraitPreview id="portrait_11.jpg" tags={['Human', 'Bard']} />
 	</div>
 
 	<h2>Bindings and Events Example</h2>
@@ -58,6 +58,11 @@
 	<div>
 		<AnimationsExample />
 	</div>
+
+	<h2>Transitions Example</h2>
+	<div>
+		<HelloMessage />
+	</div>
 </section>
 
 <style>
@@ -75,6 +80,7 @@
 	}
 
 	section > div {
+		margin-bottom: 16rem;
 	}
 
 	:global(button) {
