@@ -24,7 +24,7 @@ Tip: (hint 1a) To see the updates to the actual character model, click "Characte
 - Observe that changing the race now doesn't reflect in the character data model in the Character Debug panel.
 - Expose the `value` variable as a prop in the RaceSelect component.
 - Bind the corresponding variable in the parent component (character creator page), to that prop, so that:
-  - Changing the race selector should update the character data with the new race.
+  - Changing the race selector updates the character data with the new race.
 
 #### Links
 
