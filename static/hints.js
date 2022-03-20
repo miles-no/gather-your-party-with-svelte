@@ -43,7 +43,7 @@ Minimum damage can be set like this:
 \`$: meleeDamageMin = attributes.strength * 2;\``,
 	'3d': `\
 All of the variable declarations in our Stats file can be
-replaced by reactive declarations based on our
+replaced by reactive declarations based on the
 \`attributes\` variable.`,
 
 	'4a': `\
