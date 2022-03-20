@@ -17,11 +17,11 @@
 	};
 </script>
 
-<!-- Quest 6 - Beauties and the Beasts: Enter HTML markup here START -->
+<!-- Quest 6 - The Beauties and the Beasts: Enter HTML markup here START -->
 
-<!-- Quest 6 - Beauties and the Beasts: Enter HTML markup here END -->
+<!-- Quest 6 - The Beauties and the Beasts: Enter HTML markup here END -->
 <style>
-	/* Quest 6 - Beauties and the Beasts: Enter CSS styles here START */
+	/* Quest 6 - The Beauties and the Beasts: Enter CSS styles here START */
 
-	/* Quest 6 - Beauties and the Beasts: Enter CSS styles here END */
+	/* Quest 6 - The Beauties and the Beasts: Enter CSS styles here END */
 </style>

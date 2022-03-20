@@ -1,14 +1,18 @@
-# Quest 1 - Choose your origin
+# Quest 1 - Choose your Origin
 
 #### Lore
 
-Born different, but with one same goal on their mind.
+Some say heroes are shaped, but they all have to start somewhere!
 
 #### Intro
 
-One of the main qualities of components is its ability to pass data in and out.
-In Svelte, one way to accomplish this is by exposing [props](https://svelte.dev/tutorial/declaring-props)
-and using [bindings](https://svelte.dev/tutorial/text-inputs), which is the two-way binding for Svelte.
+One of the main qualities of components is its ability to pass data in and out, through props, bindings, and events.
+
+In Svelte, one way to accomplish this is by exposing [props](https://svelte.dev/tutorial/declaring-props) in a component
+and using [bindings](https://svelte.dev/tutorial/text-inputs), which is the two-way binding for Svelte, to bind these
+values to some variable in a parent component.
+
+Tip: (hint 1a) To see the updates to the actual character model, click "Character Debug" in the lower right corner.
 
 #### Files
 
@@ -17,8 +21,10 @@ and using [bindings](https://svelte.dev/tutorial/text-inputs), which is the two-
 
 #### Goal
 
-- Changing the race selector should update the character data, see the 'Character Debug' panel for details. (See hint 1a)
-- Changing the race of the character should be reflected in the parent component.
+- Observe that changing the race now doesn't reflect in the character data model in the Character Debug panel.
+- Expose the `value` variable as a prop in the RaceSelect component.
+- Bind the corresponding variable in the parent component (character creator page), to that prop, so that:
+  - Changing the race selector updates the character data with the new race.
 
 #### Links
 
@@ -36,19 +42,19 @@ and using [bindings](https://svelte.dev/tutorial/text-inputs), which is the two-
 
 #### Lore
 
-_click_ _click_.... Our heroes' journey can not start if we can not even click a button!
+_click_ _click_... Our heroes' journey can not start if we can not even click a button!
 
 #### Intro
 
 For consistent design and functionality we wish to create a Button component that can be reused in our application.
 
-The Button component currently has the three variables `variant`, `small` and `disabled`, but they are currently not
-exposed, and can not be set by parent components.
+The Button component currently has the three variables: `variant`, `small`, and `disabled`.
+But they are currently not exposed as props, and can not be set by parent components.
 
-We also wish to expose the `click` event of the inner button so any parent components, as that is the main use case for
-a button.
+We also wish to expose the `click` event of the inner button so any parent components can listen for that event,
+as that is the main use case for a button.
 
-Lastly, our button should also have some content. We wish for anything that is inside our Buttons tag to be reflected
+Lastly, our button should also have some content. We wish for anything that is inside our Button tag to be reflected
 into the inner button. Example: `<Button>This should be displayed inside the button</Button>`.
 In Svelte this is done using [Slots](https://svelte.dev/tutorial/slots).
 
@@ -58,9 +64,9 @@ In Svelte this is done using [Slots](https://svelte.dev/tutorial/slots).
 
 #### Goal
 
-- Expose the variables `variant`, `small` and `disabled` so that they can be set by the parent component.
+- Expose the variables `variant`, `small`, and `disabled` so that they can be set by the parent component.
 - Propagate the `click` event from the button to parent components.
-- Use `slots` to display the content our Buttons html tag in parent components.
+- Use slots to display the content our Button's html tag in parent components.
 
 #### Links
 
@@ -73,19 +79,20 @@ In Svelte this is done using [Slots](https://svelte.dev/tutorial/slots).
 
 - `npm run hint 2a`
 - `npm run hint 2b`
+- `npm run hint 2c`
 
 # Quest 3 - Boosting our Heroes' stats
 
 #### Lore
 
-Our mighty heroes seem a bit weak. Luckily we are able to assist them by boosting their attributes effects on their
-stats.
+Our mighty heroes seem a bit weak, and their investment in their attributes isn't helping!
+
+Luckily we are able to assist them by boosting their attributes' effects on their stats.
 
 #### Intro
 
-Currently, the attributes do not affect the stats in any way.
-In the goals section you can see how we wish for attributes to effect stats,
-you should be able to see any changes as they occur when it works correctly.
+Currently, the attributes do not affect the stats in any way. In the goals section you can see how we wish attributes
+should affect stats. You should be able to see any changes in the stats when an attribute is changed.
 
 To accomplish our goal we can use [Reactive Declarations](https://svelte.dev/tutorial/reactive-declarations) to change
 one value whenever any referenced values change.
@@ -106,7 +113,8 @@ The parent component is already passing the attributes to the Stats component in
 - Hitpoints equals constitution x 5.
 - Mana equals wisdom x 10.
 - Spellpower equals intelligence x 2.5.
-- When charisma is < 12 speech should be `Timid`, >= 12 speech should be `Well Spoken`, >16 speech should be `Charming`.
+- When charisma is < 12 speech should be `Timid`, >= 12 charisma should be `Well Spoken`,
+  and >16 charisma should be `Charming`.
 
 #### Links
 
@@ -117,22 +125,24 @@ The parent component is already passing the attributes to the Stats component in
 - `npm run hint 3a`
 - `npm run hint 3b`
 - `npm run hint 3c`
+- `npm run hint 3d`
 
-# Quest 4 - Skills to desire
+# Quest 4 - Skills to Desire
 
 #### Lore
 
-Our heroes look mighty powerful! But they do still not seem satisfied... Maybe we should let them train som skills?
+Our heroes look mighty powerful! But they do still not seem satisfied... Maybe we should let them train som skills,
+and impress them by making it look smooth?
 
 #### Intro
 
-The current solution provides a list of skills and those selected.
-Currently, when selecting a skill, the skill is instantly moved between the two lists.
+The current solution provides a list of available skills and selected skills.
+Currently, when selecting or deselecting a skill, the skill is instantly moved between the two lists.
 
 To ease our heroes' weary eyes we want to animate the items moving between the two lists.
 
-Svelte offers powerful motion tools to deal with simple transitions, or more advanced animations when taking elements
-in or out of the DOM and moving them somewhere else.
+Svelte offers powerful motion tools to deal with simple transitions, or more advanced transitions and animations when
+taking elements in or out of the DOM and moving them somewhere else.
 
 Here, when selecting a skill, the button is removed from the list it was in, and added to the DOM in the other list.
 For removing and adding elements to the DOM Svelte offers several transition directives, each with a different effect.
@@ -152,42 +162,46 @@ transitioning. This allows us to make very convincing animations where many elem
 
 #### Goal
 
-- Use [Deferred Transitions](https://svelte.dev/tutorial/deferred-transitions) to animate the skill selection,
-  making a clicked skill move smoothly from one list to the other.
-- Use [Animations](https://svelte.dev/tutorial/animate) to animate the movement of the other elements in the list
+- Use [Deferred Transitions](https://svelte.dev/tutorial/deferred-transitions) to transition the skill selection,
+  making a clicked skill move smoothly from one list to the other, sending it from one element and receiving it another.
+- Use [Animations](https://svelte.dev/tutorial/animate) to animate the movement of the _other_ elements in the list
   when an element is clicked and moves between them.
 
 #### Links
 
 - [Deferred Transitions](https://svelte.dev/tutorial/deferred-transitions)
 - [Animations](https://svelte.dev/tutorial/animate)
+- _(For the curious: [FLIP animations](https://aerotwist.com/blog/flip-your-animations/))_
 
 #### Hints
 
 - `npm run hint 4a`
 - `npm run hint 4b`
+- `npm run hint 4c`
+- `npm run hint 4d`
 
 # Quest 5 - Indecisive Heroes
 
 #### Lore
 
-Some of our heroes seem to need help to decide what attributes they have, and are requesting our assistance.
+Some of our heroes seem to need help to decide what attributes possess, and are requesting our assistance.
 
 #### Intro
 
-Svelte is full of useful tools for animating changes. Start by looking into
-[Motion (Tweened)](https://svelte.dev/tutorial/tweened) or
-[Motion (Spring)](https://svelte.dev/tutorial/spring) and how you can animate the attributes changing.
+Svelte is full of useful tools for animating changes, i.e. _moving_ a value from one value to another.
+Start by looking into [Motion (Tweened)](https://svelte.dev/tutorial/tweened) or
+[Motion (Spring)](https://svelte.dev/tutorial/spring). Both of these directives will work for our task.
 
-Remember to also update and animate `pointsRemaining`.
+We want to make our heroes' attributes move smoothly from one value to another when it's changed, insted of being
+replaced right away. This can more easily be spotted when using the "Randomize" button than when adding or removing
+an attribute.
+
+Remember to also update and animate `pointsRemaining`, in addition to the attributes themselves.
 
 Play around with the motion settings to see how it affects the animation.
 
 Tip: It's often a good idea to maintain two separate variables when working with animating UI elements: one for the
 _actual_ value, and another "display"-value that animates/moves towards the real value when it changes.
-
-Tip 2: It can be difficult to see the attributes changing when increasing or decreasing them by 1 with the +/- buttons,
-but using the randomize button will produce a more visible effect.
 
 #### Files
 
@@ -208,12 +222,13 @@ but using the randomize button will produce a more visible effect.
 - `npm run hint 5a`
 - `npm run hint 5b`
 - `npm run hint 5c`
+- `npm run hint 5d`
 
-# Quest 6 - Beauties and the Beasts
+# Quest 6 - The Beauties and the Beasts
 
 #### Lore
 
-Someone has vandalized our hall of fame, and all our heroes' pictures were stolen! Help them recreate their pictures.
+Someone has vandalized our hall of fame, and all our heroes' pictures were stolen! Help them reclaim their pictures.
 
 #### Intro
 
@@ -229,7 +244,7 @@ Promises might seem scary, but luckily Svelte has a special construct for dealin
 
 Short explanation of promises: When you "fire" a promise with a target URL, it goes through a couple of states:
 
-1. First it's in a loading state while it resolves the URL.
+1. First it's in a loading state while it resolves the payload at the URL.
 2. Then it either:
    1. Resolves with a value.
    2. Rejects with an error.
@@ -255,7 +270,7 @@ be essential.
   - Note: The portrait data is located at the URL `/api/portraits/{ID}`.
 - Inside the each block, use another await block to render the different states of the portrait promises:
   - Loading: A `PortraitPreview` where the `isLoading` prop is set to `true`.
-  - Resolved: A `PortraitPreview` with the value prop set to the `portrait` property on the resolved value.
+  - Resolved: A `PortraitPreview` with the value prop set to the payload resolved in this promise.
   - Rejected: An error message.
 - Feel free to style the portrait selector as you'd like.
 
@@ -279,13 +294,15 @@ _I swear I saw the recruitment board somewhere around here..._
 
 #### Intro
 
-Now that we have a way of creating characters, we need to be able to see who's available! For that, we're going to
-implement a recruitment board. This will be a whole new page in our
+Now that we have a way of creating characters, we need to be able to see who's available for hire!
+For that, we're going to implement a recruitment board. This will be a whole new page in our
 [Single-page application](https://developer.mozilla.org/en-US/docs/Glossary/SPA).
 
-We need to take advantage of SvelteKit in this quest. SvelteKit gives us some great benefits, among them routing in our
-application. For those familiar with [Next.js](https://nextjs.org/), SvelteKit works in a similar way, with file-based
-routing.
+We need to take advantage of SvelteKit in this quest. SvelteKit gives us some great benefits, among them
+filesystem routing in our application.
+For those of you familiar with [Next.js](https://nextjs.org/), SvelteKit works in a similar way.
+For those not familiar with filesystem routing,
+see [SvelteKit's page about it](https://kit.svelte.dev/docs/routing#pages).
 
 Our recruitment board needs to get all created characters from our API, and display them as a list with som basic
 information.
@@ -297,7 +314,7 @@ more information about the characters if you'd like.
 
 - `src/lib/components/page-layout/header/Header.svelte`
 - `src/routes/...`
-- `src/lib/components/characters/character-preview/CharacterPreview.svelte`
+- _(Not necessary to modify: `src/lib/components/characters/character-preview/CharacterPreview.svelte`)_
 
 #### Goal
 
@@ -306,7 +323,7 @@ more information about the characters if you'd like.
   - The link should be shown as the active link when at the `/characters` page.
 - Create a new page for listing all existing characters.
   - Should use Svelte's `onMount` to fire a promise to get all characters from `/api/characters`. You can use the
-    premade `apiFetch`, which returns a promise, function for making calls to the API.
+    premade `apiFetch` function, which returns a promise, for making calls to the API.
   - Should use the `<svelte:head>` tag to change the title of the page.
   - Should handle the different states of the initial promise, just as in the previous quest.
   - You can use the `CharacterPreviewList` component to actually display the characters when resolved.
@@ -314,7 +331,7 @@ more information about the characters if you'd like.
 
 #### Links
 
-- [Routing: Pages](https://kit.svelte.dev/docs#routing-pages)
+- [Routing: Pages](https://kit.svelte.dev/docs/routing#pages)
 - [sveltekit:prefetch](https://kit.svelte.dev/docs#anchor-options-sveltekit-prefetch)
   - Note: Not important to add, but a nice feature to be aware of.
 - [onMount](https://svelte.dev/docs#run-time-svelte-onmount)
@@ -326,6 +343,7 @@ more information about the characters if you'd like.
 
 - `npm run hint 7a`
 - `npm run hint 7b`
+- `npm run hint 7c`
 
 # Titan Quest 1 - Select your Hero!
 
