@@ -77,7 +77,7 @@
 
 		<!-- Quest 1 - Choose your Origin: Enter HTML markup here START -->
 		<label class="input" for="race">
-			<span>Race</span>
+			<span data-quest-1="label">Race</span>
 			<RaceSelect id="race" />
 		</label>
 		<!-- Quest 1 - Choose your Origin: Enter HTML markup here END -->
@@ -121,22 +121,22 @@
 		{/if}
 
 		<label class="input" for="portrait">
-			<span>Portrait</span>
+			<span data-quest-6="label">Portrait</span>
 			<PortraitPicker id="portrait" bind:value={portrait} />
 		</label>
 
 		<label class="input" for="attributes">
-			<span>Attributes</span>
+			<span data-quest-5>Attributes</span>
 			<AttributeOverview id="attributes" bind:value={attributes} />
 		</label>
 
 		<label class="input" for="stats">
-			<span>Stats</span>
+			<span data-quest-3>Stats</span>
 			<Stats id="stats" {attributes} />
 		</label>
 
 		<label class="input" for="skills">
-			<span>Skills</span>
+			<span data-quest-4>Skills</span>
 			<SkillSelect id="skills" bind:value={skills} />
 		</label>
 	</div>

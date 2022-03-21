@@ -27,11 +27,13 @@
 	import type { Quests } from '$lib/_workshop-internals/types/quests';
 	import Footer from '$lib/components/page-layout/footer/Footer.svelte';
 	import Header from '$lib/components/page-layout/header/Header.svelte';
+	import QuestIndicator from '$lib/_workshop-internals/components/quest-indicator/QuestIndicator.svelte';
 	import '../app.css';
 
 	export let quests: Quests;
 </script>
 
+<QuestIndicator />
 <Header />
 
 <QuestLog {quests} />

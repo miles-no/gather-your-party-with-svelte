@@ -4,8 +4,8 @@
  * It should not be necessary to familiarize oneself with this file for the workshop.
  */
 
-import type { Writable } from 'svelte/store';
-import { writable, get } from 'svelte/store';
+import type { Readable, Writable } from 'svelte/store';
+import { writable, get, readable } from 'svelte/store';
 import { browser } from '$app/env';
 import type { QuestLogProgress } from '$lib/_workshop-internals/types/quest-log-progress';
 
@@ -36,3 +36,17 @@ const storage = <T>(key: string, initValue: T): Writable<T> => {
 };
 
 export const questLog = storage<QuestLogProgress>('quest-log', {});
+
+export const currentQuest: Readable<string> = readable<string>(undefined, (set) => {
+	return questLog.subscribe((progress: QuestLogProgress) => {
+		let lowestUncompletedQuest = undefined;
+		Array.from(Array(7).keys())
+			.map((idx) => idx + 1)
+			.forEach((id) => {
+				if (lowestUncompletedQuest === undefined && !progress[id]) {
+					lowestUncompletedQuest = id;
+				}
+			});
+		set(lowestUncompletedQuest ?? '-1');
+	});
+});

@@ -1,4 +1,4 @@
 /**
- * Ordinary quests are prefixed with 'o' and Titan quests are prefixed with 't'
+ * Ordinary quests are not prefixed, and Titan quests are prefixed with 'Titan '
  */
 export type QuestLogProgress = { [key: string]: boolean };

@@ -23,8 +23,10 @@
 		</div>
 	{/if}
 
-	<button class="rpgui-button rpgui-button--small" on:click={handleToggleShowDebug}
-		>Character debug</button
+	<button
+		data-quest-1="debug"
+		class="rpgui-button rpgui-button--small"
+		on:click={handleToggleShowDebug}>Character debug</button
 	>
 </div>
 

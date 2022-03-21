@@ -82,3 +82,80 @@ body {
 	-ms-user-select: text;
 	user-select: text;
 }
+
+.active-quest-indicator::after {
+	display: block;
+	content: '';
+	background-image: url('$lib/_workshop-internals/style/rpgui/img/icons/exclamation.png');
+	background-size: 40px 40px;
+	background-repeat: no-repeat;
+	filter: hue-rotate(326deg) saturate(3) sepia(0.5) contrast(3);
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	-webkit-animation-duration: 1s;
+	animation-duration: 2s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	animation-name: flash;
+	animation-iteration-count: 3;
+}
+
+.active-quest-indicator[data-quest-1='header']::after,
+.active-quest-indicator[data-quest-7]::after {
+	margin-top: -1.625rem;
+	margin-left: 14rem;
+}
+
+.active-quest-indicator[data-quest-1='label']::after {
+	margin-left: 3rem;
+	margin-top: -1.75rem;
+}
+
+.active-quest-indicator[data-quest-1='debug']::after {
+	margin-left: 10.5rem;
+	margin-top: -1.625rem;
+	transform: scale(0.625);
+}
+
+.active-quest-indicator[data-quest-2]::after {
+	margin-top: -1.125rem;
+	margin-left: 10rem;
+}
+
+.active-quest-indicator[data-quest-3]::after {
+	margin-left: 3.25rem;
+	margin-top: -1.75rem;
+}
+
+.active-quest-indicator[data-quest-4]::after {
+	margin-left: 3.75rem;
+	margin-top: -1.75rem;
+}
+
+.active-quest-indicator[data-quest-5]::after {
+	margin-left: 7rem;
+	margin-top: -1.75rem;
+}
+
+.active-quest-indicator[data-quest-6='label']::after {
+	margin-left: 5.75rem;
+	margin-top: -1.75rem;
+}
+
+.active-quest-indicator[data-quest-6='img']::after {
+	margin-left: -2rem;
+	margin-top: -2rem;
+}
+
+@keyframes flash {
+	0%,
+	50%,
+	100% {
+		opacity: 1;
+	}
+	25%,
+	75% {
+		opacity: 0;
+	}
+}

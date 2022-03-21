@@ -16,7 +16,7 @@
 </script>
 
 <div {id} class="container">
-	<div class="preview-container">
+	<div data-quest-6="img" class="preview-container">
 		<PortraitPreview {value} />
 	</div>
 

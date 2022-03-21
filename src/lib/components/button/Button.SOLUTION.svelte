@@ -7,6 +7,7 @@
 </script>
 
 <button
+	data-quest-2
 	class="rpgui-button"
 	class:golden={variant === 'golden'}
 	class:rpgui-button--small={small}
