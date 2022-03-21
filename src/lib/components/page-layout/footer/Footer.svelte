@@ -39,8 +39,8 @@ This file contains the footer of the page.
 		display: flex;
 		justify-content: space-between;
 		flex-wrap: wrap;
-		gap: 2rem;
-		margin: 2rem 1rem 4rem 1rem;
+		gap: 1rem;
+		margin: 2rem 1rem;
 	}
 
 	.group {
