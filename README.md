@@ -43,7 +43,7 @@ To build the application run: `npm run build`
 #### Use existing template (Recommended)
 
 1. Create an account on [https://codesandbox.io](https://codesandbox.io)
-1. Go to [https://codesandbox.io/s/booster2022-gather-your-party-with-svelte-74wzwu](https://codesandbox.io/s/booster2022-gather-your-party-with-svelte-74wzwu) and start hacking!
+2. Go to [https://codesandbox.io/s/booster2022-gather-your-party-with-svelte-74wzwu](https://codesandbox.io/s/booster2022-gather-your-party-with-svelte-74wzwu) and start hacking!
 
 #### Create new template
 
@@ -58,9 +58,10 @@ To build the application run: `npm run build`
 
 - [Miles](https://www.miles.no)
 - Powered by [create-svelte](https://github.com/sveltejs/kit/tree/master/packages/create-svelte)
-- [Code Sandbox IDE](TODO)
 - [Svelte Workshop Repository](https://github.com/miles-no/booster2022-gather-your-party-with-svelte)
 - [Svelte Workshop Presentation](https://github.com/miles-no/booster2022-gather-your-party-with-svelte/presentation.pdf)
 - [Svelte Tutorial](https://svelte.dev/tutorial/basics)
 - [Svelte Docs](https://svelte.dev/docs)
 - [SvelteKit Docs](https://kit.svelte.dev/docs)
+- [Presentation](https://github.com/miles-no/booster2022-gather-your-party-with-svelte/blob/main/docs/Presentation.pdf)
+- [Feedback](https://forms.gle/uVbWJuUV2R9N1z1V6)
