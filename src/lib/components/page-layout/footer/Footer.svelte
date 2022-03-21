@@ -23,6 +23,10 @@ This file contains the footer of the page.
 		<div class="separator">|</div>
 
 		<a href="https://kit.svelte.dev/docs" target="_blank">SvelteKit Docs</a>
+
+		<div class="separator">|</div>
+
+		<a href="https://forms.gle/uVbWJuUV2R9N1z1V6" target="_blank">Give us Feedback ♡</a>
 	</div>
 
 	<div class="group">
