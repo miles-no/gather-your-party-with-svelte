@@ -4,7 +4,7 @@
 	 *
 	 * It should not be necessary to familiarize oneself with this file for the workshop.
 	 *
-	 * The frontpage.
+	 * The frontpage/homepage of our application.
 	 */
 
 	import type { Load } from '@sveltejs/kit';
@@ -14,6 +14,7 @@
 	export const load: Load = async ({ fetch }) => {
 		const readmeResponse = await fetch('/api/metadata/readme');
 		const readme = await readmeResponse.text();
+
 		return { props: { readme } };
 	};
 </script>

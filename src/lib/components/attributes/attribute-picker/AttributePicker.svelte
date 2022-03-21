@@ -9,11 +9,11 @@
 	export let disableMin: boolean;
 	export let disableMax: boolean;
 
-	const add = (): void => {
+	const add = () => {
 		dispatch('add');
 	};
 
-	const subtract = (): void => {
+	const subtract = () => {
 		dispatch('subtract');
 	};
 </script>

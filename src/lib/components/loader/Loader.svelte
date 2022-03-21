@@ -2,29 +2,30 @@
 	let ms = 300;
 	let counter = 0;
 
-	const incr = () => {
+	const increment = () => {
 		if (counter === 2) {
 			counter = 0;
 
 			return;
 		}
+
 		counter++;
 	};
 
 	let clear: NodeJS.Timer;
+
 	$: {
 		clearInterval(clear);
-		clear = setInterval(incr, ms);
+		clear = setInterval(increment, ms);
 	}
 </script>
 
-{#if counter === 0}
-	<div class="rpgui-icon potion-red loader" />
-{:else if counter === 1}
-	<div class="rpgui-icon potion-green loader" />
-{:else if counter === 2}
-	<div class="rpgui-icon potion-blue loader" />
-{/if}
+<div
+	class="rpgui-icon loader"
+	class:potion-red={counter === 0}
+	class:potion-green={counter === 1}
+	class:potion-blue={counter === 2}
+/>
 
 <style>
 	.loader {

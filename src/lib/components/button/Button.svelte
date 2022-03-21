@@ -2,6 +2,7 @@
 	/**
 	 * Quest 2 - The Mighty Button
 	 */
+
 	type ButtonVariant = 'golden';
 
 	let variant: ButtonVariant;

@@ -14,7 +14,7 @@
 
 	let showQuestLog = false;
 
-	const toggleQuestLog = (): void => {
+	const toggleQuestLog = () => {
 		showQuestLog = !showQuestLog;
 	};
 
@@ -22,7 +22,7 @@
 		return questLog[id];
 	};
 
-	const setQuestProgress = (id: string, completed: boolean): void => {
+	const setQuestProgress = (id: string, completed: boolean) => {
 		questLog.set({ ...$questLog, [id]: completed });
 	};
 </script>

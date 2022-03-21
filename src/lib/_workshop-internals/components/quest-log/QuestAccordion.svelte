@@ -16,11 +16,11 @@
 
 	let isOpen = false;
 
-	const toggle = (): void => {
+	const toggle = () => {
 		isOpen = !isOpen;
 	};
 
-	const toggleCompleted = (completed: boolean): void => {
+	const toggleCompleted = (completed: boolean) => {
 		dispatch('toggleCompleted', completed);
 	};
 </script>

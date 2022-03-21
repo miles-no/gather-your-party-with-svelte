@@ -15,7 +15,7 @@
 	export let quest: Quest;
 	export let completed = false;
 
-	const toggleCompleted = ({ detail: completed }): void => {
+	const toggleCompleted = ({ detail: completed }) => {
 		dispatch('toggleCompleted', completed);
 	};
 

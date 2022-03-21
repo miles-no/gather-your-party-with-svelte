@@ -11,10 +11,10 @@
 </script>
 
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import Loader from '$lib/components/loader/Loader.svelte';
 	import type { Character } from '$lib/types/character';
 	import { apiFetch } from '$lib/utils/api-fetch';
-	import { onMount } from 'svelte';
 
 	export let uid: string;
 
