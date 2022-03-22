@@ -3,11 +3,8 @@
 ## Getting started
 
 1. Make sure you have Node v16 or v17 installed with `node --version`.
-
-2. Clone the repository to your work environment: `git clone https://github.com/miles-no/booster2022-gather-your-party-with-svelte.git`
-
+2. Clone the repository to your work environment: `git clone https://github.com/miles-no/booster2022-gather-your-party-with-svelte.git`.
 3. Install dependencies with `npm install`.
-
 4. To start the development server and open the application: `npm run dev -- --open`.
 
 ## Workshop
@@ -20,9 +17,10 @@ Both this file and the `workshop-tasks` file can be viewed on the [homepage](htt
 
 When working with quests there will always be an accompanying solutions file.
 
-If the task is located in `my-quest.Svelte` the solution file will be called `my-quest.SOLUTION.Svelte`.
+If the task is located in `my-quest.svelte` the solution file will be called `my-quest.SOLUTION.svelte`.
 
-Use this knowledge at your own discretion, but we HIGHLY recommend not looking at these unless you are out of other options.
+Use this knowledge at your own discretion, but we HIGHLY recommend not looking at these unless you are out of other
+options.
 
 ## Tips
 
@@ -42,17 +40,17 @@ To build the application run: `npm run build`
 
 #### Use existing template (Recommended)
 
-1. Create an account on [https://codesandbox.io](https://codesandbox.io)
+1. Create an account on [https://codesandbox.io](https://codesandbox.io).
 2. Go to [https://codesandbox.io/s/booster2022-gather-your-party-with-svelte-74wzwu](https://codesandbox.io/s/booster2022-gather-your-party-with-svelte-74wzwu) and start hacking!
 
 #### Create new template
 
-1. Go to [https://codesandbox.io](https://codesandbox.io)
-2. Login with your user
-3. Click `Create Sandbox`
-4. Select `Import Project`
-5. Paste in `https://github.com/miles-no/booster2022-gather-your-party-with-svelte`
-6. Click `Import and Fork`
+1. Go to [https://codesandbox.io](https://codesandbox.io).
+2. Login with your user.
+3. Click `Create Sandbox`.
+4. Select `Import Project`.
+5. Paste in `https://github.com/miles-no/booster2022-gather-your-party-with-svelte`.
+6. Click `Import and Fork`.
 
 ## Links
 

@@ -48,9 +48,8 @@
 		value = allocation;
 	};
 
-	function getAttributes(displayedAttributes: AttributeAllocation): [Attribute, number][] {
-		return Object.entries(displayedAttributes) as [Attribute, number][];
-	}
+	const getAttributes = (displayedAttributes: AttributeAllocation): [Attribute, number][] =>
+		Object.entries(displayedAttributes) as [Attribute, number][];
 </script>
 
 <div {id} class="container">

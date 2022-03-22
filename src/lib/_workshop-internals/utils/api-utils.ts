@@ -14,7 +14,7 @@ const FOLDER_PATH = '.data';
 const FILE_PATH = `${FOLDER_PATH}/characters.json`;
 const ENCODING = 'utf8';
 
-const createFileIfNotExist = (): void => {
+const createFileIfNotExist = () => {
 	if (existsSync(FILE_PATH)) {
 		return;
 	}
@@ -35,8 +35,8 @@ export const getCharacters = (): Character[] | ApiError => {
 			return { status: 500, error: 'Corrupt characters file' };
 		}
 		return characters;
-	} catch (e) {
-		console.error('Failed to load characters file.\n', e);
+	} catch (error) {
+		console.error('Failed to load characters file.\n', error);
 		return [];
 	}
 };
@@ -45,8 +45,8 @@ export const saveCharacters = (characters: Character[]): void | ApiError => {
 	const jsonString = JSON.stringify(characters);
 	try {
 		writeFileSync(FILE_PATH, jsonString, ENCODING);
-	} catch (e) {
-		console.error('Failed to write to file.\n', e);
+	} catch (error) {
+		console.error('Failed to write to file.\n', error);
 		return { status: 500, error: 'Failed to write to file.' };
 	}
 };

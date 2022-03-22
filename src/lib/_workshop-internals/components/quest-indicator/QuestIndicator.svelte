@@ -4,6 +4,7 @@
 	 *
 	 * It should not be necessary to familiarize oneself with this file for the workshop.
 	 */
+
 	import { onDestroy, onMount } from 'svelte';
 	import { currentQuest } from '$lib/_workshop-internals/stores/quest-log-store';
 	import type { Unsubscriber } from 'svelte/store';
@@ -13,9 +14,9 @@
 
 	let observer: MutationObserver;
 	let currentQuestUnsubscriber: Unsubscriber;
-	let questToDisplay: string = undefined;
+	let questToDisplay: string;
 
-	const renderQuestIndicators = (): void => {
+	const renderQuestIndicators = () => {
 		const activeIndicators = document.body.querySelectorAll(`[${currentQuestMarker}]`);
 		activeIndicators?.forEach((node) => {
 			node.removeAttribute(currentQuestMarker);

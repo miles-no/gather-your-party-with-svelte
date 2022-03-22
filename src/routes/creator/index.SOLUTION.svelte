@@ -6,6 +6,7 @@
 	import PortraitPicker from '$lib/components/portraits/portrait-picker/PortraitPicker.svelte';
 	import RaceSelect from '$lib/components/race-select/RaceSelect.svelte';
 	import SkillSelect from '$lib/components/skill-select/SkillSelect.svelte';
+	import { INITIAL_ATTRIBUTES } from '$lib/constants/initial-attributes';
 	import { CLASSES } from '$lib/models/classes';
 	import type { AttributeAllocation } from '$lib/types/attribute-allocation';
 	import type { Character } from '$lib/types/character';
@@ -14,7 +15,6 @@
 	import type { Skill } from '$lib/types/skill';
 	import type { UpsertCharacterRequest } from '$lib/types/upsert-character-request';
 	import { apiFetch } from '$lib/utils/api-fetch';
-	import { INITIAL_ATTRIBUTES } from '$lib/constants/initial-attributes';
 
 	let saveCharacterPromise: Promise<Character>;
 	let isSavingCharacter = false;

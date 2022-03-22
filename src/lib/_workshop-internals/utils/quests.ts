@@ -22,6 +22,7 @@ const parseQuest = (rawQuest: string, titan = false): Quest => {
 	const goal = getPart('Goal', rawQuest);
 	const links = getPart('Links', rawQuest);
 	const hints = getPart('Hints', rawQuest);
+
 	return {
 		id: titan ? 'Titan ' + id : id,
 		title,
