@@ -1133,3 +1133,9 @@ ul.rpgui-list-imp {
 	background-image: url('$lib/_workshop-internals/style/rpgui/img/slider-thumb-golden.png');
 	background-size: 100% 100%;
 }
+
+*:focus {
+	box-shadow: 0 0 0 2px rgba(198, 128, 62, 1),
+		0 0 0 4px rgba(125, 78, 53, 1),
+		0 0 0 6px rgba(0, 0, 0, 1);
+}
