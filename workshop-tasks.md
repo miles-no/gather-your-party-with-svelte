@@ -304,7 +304,7 @@ For those of you familiar with [Next.js](https://nextjs.org/), SvelteKit works i
 For those not familiar with filesystem routing,
 see [SvelteKit's page about it](https://kit.svelte.dev/docs/routing#pages).
 
-Our recruitment board needs to get all created characters from our API, and display them as a list with som basic
+Our recruitment board needs to get all created characters from our API, and display them as a list with some basic
 information.
 
 A basic component for showing a character has been created: `CharacterPreview.svelte`. Feel free to modify this to show
