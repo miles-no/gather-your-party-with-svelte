@@ -131,7 +131,7 @@ The parent component is already passing the attributes to the Stats component in
 
 #### Lore
 
-Our heroes look mighty powerful! But they do still not seem satisfied... Maybe we should let them train som skills,
+Our heroes look mighty powerful! But they do still not seem satisfied... Maybe we should let them train some skills,
 and impress them by making it look smooth?
 
 #### Intro
