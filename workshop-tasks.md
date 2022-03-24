@@ -106,7 +106,7 @@ The parent component is already passing the attributes to the Stats component in
 #### Goal
 
 - Use Reactive Declarations to set minimum damage as a reactive variable based on the strength attribute,
-  replacing the existing implementation of the `minimumDamage` variable.
+  replacing the existing implementation of the `meleeDamageMin` variable.
   - Minimum damage should be equal to strength x 2.
 - Maximum damage equals strength x 3.
 - Block change equals dexterity x 0.5.
@@ -114,7 +114,7 @@ The parent component is already passing the attributes to the Stats component in
 - Mana equals wisdom x 10.
 - Spellpower equals intelligence x 2.5.
 - When charisma is < 12 speech should be `Timid`, >= 12 charisma should be `Well Spoken`,
-  and >16 charisma should be `Charming`.
+  and >= 16 charisma should be `Charming`.
 
 #### Links
 
