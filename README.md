@@ -1,5 +1,13 @@
 # Gather your party with Svelte
 
+---
+---
+
+# This repository is archived, [click here for the new repository.](https://github.com/miles-no/gather-your-party-with-svelte)
+
+---
+---
+
 ## Getting started
 
 1. Make sure you have Node v16 or v17 installed with `node --version`.
