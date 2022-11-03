@@ -17,9 +17,13 @@
 	};
 </script>
 
-<!-- Quest 6 - The Beauties and the Beasts: Enter HTML markup here START -->
+<!-- Quest 6 - The Beauties and the Beasts: Replace HTML markup here START -->
+<p>
+	But... where's the portraits?!?? Maybe... Maybe! Maybe someone will grant us a quest later on to
+	retrieve them...
+</p>
 
-<!-- Quest 6 - The Beauties and the Beasts: Enter HTML markup here END -->
+<!-- Quest 6 - The Beauties and the Beasts:  HTML markup here END -->
 <style>
 	/* Quest 6 - The Beauties and the Beasts: Enter CSS styles here START */
 
