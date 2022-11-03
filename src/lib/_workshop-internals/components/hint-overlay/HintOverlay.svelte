@@ -33,8 +33,8 @@
 </script>
 
 {#if hint}
-	<div class="hint-container" on:click={handleCloseHint}>
-		<div class="rpgui-container framed hint" on:click|stopPropagation>
+	<div class="hint-container" on:click={handleCloseHint} on:keypress={handleCloseHint}>
+		<div class="rpgui-container framed hint" on:click|stopPropagation on:keypress|stopPropagation>
 			{hint}
 			<button class="rpgui-button close-hint-button" on:click={handleCloseHint}>Close</button>
 		</div>

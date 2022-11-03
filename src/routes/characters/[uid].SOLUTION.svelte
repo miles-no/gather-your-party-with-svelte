@@ -18,6 +18,7 @@
 
 	export let uid: string;
 
+	// eslint-disable-next-line @typescript-eslint/no-empty-function
 	let getCharacterPromise: Promise<Character> = new Promise(() => {});
 
 	onMount(() => {

@@ -12,11 +12,11 @@
 		counter++;
 	};
 
-	let clear: NodeJS.Timer;
+	let clear: number;
 
 	$: {
-		clearInterval(clear);
-		clear = setInterval(increment, ms);
+		window.clearInterval(clear);
+		clear = window.setInterval(increment, ms);
 	}
 </script>
 

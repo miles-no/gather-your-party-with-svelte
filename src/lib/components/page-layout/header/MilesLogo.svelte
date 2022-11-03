@@ -11,7 +11,7 @@
 </script>
 
 <div class="container">
-	<a href="https://www.miles.no/" target="_blank">
+	<a href="https://www.miles.no/" target="_blank" rel="noreferrer">
 		<img src={logo} alt="Miles" />
 	</a>
 </div>
