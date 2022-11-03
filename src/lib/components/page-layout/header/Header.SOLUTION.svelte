@@ -60,6 +60,7 @@
 		transition: color 0.1s linear;
 	}
 
+	nav a:focus,
 	nav a:hover {
 		color: var(--accent-color);
 	}

@@ -100,6 +100,7 @@ inside your html file.
 
 /* button hover */
 .rpgui-button.hover,
+.rpgui-button:focus,
 .rpgui-button:hover {
 	background-image: url('$lib/_workshop-internals/style/rpgui/img/button-hover.png');
 }
@@ -146,6 +147,7 @@ inside your html file.
 
 /* button hover */
 .rpgui-button.golden.hover,
+.rpgui-button.golden:focus,
 .rpgui-button.golden:hover {
 	background-image: url('$lib/_workshop-internals/style/rpgui/img/button-golden-hover.png');
 }
@@ -518,11 +520,13 @@ ul.rpgui-dropdown-imp {
 }
 
 /* dropdown options hover */
+.rpgui-dropdown-imp li:focus,
 .rpgui-dropdown-imp li:hover {
 	color: yellow;
 }
 
 /* dropdown hover */
+.rpgui-dropdown-imp:focus,
 .rpgui-dropdown-imp:hover {
 	color: yellow;
 }
@@ -649,6 +653,11 @@ ul.rpgui-dropdown-imp {
 	user-select: text;
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0.5);
 }
+.rpgui-content input:focus,
+.rpgui-content textarea:focus {
+	box-shadow: 0 0 0 2px rgba(198, 128, 62, 1), 0 0 0 4px rgba(125, 78, 53, 1),
+		0 0 0 6px rgba(0, 0, 0, 1);
+}
 
 /* textarea extra rules */
 .rpgui-content textarea {
@@ -730,11 +739,13 @@ ul.rpgui-list-imp {
 }
 
 /* list options hover */
+.rpgui-list-imp li:focus,
 .rpgui-list-imp li:hover {
 	color: yellow;
 }
 
 /* list hover */
+.rpgui-list-imp:focus,
 .rpgui-list-imp:hover {
 	color: yellow;
 }
@@ -838,6 +849,7 @@ ul.rpgui-list-imp {
 }
 
 /* default gui link */
+.rpgui-content a:focus,
 .rpgui-content a:hover {
 	text-decoration: underline;
 }
@@ -1132,10 +1144,4 @@ ul.rpgui-list-imp {
 	left: 40px;
 	background-image: url('$lib/_workshop-internals/style/rpgui/img/slider-thumb-golden.png');
 	background-size: 100% 100%;
-}
-
-*:focus {
-	box-shadow: 0 0 0 2px rgba(198, 128, 62, 1),
-		0 0 0 4px rgba(125, 78, 53, 1),
-		0 0 0 6px rgba(0, 0, 0, 1);
 }

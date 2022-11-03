@@ -36,6 +36,7 @@
 		background-size: contain;
 		transition: all 0.2s ease-in-out;
 	}
+	.container > a:focus,
 	.container > a:hover {
 		background: url('$lib/_workshop-internals/style/rpgui/img/icons/shield.png');
 		background-size: contain;
