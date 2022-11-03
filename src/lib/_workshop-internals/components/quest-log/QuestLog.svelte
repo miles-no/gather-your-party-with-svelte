@@ -5,6 +5,7 @@
 	 * It should not be necessary to familiarize oneself with this file for the workshop.
 	 */
 
+	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
 	import Quest from '$lib/_workshop-internals/components/quest-log/Quest.svelte';
 	import { questLog } from '$lib/_workshop-internals/stores/quest-log-store';
@@ -25,6 +26,14 @@
 	const setQuestProgress = (id: string, completed: boolean) => {
 		questLog.set({ ...$questLog, [id]: completed });
 	};
+
+	onMount(() => {
+		if (!$questLog[2]) {
+			console.log(
+				"PS: Don't worry about warnings about unkwown props and unexpected slots in the <Button> component for now, that's expected until we complete the second quest!",
+			);
+		}
+	});
 </script>
 
 <button class="rpgui-button rpgui-button--small toggle-btn" on:click={toggleQuestLog}>
