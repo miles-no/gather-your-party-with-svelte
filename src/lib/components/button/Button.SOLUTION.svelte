@@ -1,9 +1,9 @@
 <script lang="ts">
 	type ButtonVariant = 'golden';
 
-	export let variant: ButtonVariant;
-	export let small: boolean;
-	export let disabled: boolean;
+	export let variant: ButtonVariant = undefined;
+	export let small: boolean = undefined;
+	export let disabled: boolean = undefined;
 </script>
 
 <button

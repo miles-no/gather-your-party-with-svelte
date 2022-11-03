@@ -4,7 +4,7 @@
 	import PortraitSelection from '$lib/components/portraits/portrait-selection/PortraitSelection.svelte';
 
 	export let id: string;
-	export let value: string;
+	export let value: string = undefined;
 
 	let showPortraitSelection = false;
 
