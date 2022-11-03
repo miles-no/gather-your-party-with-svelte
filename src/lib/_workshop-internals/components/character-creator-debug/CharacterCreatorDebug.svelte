@@ -38,6 +38,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: flex-end;
+		z-index: 10000;
 	}
 
 	.debug-character-data {
