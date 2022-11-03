@@ -33,11 +33,11 @@
 </script>
 
 <svelte:head>
-	<title>Gather your party with Svelte!</title>
+	<title>Gather your Party with Svelte!</title>
 </svelte:head>
 
 <section>
-	<h1>Gather your party with Svelte!</h1>
+	<h1>Gather your Party with Svelte!</h1>
 
 	<button class="toggle-markdown rpgui-button" on:click={toggleReadme}>
 		{isReadmeOpen ? 'Hide' : 'Show'} Readme

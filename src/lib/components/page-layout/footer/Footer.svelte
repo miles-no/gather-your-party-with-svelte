@@ -8,8 +8,8 @@ This file contains the footer of the page.
 
 <footer class="grid">
 	<div class="group">
-		<a href="https://github.com/miles-no/booster2022-gather-your-party-with-svelte" target="_blank"
-			>GitHub</a
+		<a href="https://github.com/miles-no/gather-your-party-with-svelte" target="_blank"
+			>Workshop@GitHub</a
 		>
 
 		<div class="separator">|</div>
