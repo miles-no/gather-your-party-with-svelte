@@ -72,9 +72,14 @@ Instead of replacing the current values/object, create a new
 springed/tweened object to use as the "display value", and set
 this value to "target" the real value when the real value changes.`,
 	'5c': `\
+The \`$variable\` syntax of stores might be a bit confusing.
+This is called auto-subscriptions, and is a way for you to subscribe to
+the value of a store, without needing to handle the subscription (and
+unsubscription) yourself. And in this case, a spring is a store!`,
+	'5d': `\
 Remember to update the display values when the real values are updated,
 in your event handlers.`,
-	'5d': `\
+	'5e': `\
 Not sure if it is working? Try setting the stiffness to
 0.02 (spring) or the duration to a large number, e.g. 2000 (tweened)
 to make it clearer.

@@ -214,6 +214,7 @@ _actual_ value, and another "display"-value that animates/moves towards the real
 
 #### Links
 
+- [Store Auto-subscriptions](https://svelte.dev/tutorial/auto-subscriptions)
 - [Motion (Tweened)](https://svelte.dev/tutorial/tweened)
 - [Motion (Spring)](https://svelte.dev/tutorial/spring)
 
