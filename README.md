@@ -1,9 +1,10 @@
-# Gather your party with Svelte
+# Gather your Party with Svelte
 
 ## Getting started
 
-1. Make sure you have Node v16 or v17 installed with `node --version`.
-2. Clone the repository to your work environment: `git clone https://github.com/miles-no/booster2022-gather-your-party-with-svelte.git`.
+1. Make sure you have Node v16 or v17+ installed with `node --version`.
+2. Clone the repository to your work environment: `git clone git@github.com:miles-no/gather-your-party-with-svelte.git`
+   or `git clone https://github.com/miles-no/gather-your-party-with-svelte.git`.
 3. Install dependencies with `npm install`.
 4. To start the development server and open the application: `npm run dev -- --open`.
 
@@ -26,7 +27,7 @@ options.
 
 - To clear local data (characters that have been saved), run `npm run clear-data`.
 - If you're unfamiliar with TypeScript and do not wish to use it in your Svelte component files, you can remove
-  the `lang="ts"` attribute at the top of the `<script>` tag.
+  the `lang="ts"` attribute at the top of the `<script>` tag, and strip out any TypeScript types in the file.
 - While it's not necessary, if you like using a code style formatter, `prettier` is set up in this project.
   You can run it in two different ways:
   - If you have it set up in your Editor you can run it via the editor on the file you're working on.
@@ -38,28 +39,30 @@ To build the application run: `npm run build`
 
 ### Alternative: Workshop using Codesandbox as IDE
 
+<!-- TODO Creating a CS template isn't working, fix this after write permissions are fiex -->
+<!--
 #### Use existing template (Recommended)
 
 1. Create an account on [https://codesandbox.io](https://codesandbox.io).
 2. Go to [https://codesandbox.io/s/booster2022-gather-your-party-with-svelte-74wzwu](https://codesandbox.io/s/booster2022-gather-your-party-with-svelte-74wzwu) and start hacking!
+-->
 
 #### Create new template
 
 1. Go to [https://codesandbox.io](https://codesandbox.io).
 2. Login with your user.
-3. Click `Create Sandbox`.
-4. Select `Import Project`.
-5. Paste in `https://github.com/miles-no/booster2022-gather-your-party-with-svelte`.
+3. Click `Create`.
+4. Select `Import from GitHub`.
+5. Paste in `https://github.com/miles-no/gather-your-party-with-svelte.git`.
 6. Click `Import and Fork`.
 
 ## Links
 
 - [Miles](https://www.miles.no)
 - Powered by [create-svelte](https://github.com/sveltejs/kit/tree/master/packages/create-svelte)
-- [Svelte Workshop Repository](https://github.com/miles-no/booster2022-gather-your-party-with-svelte)
-- [Svelte Workshop Presentation](https://github.com/miles-no/booster2022-gather-your-party-with-svelte/presentation.pdf)
+- [Svelte Workshop Repository](https://github.com/miles-no/gather-your-party-with-svelte)
+- [Svelte Workshop Presentation](https://github.com/miles-no/gather-your-party-with-svelte/blob/main/docs/Presentation.pdf)
 - [Svelte Tutorial](https://svelte.dev/tutorial/basics)
 - [Svelte Docs](https://svelte.dev/docs)
 - [SvelteKit Docs](https://kit.svelte.dev/docs)
-- [Presentation](https://github.com/miles-no/booster2022-gather-your-party-with-svelte/blob/main/docs/Presentation.pdf)
 - [Feedback](https://forms.gle/uVbWJuUV2R9N1z1V6)
