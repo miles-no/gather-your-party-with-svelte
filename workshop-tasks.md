@@ -54,7 +54,7 @@ But they are currently not exposed as props, and can not be set by parent compon
 We also wish to expose the `click` event of the inner button so any parent components can listen for that event,
 as that is the main use case for a button.
 
-Lastly, our button should also have some content. We wish for anything that is inside our Button tag to be reflected
+Lastly, our button should also have some content. We wish for anything that is inside our Button element to be reflected
 into the inner button. Example: `<Button>This should be displayed inside the button</Button>`.
 In Svelte this is done using [Slots](https://svelte.dev/tutorial/slots).
 
@@ -91,7 +91,7 @@ Luckily we are able to assist them by boosting their attributes' effects on thei
 
 #### Intro
 
-Currently, the attributes do not affect the stats in any way. In the goals section you can see how we wish attributes
+Currently, the attributes do not affect the stats in any way. In the "Goals section" you can see how we wish attributes
 should affect stats. You should be able to see any changes in the stats when an attribute is changed.
 
 To accomplish our goal we can use [Reactive Declarations](https://svelte.dev/tutorial/reactive-declarations) to change
@@ -109,7 +109,7 @@ The parent component is already passing the attributes to the Stats component in
   replacing the existing implementation of the `meleeDamageMin` variable.
   - Minimum damage should be equal to strength x 2.
 - Maximum damage equals strength x 3.
-- Block change equals dexterity x 0.5.
+- Block chance equals dexterity x 0.5.
 - Hitpoints equals constitution x 5.
 - Mana equals wisdom x 10.
 - Spellpower equals intelligence x 2.5.
@@ -150,7 +150,7 @@ Most of these deal only with the position the element is in when it's removed or
 But others have logic for transitioning the element between where it's added, i.e. received, and where it's removed,
 i.e. sent. These are called [Deferred Transitions](https://svelte.dev/tutorial/deferred-transitions).
 
-These kind of transitions allows us to move an element between where it's added or removed and to where it's new
+These kinds of transitions allow us to move an element between where it's added or removed and to where it's new
 position is.
 
 Svelte _also_ offers us animation directives for animating the _surrounding_ elements in the DOM, which aren't
