@@ -19,7 +19,22 @@
 <div class="container">
 	{#if display}
 		<div class="rpgui-container framed-grey debug-character-data">
-			<pre><code>{JSON.stringify(character, undefined, 2)}</code></pre>
+			<div>id: {JSON.stringify(character.id)}</div>
+			<div>name: {JSON.stringify(character.name)}</div>
+			<div>race: {JSON.stringify(character.race)}</div>
+			<div>primaryClass: {JSON.stringify(character.primaryClass)}</div>
+			<div>secondaryClass: {JSON.stringify(character.secondaryClass)}</div>
+			<div>
+				portrait: <img src={character.portrait} alt="Portrait" title={character.portrait} />
+			</div>
+			<div>
+				attributes:
+				<pre><code>{JSON.stringify(character.attributes, null, 2)}</code></pre>
+			</div>
+			<div>
+				skills:
+				<pre><code>{JSON.stringify(character.skills, null, 2)}</code></pre>
+			</div>
 		</div>
 	{/if}
 
@@ -42,11 +57,15 @@
 	}
 
 	.debug-character-data {
-		background: white;
-	}
-
-	.debug-character-data pre {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5em;
+		background: white !important;
 		font-size: 0.825em;
 		line-height: 1.25;
+	}
+
+	.debug-character-data img {
+		height: 64px;
 	}
 </style>
