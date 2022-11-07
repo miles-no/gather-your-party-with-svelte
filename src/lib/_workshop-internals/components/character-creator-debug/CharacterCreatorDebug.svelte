@@ -25,7 +25,11 @@
 			<div>primaryClass: {JSON.stringify(character.primaryClass)}</div>
 			<div>secondaryClass: {JSON.stringify(character.secondaryClass)}</div>
 			<div>
-				portrait: <img src={character.portrait} alt="Portrait" title={character.portrait} />
+				portrait: {#if character.portrait}<img
+						src={character.portrait}
+						alt="Portrait"
+						title={character.portrait}
+					/>{:else}{JSON.stringify(character.portrait)}{/if}
 			</div>
 			<div>
 				attributes:
