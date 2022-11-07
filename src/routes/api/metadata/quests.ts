@@ -12,7 +12,7 @@ import fs from 'fs';
 const QUESTS_PATH = 'workshop-tasks.md';
 
 // GET /api/metadata/workshop-tasks
-export const get: RequestHandler = async () => {
+export const GET: RequestHandler = async () => {
 	const data = fs.readFileSync(QUESTS_PATH, 'utf8');
 
 	return { body: data };

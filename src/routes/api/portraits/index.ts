@@ -36,6 +36,6 @@ const portraits = [
 ];
 
 // GET /api/portraits
-export const get: RequestHandler = async () => {
+export const GET: RequestHandler = async () => {
 	return { body: portraits };
 };

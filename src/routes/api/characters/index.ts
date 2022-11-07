@@ -18,7 +18,7 @@ import {
 import { validateCharacter } from '$lib/_workshop-internals/utils/character-validation';
 
 // GET /api/characters
-export const get: RequestHandler<void, Character[] | string> = () => {
+export const GET: RequestHandler<void, Character[] | string> = () => {
 	const response = getCharacters();
 	if (isApiError(response)) {
 		return { status: response.status, body: response.error };

@@ -10,7 +10,7 @@ import type { RequestHandler } from '@sveltejs/kit';
 import { isApiError, getCharacters } from '$lib/_workshop-internals/utils/api-utils';
 
 // GET /api/characters/[id]
-export const get: RequestHandler = async ({ params }) => {
+export const GET: RequestHandler = async ({ params }) => {
 	const lookupId = params.id;
 	const characters = getCharacters();
 	if (isApiError(characters)) {
