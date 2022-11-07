@@ -24,6 +24,5 @@ export const GET: RequestHandler = async ({ params }) => {
 		return new Response(`Could not find character with id '${lookupId}'`, { status: 404 });
 	}
 
-	// TODO Must add headers for JSON?
 	return new Response(JSON.stringify(character));
 };

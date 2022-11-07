@@ -37,6 +37,5 @@ const PORTRAITS = [
 
 // GET /api/portraits
 export const GET: RequestHandler = async () => {
-	// TODO Must add headers for JSON?
 	return new Response(JSON.stringify(PORTRAITS));
 };

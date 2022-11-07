@@ -24,7 +24,6 @@ export const GET: RequestHandler = () => {
 		return new Response(response.error, { status: response.status });
 	}
 
-	// TODO Must add headers for JSON?
 	return new Response(JSON.stringify(response));
 };
 
@@ -67,6 +66,5 @@ export const POST: RequestHandler = async ({ request }) => {
 		return new Response(response.error, { status: response.status });
 	}
 
-	// TODO Must add headers for JSON?
 	return new Response(JSON.stringify(characterRequest), { status: 201 });
 };
