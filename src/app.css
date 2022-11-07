@@ -82,7 +82,7 @@ body {
 	user-select: text;
 }
 
-.active-quest-indicator::after {
+.active-quest-indicator:not(.golden)::after {
 	display: block;
 	content: '';
 	background-image: url('$lib/_workshop-internals/style/rpgui/img/icons/exclamation.png');
@@ -117,7 +117,7 @@ body {
 	transform: scale(0.625);
 }
 
-.active-quest-indicator[data-quest-2]::after {
+.active-quest-indicator[data-quest-2]:not(.golden)::after {
 	margin-top: -1.125rem;
 	margin-left: 10rem;
 }
