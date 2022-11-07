@@ -73,7 +73,7 @@
 
 	<div>
 		<div class="label">
-			Available skills {#each Array(availableSkillsCount).fill(0) as i}*{/each}
+			Available skills {#each Array(availableSkillsCount).fill(0) as _}*{/each}
 		</div>
 
 		<div class="list">

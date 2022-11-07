@@ -23,6 +23,10 @@
 	const toggleCompleted = (completed: boolean) => {
 		dispatch('toggleCompleted', completed);
 	};
+
+	const handleChange = (event: Event) => {
+		toggleCompleted((event.target as HTMLInputElement).checked);
+	};
 </script>
 
 <h1 class="accordion">
@@ -31,7 +35,7 @@
 		class="rpgui-checkbox golden toggle-completed"
 		type="checkbox"
 		bind:checked={completed}
-		on:change={(event) => toggleCompleted(event.target.checked)}
+		on:change={handleChange}
 	/><label class="toggle-completed-label" for="quest-{id}" />
 	<button class="rpgui-cursor-point toggle-btn" on:click={toggle} aria-expanded={isOpen}>
 		<svg

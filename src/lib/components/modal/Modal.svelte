@@ -42,7 +42,7 @@
 	};
 
 	const handleCloseByClick = (event: MouseEvent) => {
-		if (event.target.id !== MODAL_ID) {
+		if ((event.target as HTMLDivElement).id !== MODAL_ID) {
 			return;
 		}
 

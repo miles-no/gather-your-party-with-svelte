@@ -7,7 +7,7 @@
 
 	export let clickable = false;
 	export let isLoading = false;
-	export let value: string;
+	export let value: string = undefined;
 
 	const handleClick = () => {
 		if (isLoading) {

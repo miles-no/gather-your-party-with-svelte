@@ -21,7 +21,7 @@
 		<Loader />
 	{:then characters}
 		<CharacterPreviewList {characters} />
-	{:catch error}
+	{:catch _}
 		&cross; Error getting characters, see console for more info.
 	{/await}
 </section>

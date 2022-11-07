@@ -29,7 +29,7 @@ export const GET: RequestHandler = () => {
 
 // POST /api/characters
 export const POST: RequestHandler = async ({ request }) => {
-	let data;
+	let data: unknown;
 	try {
 		data = await request.json();
 	} catch (error) {

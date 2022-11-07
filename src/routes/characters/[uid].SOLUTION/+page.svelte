@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { PageData } from './$types';
+	import type { PageData } from './$types';
 	import { onMount } from 'svelte';
 	import Loader from '$lib/components/loader/Loader.svelte';
 	import type { Character } from '$lib/types/character';
@@ -20,7 +20,7 @@
 		<title>Loading character...</title>
 	{:then character}
 		<title>{character.name}</title>
-	{:catch error}
+	{:catch _}
 		<title>Character not found</title>
 	{/await}
 </svelte:head>
@@ -29,7 +29,7 @@
 	<Loader />
 {:then character}
 	<pre><code>{JSON.stringify(character, undefined, 2)}</code></pre>
-{:catch error}
+{:catch _}
 	<p>Could not fetch character.</p>
 {/await}
 

@@ -9,6 +9,7 @@
 	import { fade } from 'svelte/transition';
 	import Quest from '$lib/_workshop-internals/components/quest-log/Quest.svelte';
 	import { questLog } from '$lib/_workshop-internals/stores/quest-log-store';
+	import type { QuestLogProgress } from '$lib/_workshop-internals/types/quest-log-progress';
 	import type { Quests } from '$lib/_workshop-internals/types/quests';
 
 	export let quests: Quests;
@@ -19,7 +20,7 @@
 		showQuestLog = !showQuestLog;
 	};
 
-	const getQuestProgress = (questLog, id: string): boolean => {
+	const getQuestProgress = (questLog: QuestLogProgress, id: string): boolean => {
 		return questLog[id];
 	};
 

@@ -12,6 +12,8 @@
 		getPortraitsPromise = apiFetch<string[]>('/api/portraits');
 	});
 
+	const fetchPortrait = async (portrait: string) => apiFetch(`/api/portraits/${portrait}`);
+
 	const handleSelect = ({ detail: { portrait } }) => {
 		dispatch('select', { portrait });
 	};
@@ -22,16 +24,16 @@
 {:then portraits}
 	<div class="portraits">
 		{#each portraits as portrait (portrait)}
-			{#await apiFetch(`/api/portraits/${portrait}`)}
+			{#await fetchPortrait(portrait)}
 				<PortraitPreview isLoading />
 			{:then payload}
 				<PortraitPreview value={payload} clickable on:click={handleSelect} />
-			{:catch error}
+			{:catch _}
 				<p>Unable to fetch portrait {portrait}.</p>
 			{/await}
 		{/each}
 	</div>
-{:catch error}
+{:catch _}
 	<p>Unable to fetch list of portraits.</p>
 {/await}
 

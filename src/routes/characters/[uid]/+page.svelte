@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { PageData } from './$types';
+	import type { PageData } from './$types';
 	import { onMount } from 'svelte';
 	import Loader from '$lib/components/loader/Loader.svelte';
 	import type { Character } from '$lib/types/character';

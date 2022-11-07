@@ -147,7 +147,7 @@
 		{#if savedCharacter}
 			&check; Character "{savedCharacter.name}" saved.
 		{/if}
-	{:catch error}
+	{:catch _}
 		&cross; Error saving character, see console for more info.
 	{/await}
 </section>
