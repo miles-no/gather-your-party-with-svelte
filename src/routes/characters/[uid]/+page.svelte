@@ -1,28 +1,11 @@
-<script context="module" lang="ts">
-	import type { Load } from '@sveltejs/kit';
-
-	interface LoadProps {
-		uid: string;
-	}
-
-	/**
-	 * Titan Quest 1 - Select your Hero: Implement load function here START
-	 */
-	export const load: Load<LoadProps, LoadProps> = () => {
-		return {};
-	};
-	/**
-	 * Titan Quest 1 - Select your Hero: Implement load function here END
-	 */
-</script>
-
 <script lang="ts">
+	import { PageData } from './$types';
+	import { onMount } from 'svelte';
 	import Loader from '$lib/components/loader/Loader.svelte';
 	import type { Character } from '$lib/types/character';
 	import { apiFetch } from '$lib/utils/api-fetch';
-	import { onMount } from 'svelte';
 
-	export let uid: string;
+	export let data: PageData;
 
 	/**
 	 * Titan Quest 1 - Select your Hero: Implement fetching of character here START

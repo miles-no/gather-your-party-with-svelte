@@ -1,43 +1,20 @@
-<script context="module" lang="ts">
-	/***
-	 * NOT PART OF WORKSHOP
-	 *
-	 * It should not be necessary to familiarize oneself with this file for the workshop.
-	 *
-	 * As the filename might hint at, this file contains the layout of the application.
-	 */
-
-	import type { Load } from '@sveltejs/kit';
-	import { parseQuests } from '$lib/_workshop-internals/utils/quests';
-
-	export const prerender = true;
-
-	export const load: Load = async ({ fetch }) => {
-		const questsResponse = await fetch('/api/metadata/quests');
-		const questsRawText = await questsResponse.text();
-		const quests = parseQuests(questsRawText);
-
-		return { props: { quests } };
-	};
-</script>
-
 <script lang="ts">
+	import type { PageData } from './$types';
 	import HintOverlay from '$lib/_workshop-internals/components/hint-overlay/HintOverlay.svelte';
 	import Footer from '$lib/components/page-layout/footer/Footer.svelte';
 	import Header from '$lib/components/page-layout/header/Header.svelte';
 	import QuestIndicator from '$lib/_workshop-internals/components/quest-indicator/QuestIndicator.svelte';
 	import QuestLog from '$lib/_workshop-internals/components/quest-log/QuestLog.svelte';
-	import type { Quests } from '$lib/_workshop-internals/types/quests';
 	import '../app.css';
 
-	export let quests: Quests;
+	export let data: PageData;
 </script>
 
 <QuestIndicator />
 
 <Header />
 
-<QuestLog {quests} />
+<QuestLog quests={data.quests} />
 
 <main>
 	<slot />

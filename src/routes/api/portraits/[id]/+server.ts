@@ -15,5 +15,5 @@ export const GET: RequestHandler = async ({ params }) => {
 	const path = `src/lib/_workshop-internals/assets/portraits/${lookupId}`;
 	const data = fs.readFileSync(path, 'base64');
 
-	return { body: `"data:image/jpeg;base64,${data}"` };
+	return new Response(`"data:image/jpeg;base64,${data}"`);
 };

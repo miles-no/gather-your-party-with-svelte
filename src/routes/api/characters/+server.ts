@@ -6,7 +6,7 @@
  * This file contains API endpoints for getting all characters and adding new characters.
  */
 
-import type { RequestHandler } from '@sveltejs/kit';
+import type { RequestHandler } from './$types';
 import { v4 as uuid } from '@lukeed/uuid';
 import type { Character } from '$lib/types/character';
 import type { UpsertCharacterRequest } from '$lib/types/upsert-character-request';
@@ -18,32 +18,36 @@ import {
 import { validateCharacter } from '$lib/_workshop-internals/utils/character-validation';
 
 // GET /api/characters
-export const GET: RequestHandler<void, Character[] | string> = () => {
+export const GET: RequestHandler = () => {
 	const response = getCharacters();
 	if (isApiError(response)) {
-		return { status: response.status, body: response.error };
+		return new Response(response.error, { status: response.status });
 	}
-	return { body: response };
+
+	// TODO Must add headers for JSON?
+	return new Response(JSON.stringify(response));
 };
 
 // POST /api/characters
-export const post: RequestHandler = async ({ request }) => {
+export const POST: RequestHandler = async ({ request }) => {
 	let data;
 	try {
 		data = await request.json();
 	} catch (error) {
-		return { status: 400, body: 'Request body must be a string containing valid JSON' };
+		return new Response('Request body must be a string containing valid JSON', { status: 400 });
 	}
 
 	const validation = validateCharacter(data);
 	if (isApiError(validation)) {
-		return { status: validation.status, body: validation.error };
+		return new Response(validation.error, { status: validation.status });
 	}
+
 	const characterRequest: UpsertCharacterRequest = data as UpsertCharacterRequest;
 	const characters = getCharacters();
 	if (isApiError(characters)) {
-		return { status: characters.status, body: characters.error };
+		return new Response(characters.error, { status: characters.status });
 	}
+
 	if (!characterRequest.id) {
 		characterRequest.id = uuid();
 	}
@@ -57,10 +61,12 @@ export const post: RequestHandler = async ({ request }) => {
 		tmp[existingIndex] = newCharacter;
 		updatedList = tmp;
 	}
+
 	const response = saveCharacters(updatedList);
 	if (isApiError(response)) {
-		return { status: response.status, body: response.error };
+		return new Response(response.error, { status: response.status });
 	}
 
-	return { status: 201, body: characterRequest };
+	// TODO Must add headers for JSON?
+	return new Response(JSON.stringify(characterRequest), { status: 201 });
 };

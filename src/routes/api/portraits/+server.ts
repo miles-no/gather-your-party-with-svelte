@@ -6,9 +6,9 @@
  * This file contains API endpoints for getting all portraits.
  */
 
-import type { RequestHandler } from '@sveltejs/kit';
+import type { RequestHandler } from './$types';
 
-const portraits = [
+const PORTRAITS = [
 	'portrait_01.jpg',
 	'portrait_02.jpg',
 	'portrait_03.jpg',
@@ -37,5 +37,6 @@ const portraits = [
 
 // GET /api/portraits
 export const GET: RequestHandler = async () => {
-	return { body: portraits };
+	// TODO Must add headers for JSON?
+	return new Response(JSON.stringify(PORTRAITS));
 };

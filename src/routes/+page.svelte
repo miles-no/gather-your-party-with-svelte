@@ -1,29 +1,9 @@
-<script context="module" lang="ts">
-	/***
-	 * NOT PART OF WORKSHOP
-	 *
-	 * It should not be necessary to familiarize oneself with this file for the workshop.
-	 *
-	 * The frontpage/homepage of our application.
-	 */
-
-	import type { Load } from '@sveltejs/kit';
-
-	export const prerender = true;
-
-	export const load: Load = async ({ fetch }) => {
-		const readmeResponse = await fetch('/api/metadata/readme');
-		const readme = await readmeResponse.text();
-
-		return { props: { readme } };
-	};
-</script>
-
 <script lang="ts">
+	import type { PageData } from './$types';
 	import { slide } from 'svelte/transition';
 	import Markdown from '$lib/_workshop-internals/components/markdown/Markdown.svelte';
 
-	export let readme: string;
+	export let data: PageData;
 
 	let isReadmeOpen = false;
 
@@ -44,7 +24,7 @@
 	</button>
 	{#if isReadmeOpen}
 		<div class="markdown" transition:slide={{ duration: 300 }}>
-			<Markdown source={readme} />
+			<Markdown source={data.readme} />
 		</div>
 	{/if}
 </section>

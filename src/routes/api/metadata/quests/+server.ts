@@ -6,7 +6,7 @@
  * This file contains API endpoints for getting the quests raw data.
  */
 
-import type { RequestHandler } from '@sveltejs/kit';
+import type { RequestHandler } from './$types';
 import fs from 'fs';
 
 const QUESTS_PATH = 'workshop-tasks.md';
@@ -15,5 +15,5 @@ const QUESTS_PATH = 'workshop-tasks.md';
 export const GET: RequestHandler = async () => {
 	const data = fs.readFileSync(QUESTS_PATH, 'utf8');
 
-	return { body: data };
+	return new Response(data);
 };

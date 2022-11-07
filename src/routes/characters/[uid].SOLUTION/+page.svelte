@@ -1,28 +1,17 @@
-<script context="module" lang="ts">
-	import type { Load } from '@sveltejs/kit';
-
-	interface LoadProps {
-		uid: string;
-	}
-
-	export const load: Load<LoadProps, LoadProps> = async ({ params }) => ({
-		props: { uid: params.uid },
-	});
-</script>
-
 <script lang="ts">
+	import { PageData } from './$types';
 	import { onMount } from 'svelte';
 	import Loader from '$lib/components/loader/Loader.svelte';
 	import type { Character } from '$lib/types/character';
 	import { apiFetch } from '$lib/utils/api-fetch';
 
-	export let uid: string;
+	export let data: PageData;
 
 	// eslint-disable-next-line @typescript-eslint/no-empty-function
 	let getCharacterPromise: Promise<Character> = new Promise(() => {});
 
 	onMount(() => {
-		getCharacterPromise = apiFetch<Character>(`/api/characters/${uid}`);
+		getCharacterPromise = apiFetch<Character>(`/api/characters/${data.uid}`);
 	});
 </script>
 

@@ -6,13 +6,14 @@
  * This file contains API endpoints for getting the readme raw data.
  */
 
-import type { RequestHandler } from '@sveltejs/kit';
+import type { RequestHandler } from './$types';
 import fs from 'fs';
+
+const README_PATH = 'README.md';
 
 // GET /api/metadata/readme
 export const GET: RequestHandler = async () => {
-	const path = 'README.md';
-	const data = fs.readFileSync(path, 'utf8');
+	const data = fs.readFileSync(README_PATH, 'utf8');
 
-	return { body: data };
+	return new Response(data);
 };
