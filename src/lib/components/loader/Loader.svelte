@@ -15,8 +15,8 @@
 	let clear: number;
 
 	$: {
-		window.clearInterval(clear);
-		clear = window.setInterval(increment, ms);
+		clearInterval(clear);
+		clear = setInterval(increment, ms);
 	}
 </script>
 
