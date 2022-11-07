@@ -6,7 +6,7 @@
 
 import type { Readable, Writable } from 'svelte/store';
 import { writable, get, readable } from 'svelte/store';
-import { browser } from '$app/env';
+import { browser } from '$app/environment';
 import type { QuestLogProgress } from '$lib/_workshop-internals/types/quest-log-progress';
 
 const storage = <T>(key: string, initValue: T): Writable<T> => {

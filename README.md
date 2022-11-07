@@ -2,7 +2,7 @@
 
 ## Getting started
 
-1. Make sure you have Node v16 or v17+ installed with `node --version`.
+1. Make sure you have Node v16.14+ installed with `node --version`.
 2. Clone the repository to your work environment: `git clone git@github.com:miles-no/gather-your-party-with-svelte.git`
    or `git clone https://github.com/miles-no/gather-your-party-with-svelte.git`.
 3. Install dependencies with `npm install`.
