@@ -29,7 +29,7 @@ This file contains the footer of the page.
 
 		<div class="separator">|</div>
 
-		<a href="https://forms.gle/uVbWJuUV2R9N1z1V6" target="_blank" rel="noreferrer"
+		<a href="https://forms.gle/dUEaaMj2fZDkXH9u8" target="_blank" rel="noreferrer"
 			>Give us Feedback ♡</a
 		>
 	</div>
