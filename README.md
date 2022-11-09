@@ -39,12 +39,12 @@ To build the application run: `npm run build`
 
 ### Alternative: Workshop using Codesandbox as IDE
 
-<!-- TODO Creating a CS template isn't working, fix this after write permissions are fiex -->
+<!-- TODO Creating a CS template isn't working for the moment, can't fork an imported repo in CS -->
 <!--
 #### Use existing template (Recommended)
 
 1. Create an account on [https://codesandbox.io](https://codesandbox.io).
-2. Go to [https://codesandbox.io/s/booster2022-gather-your-party-with-svelte-74wzwu](https://codesandbox.io/s/booster2022-gather-your-party-with-svelte-74wzwu) and start hacking!
+2. Go to [https://codesandbox.io/s/TODO](https://codesandbox.io/s/TODO) and start hacking!
 -->
 
 #### Create new template
