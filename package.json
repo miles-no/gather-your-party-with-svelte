@@ -12,9 +12,8 @@
 		"hint": "node hinter.js",
 		"clear-data": "npx -y rimraf .data",
 		"solve": "find ./src -name '*.SOLUTION.svelte' -exec bash -c 'mv $0 ${0/SOLUTION./}' {} ; && find ./src/routes -name 'SOLUTION.*.svelte' -exec bash -c 'mv $0 ${0/SOLUTION./}' {} ; && find ./src/routes -type d -name '*.SOLUTION' -exec bash -c 'mv \"$0\"/* ${0/.SOLUTION/}/' {} ;",
-		"ci:copy-public": "bash -c 'mkdir -p ./static/api/' && bash -c 'cp -R ./src/lib/_workshop-internals/assets/* ./static/api/'",
 		"ci:solve": "find ./src -name '*.SOLUTION.svelte' -exec bash -c 'mv $0 ${0/SOLUTION./}' {} \\; && find ./src/routes -name 'SOLUTION.*.svelte' -exec bash -c 'mv $0 ${0/SOLUTION./}' {} \\; && find ./src/routes -type d -name '*.SOLUTION' -exec bash -c 'mv \"$0\"/* ${0/.SOLUTION/}/' {} \\;",
-		"ci:build": "npm run ci:copy-public && npm run ci:solve && npm run build",
+		"ci:build": "npm run ci:solve && npm run build",
 		"deploy": "cp -R . /tmp/booster2022-deploy && cd /tmp/booster2022-deploy && npm run solve && vercel --prod && rm -rf /tmp/booster2022-deploy"
 	},
 	"devDependencies": {
