@@ -10,24 +10,25 @@
 
 ## Workshop
 
-All tasks are listed in file `workshop-tasks.md` located in the root of the project.
+All tasks are listed in the file `workshop-tasks.md` located at the root of the project.
 
-Both this file and the `workshop-tasks` file can be viewed on the [homepage](http://localhost:3000).
+Both this readme file and the `workshop-tasks` (as Quests) file can be viewed in the [local app](http://localhost:3000).
 
 ### Solutions
 
 When working with quests there will always be an accompanying solutions file.
 
-If the task is located in `my-quest.svelte` the solution file will be called `my-quest.SOLUTION.svelte`.
+If the task is located in `my-quest.svelte` the solution file will be called `my-quest.SOLUTION.svelte` (or
+`SOLUTION.+page.svelte` for a route, and `my-quest.SOLUTION` for a route folder).
 
-Use this knowledge at your own discretion, but we HIGHLY recommend not looking at these unless you are out of other
-options.
+Use this knowledge at your own discretion, but we recommend not looking at these unless you are out of other options.
 
 ## Tips
 
 - To clear local data (characters that have been saved), run `npm run clear-data`.
 - If you're unfamiliar with TypeScript and do not wish to use it in your Svelte component files, you can remove
-  the `lang="ts"` attribute at the top of the `<script>` tag, and strip out any TypeScript types in the file.
+  the `lang="ts"` attribute at the top of the `<script>` tag in components, and strip out any TypeScript types in the
+  file.
 - While it's not necessary, if you like using a code style formatter, `prettier` is set up in this project.
   You can run it in two different ways:
   - If you have it set up in your Editor you can run it via the editor on the file you're working on.
@@ -35,7 +36,7 @@ options.
 
 ### Building
 
-To build the application run: `npm run build`
+To build the application run: `npm run build`.
 
 ### Alternative: Workshop using Codesandbox as IDE
 
