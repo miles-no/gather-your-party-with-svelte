@@ -11,7 +11,7 @@ Take a look at the referenced links for examples.',
 	'1c': '\
 Have you tried exporting `let race` in RaceSelect?',
 	'1d': `\
-Have you bound the 'race' value in 'src/routes/creator/index.svelte'?
+Have you bound the 'race' value in 'src/routes/creator/+page.svelte'?
 Look at how 'primaryClass' is bound.`,
 
 	'2a': `\
@@ -117,11 +117,6 @@ It might be a good idea to check out the other routes
 to see examples of how to create a new page which loads
 some data on mount.
 Perhaps the Character creator page would be a good place to start?`,
-	'7c': `\
-The path where you should create your filebased route can be one of two:
-- \`src/routes/characters/index.svelte\`.
-- \`src/routes/characters.svelte\`.
-These two routes are equivalent.`,
 
 	t1a: `\
 We recommend exposing the \`uid\` param as a prop to

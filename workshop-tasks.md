@@ -17,7 +17,7 @@ Tip: (hint 1a) To see the updates to the actual character model, click "Characte
 #### Files
 
 - `src/lib/components/race-select/RaceSelect.svelte`
-- `src/routes/creator/index.svelte`
+- `src/routes/creator/+page.svelte`
 
 #### Goal
 
@@ -344,7 +344,6 @@ more information about the characters if you'd like.
 
 - `npm run hint 7a`
 - `npm run hint 7b`
-- `npm run hint 7c`
 
 # Titan Quest 1 - Select your Hero!
 
@@ -368,7 +367,7 @@ already set up in the `CharacterPreview` component.
 #### Files
 
 - `src/lib/components/characters/character-preview/CharacterPreview.svelte`
-- `src/routes/characters/[uid].svelte`
+- `src/routes/characters/[uid]/+page.svelte`
 
 #### Goal
 
