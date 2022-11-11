@@ -22,9 +22,9 @@
 	},
 	"type": "module",
 	"scripts": {
-		"dev": "vite dev",
+		"dev": "vite dev --port 3264",
 		"build": "vite build",
-		"preview": "vite preview",
+		"preview": "vite preview --port 6432",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --ignore-path .gitignore --plugin-search-dir . --check . && eslint --ignore-path .gitignore .",

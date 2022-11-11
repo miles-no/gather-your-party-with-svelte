@@ -6,13 +6,14 @@
 2. Clone the repository to your work environment: `git clone git@github.com:miles-no/gather-your-party-with-svelte.git`
    or `git clone https://github.com/miles-no/gather-your-party-with-svelte.git`.
 3. Install dependencies with `npm install`.
-4. To start the development server and open the application: `npm run dev -- --open`.
+4. To start the development server and open the application: `npm run dev -- --open` (or `npm run dev` to run without
+   opening a new window).
 
 ## Workshop
 
 All tasks are listed in the file `workshop-tasks.md` located at the root of the project.
 
-Both this readme file and the `workshop-tasks` (as Quests) file can be viewed in the [local app](http://localhost:3000).
+Both this readme file and the `workshop-tasks` (as Quests) file can be viewed in the [local app](http://localhost:3264).
 
 ### Solutions
 
