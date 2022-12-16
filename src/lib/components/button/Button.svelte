@@ -5,9 +5,9 @@
 
 	type ButtonVariant = 'golden';
 
-	let variant: ButtonVariant;
-	let small: boolean;
-	let disabled: boolean;
+	export let variant: ButtonVariant;
+	export let small: boolean;
+	export let disabled: boolean;
 </script>
 
 <button
