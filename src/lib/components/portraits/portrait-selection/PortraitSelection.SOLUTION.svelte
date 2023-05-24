@@ -12,7 +12,7 @@
 		getPortraitsPromise = apiFetch<string[]>('/api/portraits');
 	});
 
-	const fetchPortrait = async (portrait: string) => apiFetch(`/api/portraits/${portrait}`);
+	const fetchPortrait = async (portrait: string) => apiFetch<string>(`/api/portraits/${portrait}`);
 
 	const handleSelect = ({ detail: { portrait } }) => {
 		dispatch('select', { portrait });

@@ -9,13 +9,13 @@
 	<nav>
 		<ul class="rpgui-container framed-golden-2">
 			<li class:active={$page.url.pathname === '/'}>
-				<a data-sveltekit-prefetch href="/">Home</a>
+				<a data-sveltekit-preload-data="hover" href="/">Home</a>
 			</li>
 			<li data-quest-1="header" data-quest-7 class:active={$page.url.pathname === '/creator'}>
-				<a data-sveltekit-prefetch href="/creator">Character Creator</a>
+				<a data-sveltekit-preload-data="hover" href="/creator">Character Creator</a>
 			</li>
 			<li class:active={$page.url.pathname === '/characters'}>
-				<a data-sveltekit-prefetch href="/characters">Characters</a>
+				<a data-sveltekit-preload-data="hover" href="/characters">Characters</a>
 			</li>
 		</ul>
 	</nav>

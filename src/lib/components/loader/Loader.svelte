@@ -12,7 +12,7 @@
 		counter++;
 	};
 
-	let clear: number;
+	let clear: NodeJS.Timeout;
 
 	$: {
 		clearInterval(clear);

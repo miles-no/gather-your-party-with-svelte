@@ -333,7 +333,7 @@ more information about the characters if you'd like.
 #### Links
 
 - [Routing: Pages](https://kit.svelte.dev/docs/routing#pages)
-- [data-sveltekit-prefetch](https://kit.svelte.dev/docs#anchor-options-sveltekit-prefetch)
+- [data-sveltekit-preload-data](https://kit.svelte.dev/docs/link-options#data-sveltekit-preload-data)
   - Note: Not important to add, but a nice feature to be aware of.
 - [onMount](https://svelte.dev/docs#run-time-svelte-onmount)
 - [Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
