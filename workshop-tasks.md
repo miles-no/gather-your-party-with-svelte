@@ -303,7 +303,7 @@ We need to take advantage of SvelteKit in this quest. SvelteKit gives us some gr
 filesystem routing in our application.
 For those of you familiar with [Next.js](https://nextjs.org/), SvelteKit works in a similar way.
 For those not familiar with filesystem routing,
-see [SvelteKit's page about it](https://kit.svelte.dev/docs/routing#pages).
+see [SvelteKit's page about it](https://kit.svelte.dev/docs/routing).
 
 Our recruitment board needs to get all created characters from our API, and display them as a list with some basic
 information.
@@ -332,7 +332,7 @@ more information about the characters if you'd like.
 
 #### Links
 
-- [Routing: Pages](https://kit.svelte.dev/docs/routing#pages)
+- [Routing: Pages](https://kit.svelte.dev/docs/routing)
 - [data-sveltekit-preload-data](https://kit.svelte.dev/docs/link-options#data-sveltekit-preload-data)
   - Note: Not important to add, but a nice feature to be aware of.
 - [onMount](https://svelte.dev/docs#run-time-svelte-onmount)
@@ -358,8 +358,8 @@ we wanted to view _all_ the information about a hero as well? To accomplish this
 displaying a character.
 
 To accomplish this, a SvelteKit route with a slug/parameter to reference the character ID is recommended. To access this
-parameter, SvelteKit's [load](https://kit.svelte.dev/docs#loading) function can be used in a
-`<script context="module" lang="ts">` tag in your component.
+parameter, SvelteKit's [load](https://kit.svelte.dev/docs/load#page-data) function can be used in a `+page.ts` file next
+to your page component.
 
 The character page should be accessed by clicking one of the character previews in the Characters page. This link is
 already set up in the `CharacterPreview` component.
@@ -368,20 +368,21 @@ already set up in the `CharacterPreview` component.
 
 - `src/lib/components/characters/character-preview/CharacterPreview.svelte`
 - `src/routes/characters/[uid]/+page.svelte`
+- `src/routes/characters/[uid]/+page.ts`
 
 #### Goal
 
 - Add a Character page component.
-- In a `<script context="module" lang="ts">` tag in your component, access the `uid` parameter in a `load` function and
-  expose it as a prop to the normal `<script>` tag.
-- In your normal `<script>` tag, fire a call to the API to get the character, handling loading states of the promise.
+- In the `+page.ts` file next to your component, access the `uid` parameter in a `load` function and expose it as a prop
+  to the normal `<script>` tag.
+- In your component `<script>` tag, fire a call to the API to get the character, handling loading states of the promise.
 - Display all the information about the character on the page, using any existing components you find relevant, and
   implementing your own display of information about the character and your own CSS styles to achieve this.
 
 #### Links
 
-- [load](https://kit.svelte.dev/docs#loading)
-- [Routing: Pages](https://kit.svelte.dev/docs#routing-pages)
+- [load](https://kit.svelte.dev/docs/load#page-data)
+- [Routing: Pages](https://kit.svelte.dev/docs/routing)
 - [onMount](https://svelte.dev/docs#run-time-svelte-onmount)
 - [svelte:head](https://svelte.dev/docs#template-syntax-svelte-head)
 - [Await Blocks](https://svelte.dev/tutorial/await-blocks)
@@ -429,7 +430,7 @@ You are free to simulate the combat any way you want to, but here's a few ideas 
 
 #### Links
 
-- [Routing: Pages](https://kit.svelte.dev/docs#routing-pages)
+- [Routing: Pages](https://kit.svelte.dev/docs/routing)
 - [onMount](https://svelte.dev/docs#run-time-svelte-onmount)
 - [Svelte Tutorial](https://svelte.dev/tutorial/basics)
   - Demonstrates many features that can be used for this quest.

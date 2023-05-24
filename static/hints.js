@@ -122,7 +122,7 @@ Perhaps the Character creator page would be a good place to start?`,
 We recommend exposing the \`uid\` param as a prop to
 the component instead of using SvelteKit's fetch in the
 \`load\` function, and using methods you know in your
-""normal"" \`script\` tag to get the character from the API.`,
+component \`script\` tag to get the character from the API.`,
 
 	t2a: `\
 This is a wiiidely scoped quest.
