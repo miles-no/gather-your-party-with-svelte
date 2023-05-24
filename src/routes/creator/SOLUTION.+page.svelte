@@ -139,7 +139,7 @@
 		</label>
 	</div>
 
-	<Button variant="golden" disabled={isSavingCharacter} on:click={handleSubmit}>
+	<Button small variant="golden" disabled={isSavingCharacter} on:click={handleSubmit}>
 		{isSavingCharacter ? 'Saving character...' : 'Save character'}
 	</Button>
 
