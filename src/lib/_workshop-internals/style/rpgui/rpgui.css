@@ -228,6 +228,7 @@ inside your html file.
 	background-size: auto 100%;
 	padding-left: 34px;
 	height: 24px;
+	filter: hue-rotate(60deg);
 }
 
 /* golden checkbox */
