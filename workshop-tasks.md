@@ -192,7 +192,7 @@ Svelte is full of useful tools for animating changes, i.e. _moving_ a value from
 Start by looking into [Motion (Tweened)](https://svelte.dev/tutorial/tweened) or
 [Motion (Spring)](https://svelte.dev/tutorial/spring). Both of these directives will work for our task.
 
-We want to make our heroes' attributes move smoothly from one value to another when it's changed, insted of being
+We want to make our heroes' attributes move smoothly from one value to another when it's changed, instead of being
 replaced right away. This can more easily be spotted when using the "Randomize" button than when adding or removing
 an attribute.
 
