@@ -66,7 +66,7 @@ In Svelte this is done using [Slots](https://svelte.dev/tutorial/slots).
 
 - Expose the variables `variant`, `small`, and `disabled` so that they can be set by the parent component.
 - Propagate the `click` event from the button to parent components.
-- Use slots to display the content our Button's html tag in parent components.
+- Use slots in our Button component to display the content of our Button's html tag provided in parent components.
 
 #### Links
 
@@ -113,8 +113,8 @@ The parent component is already passing the attributes to the Stats component in
 - Hitpoints equals constitution x 5.
 - Mana equals wisdom x 10.
 - Spellpower equals intelligence x 2.5.
-- When charisma is < 12 speech should be `Timid`, >= 12 charisma should be `Well Spoken`,
-  and >= 16 charisma should be `Charming`.
+- When charisma is < 12 speech should be `Timid`, when charisma is >= 12 speech should be `Well Spoken`,
+  and when charisma is >= 16 speech should be `Charming`.
 
 #### Links
 
